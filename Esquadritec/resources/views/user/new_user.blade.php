@@ -6,21 +6,21 @@
         <title>Novo Usuário</title>
         <meta name="description" content="Tela de novo usuário">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" href="{{asset('site/style.css')}}">
     </head>
     <body>
         <form method="POST" action="{{ route('user_store') }}">
             @csrf
             <input type="text" name="name" placeholder="NOME">
-            <input type="text" name="cpf" placeholder="CPF">
-            <input type="text" name="cnpj" placeholder="CNPJ">
             <input type="text" name="email" placeholder="EMAIL">
             <input type="text" name="password" placeholder="SENHA">
             <input type="text" name="password_2" placeholder="CONFIRMAR SENHA">
             <label for="admin">ADMIN</label>
             <input id="admin" type="checkbox" name="admin" value="1">
-            <input type="submit" value="ENVIAR">
+            <input type="submit" class="btn btn-orange" value="ENVIAR">
         </form>
-        <script src="" async defer></script>
+
+        <script src="{{ asset('site/jquery.js') }}" async defer></script>
+        <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
     </body>
 </html>

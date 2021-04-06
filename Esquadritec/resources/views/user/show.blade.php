@@ -6,7 +6,7 @@
         <title>USUÁRIOS CADASTRADOS</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="{{asset('site/style.css')}}">
     </head>
     <body>
         <label for="nome" >NOME: </label>
@@ -22,5 +22,9 @@
             <label for="nome" >CNPJ: </label>
             <h4 id="nome">{{ $user->cnpj }}</h4>
         @endif
+
+
+        <script src="{{ asset('site/jquery.js') }}" async defer></script>
+        <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
     </body>
 </html>
