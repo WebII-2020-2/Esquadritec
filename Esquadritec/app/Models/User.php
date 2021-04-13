@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
 class User extends Authenticatable
@@ -43,11 +44,7 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function setAdminAttribute($value){
-        if ($value) {
-            $this->attributes['admin'] = $value;
-        } else{
-            $this->attributes['admin'] = 0;
-        }
+    public function setPasswordAttribute($value){
+        $this->attributes['password'] = Hash::make($value);
     }
 }

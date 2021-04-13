@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User as Users;
 
@@ -16,7 +17,7 @@ class User extends Controller
      */
     public function index()
     {
-        //
+        return view('user/dashboard', ['user' => Auth::user()]);
     }
 
     /**
@@ -37,7 +38,9 @@ class User extends Controller
      */
     public function store(Request $request)
     {
-        var_dump($request->except(['_token']));
+        if($request->password != $request->password_2){
+            return redirect()->route('user_create')->withErrors('Senhas não Batem');
+        }
         $user = new Users($request->except(['_token']));
         
         // $user = new Users();
@@ -49,6 +52,7 @@ class User extends Controller
         // $user->admin = $request->admin;
 
         $user->save();
+        return redirect()->route('dashboard')->with('succes', 'cadastrado');
     }
 
     /**

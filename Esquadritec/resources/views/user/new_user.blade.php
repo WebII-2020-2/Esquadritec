@@ -20,6 +20,18 @@
             <input type="submit" class="btn btn-orange" value="ENVIAR">
         </form>
 
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
+
+        @if($errors->all())
+            @foreach($errors->all() as $error)
+                <p>{{$error}}</p>
+            @endforeach
+        @endif
+
         <script src="{{ asset('site/jquery.js') }}" async defer></script>
         <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
     </body>
