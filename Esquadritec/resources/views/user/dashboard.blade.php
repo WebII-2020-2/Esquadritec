@@ -15,6 +15,7 @@
 
         <a href="{{route('logout')}}">LOGOUT</a>
         <a href="{{route('user_create')}}">NEW</a>
+        <a href="{{route('new_material')}}">NEW_MATERIAL</a>
 
         @if(session()->has('succes'))
             <div class="alert alert-success">
