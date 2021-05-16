@@ -23,7 +23,6 @@
         <button type="submit" class="btn btn-success">ENTRAR</button>
     </form>
 
-    {{-- <h1>Teste</h1> --}}
     <script src="{{ asset('site/jquery.js') }}" async defer></script>
     <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
 </body>
