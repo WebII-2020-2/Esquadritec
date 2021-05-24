@@ -12,8 +12,8 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 // });
 
 
-Route::get('/', function () {
-    return view('auth/login');
+Route::head('/teste', function () {
+    return view('modelo/formModelo');
 });
 
 // GET
