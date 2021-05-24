@@ -6,7 +6,7 @@ use App\Http\Controllers\User\User;
 use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\materiais\Material;
 use App\Http\Controllers\cliente\new_cliente;
-use App\Http\Controllers\modelo\formModelo
+use App\Http\Controllers\modelo\formModelo;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
