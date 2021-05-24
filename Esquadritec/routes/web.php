@@ -5,10 +5,16 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\User;
 use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\materiais\Material;
+use Symfony\Component\Routing\Route as RoutingRoute;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+
+
+Route::get('/', function () {
+    return view('auth/login');
+});
 
 // GET
 Route::get('/', [Login::class, 'login'])->name('login');
