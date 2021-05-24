@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Route as RoutingRoute;
 // });
 
 
-Route::head('/teste', function () {
+Route::get('/teste', function () {
     return view('modelo/formModelo');
 });
 
