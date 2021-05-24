@@ -5,7 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User\User;
 use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\materiais\Material;
-use App\Htto\Controllers\cliente\new_cliente;
+use App\Http\Controllers\cliente\new_cliente;
+use App\Http\Controllers\modelo\formModelo
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -26,6 +27,10 @@ Route::post('/dashboard/new_material/new_material_do', [Material::class, 'create
 
 Route::get('/test', function () {
     return view('cliente/new_cliente');
+});
+
+Route::get('/teste', function () {
+    return view ('modelo/formModelo');
 });
 
 
