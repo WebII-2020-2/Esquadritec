@@ -17,6 +17,22 @@
         border-radius: 28px;
         height: 255px;
     }
+    .center {
+        text-align:center;
+    }
+    .center-div {
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+    }
+    .form-control{
+        width:65%;
+    }
+    .bottom-div{
+        position: absolute;
+        bottom:20%;
+        left:25%;
+    }
 
     label {
         color: white;
@@ -24,30 +40,24 @@
 </style>
 
 <body>
-    <div class="py-4" style="text-align: center;">
-        <h2 class="text-main font-monospace ">NOVO MODELO</h2>
-    </div>
-    <div class="container card center" style="width: 500px;">
 
-        <div class="row justify-content-md-center pt-4" style="text-align: center;">
-            <div class="col-md-auto">
-                <form class="g-5">
-                    @csrf
-                    <div class="row p-3 center">
-                        <label for="modelo" class="pr-2" style="color: white">MODELO:</label>
-                        <input type="text" class="form-control" id="modelo" style="width: 200px;" placeholder="">
-                    </div>
-                    <div class="pt-4 g-4">
-                        <button class="rounded-pill btn btn-md btn-cancelar" type="submit">Cancelar</button>
-                        <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
-                    </div>
-                </form>
-            </div>
+    <div class="py-4 center" style="min-height: 200px;">
+        <h2 class="text-main font-monospace ">NOVO MODELO</h2>
+
+        <div class="card center-div" style="width: 500px;min-height: 100%;">
+            <form class="" style="height: 100%;">
+                @csrf
+                <div class="row p-3 center-div pt-5" style="width: 300px;">
+                    <label for="linha" class="pr-2" style="color: white">MODELO:</label>
+                    <input id="linha" type="text" name="linha" class="form-control" placeholder="">
+                </div>
+                <div class="center-div bottom-div">
+                    <button class="rounded-pill btn btn-md btn-cancelar" type="submit">Cancelar</button>
+                    <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
+                </div>
+            </form>
         </div>
     </div>
-
-
-
 </body>
 
 </html>
