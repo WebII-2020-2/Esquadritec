@@ -34,12 +34,13 @@ Route::get('/2', function () {
     return view('modelo/formModelo');
 });
 
-Route::get('/novo_produto', function () {
-    return view ('auth/new_produte');
-});
 
 Route::get('/3', function () {
     return view ('produto/new_line');
+});
+
+Route::get('/4', function () {
+    return view ('auth/new_produte');
 });
 
 // POST
