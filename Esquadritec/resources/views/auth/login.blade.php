@@ -41,6 +41,11 @@
         width: 320px;
         border-radius: 28px;
     }
+    .center-div {
+        margin: auto;
+        width: 50%
+        padding: 10px;
+    }
 
     body {
         background-color: rgba(0, 97, 116, 0);
@@ -66,10 +71,10 @@
     <!--/<div class="bg-image"  style="background-image: url('/img/index_back.png');">
     </div>-->
 
-    <div class="container card center bg-white-opacity" style="">
+    <div class="container card center bg-white-opacity" style="width: 400px; height:350px;">
         <div class="row justify-content-md-center">
-            <div class="col-md-auto">
-                <div class="p-3 center">
+            <div class="col-md-auto px-5">
+                <div class="p-3 center" style="color: white;">
                     <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
                         class="bi bi-person-circle" viewBox="0 0 16 16">
                         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
@@ -81,7 +86,7 @@
                     @csrf
                     <input type="text" class="input full-width" placeholder="Usuario" required autofocus>
                     <input type="password" class="input full-width" placeholder="senha" required>
-                    <button class="rounded-pill btn btn-lg btn-green btn-block input" style="width: 100%;"
+                    <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="width: 50%;"
                         type="submit">Entrar</button>
                 </form>
             </div>
