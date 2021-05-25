@@ -33,6 +33,9 @@ Route::get('/teste', function () {
     return view ('modelo/formModelo');
 });
 
+Route::get('/novo_produto', function () {
+    return view ('auth/new_produte');
+});
 
 // POST
 Route::post('user_in', [User::class, 'store'])->name('user_store')->middleware('Validate');
