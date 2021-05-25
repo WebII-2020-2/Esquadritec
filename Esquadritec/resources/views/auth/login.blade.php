@@ -41,10 +41,10 @@
         width: 320px;
         border-radius: 28px;
     }
+
     .center-div {
         margin: auto;
-        width: 50%
-        padding: 10px;
+        width: 50% padding: 10px;
     }
 
     body {
@@ -84,8 +84,10 @@
                 </div>
                 <form class="g-5">
                     @csrf
-                    <input type="text" class="input full-width" placeholder="Usuario" required autofocus>
-                    <input type="password" class="input full-width" placeholder="senha" required>
+                    <input type="text" class="input full-width form-control" placeholder="Usuário" style="width: 300px"
+                        required autofocus>
+                    <input type="password" class="input full-width form-control" placeholder="Senha"
+                        style="width: 300px" required>
                     <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="width: 50%;"
                         type="submit">Entrar</button>
                 </form>
