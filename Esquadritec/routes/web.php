@@ -32,13 +32,6 @@ Route::get('/1', function () {
 Route::get('/2', function () {
     return view('modelo/formModelo');
 });
-Route::get('/3', function () {
-    return view('');
-});
-
-Route::get('/4', function () {
-    return view('');
-});
 
 
 // POST
