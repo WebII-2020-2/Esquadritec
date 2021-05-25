@@ -14,7 +14,6 @@
             }
 
             .center{
-                top: 100px;
                 text-align: center;
             }
 
@@ -38,74 +37,79 @@
                 height: 30px;
                 text-align: center;
             }
+            .right{
+                text-align:right;
+            }
+            .input-3{
+                width: 65%;
+            }
         </style>
 
     </head>
     <body>
 
-        <div class="pt-3" style="text-align: center;">
-        <h2>NOVO CLIENTE</h2>
-            <div class="pt-5 container card center" style="color: white;">
+        <div class="pt-3 container center">
+        <h2  class="">NOVO CLIENTE</h2>
+            <div class="pt-5 card" style="color: white;min-width:600px;">
 
-                    <div class="row justify-content-md-center">
-                        <div class="col-md-auto">
-                            <form method="POST" action="{{ route('user_store') }}">
+                    <div class="row justify-content-md-center full-width"style="min-width:500px;">
+                        <div class="center" style="max-width:500px;">
+                            <form style="width:500px;" method="POST" action="{{ route('user_store') }}">
                                 @csrf
-                                <div class="rounded-pill">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="name">NOME:</label>
-                                    <input type="text" name="name">
+                                    <input class="input-3" type="text" name="name">
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="cpf">CPF:</label>
-                                    <input type="text" name="cpf">
+                                    <input class="input-3" type="text" name="cpf">
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="cnpj">CNPJ:</label>
-                                    <input type="text" name="cnpj"> 
+                                    <input class="input-3" type="text" name="cnpj"> 
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="email">EMAIL:</label>
-                                    <input type="text" name="email">    
+                                    <input class="input-3" type="text" name="email">    
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="tel">TELEFONE:</label>
-                                    <input type="text" name="tel">    
+                                    <input class="input-3" type="text" name="tel">    
                                 </div>
                     
                                 <h5 class="mt-3" style="color: black;">ENDEREÇO</h5>
                                 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="city">CIDADE:</label>
-                                    <input type="text" name="city">   
+                                    <input class="input-3" id="city" type="text" name="city">   
                                 </div>
                                 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="road">RUA:</label>
-                                    <input type="text" name="road">   
+                                    <input class="input-3" id="road" type="text" name="road">   
                                 </div>
                                 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="district">BAIRRO:</label>
-                                    <input type="text" name="district">   
+                                    <input class="input-3" type="text" name="district">   
                                 </div>
 
-                                <div class="form-group mb-2">
+                                <div class="full-width mb-2 right pr-5">
                                     <label for="number">NÚMERO:</label>
-                                    <input type="text" name="number">   
+                                    <input class="input-3"  type="text" name="number">   
                                 </div>
                                 
-                                <div class="form-group mb-2">
-                                    <label for="observation">OBSERVAÇÕES:</label>
-                                    <input type="text" name="observation">   
+                                <div class="full-width mb-2 right pr-5">
+                                    <textarea id="observation" placeholder="Coloque observações aqui..." style="height: 100px; width: 295px;"></textarea>  
                                 </div>
 
-                                <div class="full-width p-2" >
-                                    <button class="rounded-pill btn btn-md btn-danger" type="submit">Cancelar</button>
-                                    <button class="rounded-pill btn btn-md btn-success" type="submit">Confirmar</button>
+                                <div class="pt-4">
+                                    <button class="rounded-pill btn btn-sm btn-danger mr-5" type="reset">Cancelar</button>
+                                    <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Confirmar</button>
                                 </div>
                             </form>
                         </div>

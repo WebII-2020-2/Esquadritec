@@ -38,9 +38,9 @@
                         <input type="text" class="form-control" id="modelo" style="width: 200px;" placeholder="">
                     </div>
                     <div class="pt-4 g-4">
-                        <button class="rounded-pill btn btn-md btn-green" type="submit">Cadastrar</button>
+                        <button class="rounded-pill btn btn-sm btn-green" type="submit">Cadastrar</button>
 
-                        <button class="rounded-pill btn btn-md btn-cancelar" type="submit">Cancelar</button>
+                        <button class="rounded-pill btn btn-sm btn-cancelar" type="submit">Cancelar</button>
                     </div>
                 </form>
             </div>
