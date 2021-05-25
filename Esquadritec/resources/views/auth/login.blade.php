@@ -66,7 +66,7 @@
     <!--/<div class="bg-image"  style="background-image: url('/img/index_back.png');">
     </div>-->
 
-    <div class="container card center" style="">
+    <div class="container card center bg-white-opacity" style="">
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
                 <div class="p-3 center">
