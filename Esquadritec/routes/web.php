@@ -25,12 +25,12 @@ Route::get('/dashboard/new_material', [Material::class, 'index'])->name('new_mat
 Route::post('/dashboard/new_material/new_material_do', [Material::class, 'create'])->name('new_material_do')->middleware('Validate');
 
 
-Route::get('/test', function () {
+Route::get('/1', function () {
     return view('cliente/new_cliente');
 });
 
-Route::get('/teste', function () {
-    return view ('modelo/formModelo');
+Route::get('/2', function () {
+    return view('modelo/formModelo');
 });
 
 Route::get('/novo_produto', function () {
