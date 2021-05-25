@@ -10,24 +10,52 @@
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
 </head>
 <style>
-    .center{
+    @keyframes menssagem {
+        from {
+            opacity: 60%;
+        }
+
+        to {
+            opacity: 0%;
+        }
+    }
+
+    .center {
         top: 100px;
         text-align: center;
     }
-    .full-width{
+
+    .full-width {
         width: 100%;
         height: 100%;
     }
-    .input{
-        position:relative;
-        padding-top:10px;
-        margin-top:10px;
+
+    .input {
+        position: relative;
+        padding-top: 10px;
+        margin-top: 10px;
     }
-    .card{
+
+    .card {
         padding: 20px;
-        width: 300px;
+        width: 320px;
+        border-radius: 28px;
+    }
+
+    body {
+        background-color: rgba(0, 97, 116, 0);
+    }
+
+    html {
+        height: 100%;
+        margin: 0%;
+        background-image:linear-gradient(rgba(0, 97, 116, 0.4), rgba(0, 97, 116, 0.4)),
+        url("{{asset('img/index_back.png')}}");
+        background-size: cover;
+        background-repeat: no-repeat;
     }
 </style>
+
 <body>
     @if($errors->all())
     @foreach($errors->all() as $error)
@@ -42,16 +70,19 @@
         <div class="row justify-content-md-center">
             <div class="col-md-auto">
                 <div class="p-3 center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" fill="currentColor"
+                        class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                        <path fill-rule="evenodd"
+                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                     </svg>
                 </div>
                 <form class="g-5">
                     @csrf
                     <input type="text" class="input full-width" placeholder="Usuario" required autofocus>
                     <input type="password" class="input full-width" placeholder="senha" required>
-                    <button class="btn btn-lg btn-primary btn-block input" type="submit">Entrar</button>
+                    <button class="rounded-pill btn btn-lg btn-green btn-block input" style="width: 100%;"
+                        type="submit">Entrar</button>
                 </form>
             </div>
         </div>
