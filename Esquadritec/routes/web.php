@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\materiais\Material;
 use App\Http\Controllers\cliente\new_cliente;
 use App\Http\Controllers\modelo\formModelo;
+use App\Http\Controllers\produto\new_line;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
@@ -35,6 +36,10 @@ Route::get('/2', function () {
 
 Route::get('/novo_produto', function () {
     return view ('auth/new_produte');
+});
+
+Route::get('/3', function () {
+    return view ('produto/new_line');
 });
 
 // POST
