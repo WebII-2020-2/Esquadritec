@@ -36,11 +36,14 @@ Route::get('/2', function () {
 
 
 Route::get('/3', function () {
-    return view ('produto/new_line');
+    return view('produto/new_line');
 });
 
 Route::get('/4', function () {
-    return view ('auth/new_produte');
+    return view('auth/new_produte');
+});
+Route::get('/5', function () {
+    return view('materiais/newMaterial');
 });
 
 // POST

@@ -17,25 +17,36 @@
         border-radius: 28px;
         height: 255px;
     }
+
     .center {
-        text-align:center;
+        text-align: center;
     }
+
     .center-div {
         margin: auto;
         width: 50%;
         padding: 10px;
     }
-    .form-control{
-        width:65%;
+
+    .form-control {
+        width: 65%;
     }
-    .bottom-div{
+
+    .bottom-div {
         position: absolute;
-        bottom:20%;
-        left:25%;
+        bottom: 20%;
+        left: 25%;
     }
 
     label {
         color: white;
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 700;
+        line-height: 49px;
+
     }
 </style>
 
@@ -47,11 +58,11 @@
             <form class="" style="height: 100%;">
                 @csrf
                 <div class="row p-3 center-div pt-5" style="width: 300px;">
-                    <label for="linha" class="pr-2" style="color: white">LINHA:</label>
+                    <label for="linha" class="pr-2 col-form-label   " style="color: white">LINHA:</label>
                     <input id="linha" type="text" name="linha" class="form-control" placeholder="">
                 </div>
-                <div class="center-div bottom-div">
-                    <button class="rounded-pill btn btn-md btn-cancelar" type="submit">Cancelar</button>
+                <div class="center-div bottom-div w-auto">
+                    <button class="rounded-pill btn btn-md btn-cancelar mx-4" type="submit">Cancelar</button>
                     <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
                 </div>
             </form>
