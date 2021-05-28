@@ -44,7 +44,8 @@
 
     .center-div {
         margin: auto;
-        width: 50% padding: 10px;
+        width: 50%;
+        padding: 10px;
     }
 
     body {
@@ -62,11 +63,13 @@
 </style>
 
 <body>
+    <!--
     @if($errors->all())
     @foreach($errors->all() as $error)
     <p>{{$error}}</p>
     @endforeach
     @endif
+    -->
 
     <!--/<div class="bg-image"  style="background-image: url('/img/index_back.png');">
     </div>-->
