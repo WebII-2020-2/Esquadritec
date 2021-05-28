@@ -59,8 +59,8 @@
             <form class="" style="height: 100%;">
                 @csrf
                 <div class="row p-3 center-div pt-5" style="width: 300px;">
-                    <label for="linha" class="pr-2 col-form-label" style="color: white">MODELO:</label>
-                    <input id="linha" type="text" name="linha" class="form-control" placeholder="">
+                    <label for="modelo" class="pr-2 col-form-label" style="color: white">MODELO:</label>
+                    <input id="modelo" type="text" name="modelo" class="form-control" placeholder="">
                 </div>
                 <div class="center-div bottom-div w-auto">
                     <button class="rounded-pill btn btn-md btn-cancelar mx-4" type="submit">Cancelar</button>

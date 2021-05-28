@@ -64,14 +64,14 @@
         <form class=" g-3 pt-4">
             @csrf
             <div class="full-width form-group row px-0">
-                <label for="linha" class="col-form-label pl-4" style="color: white;">MATERIAL:</label>
+                <label for="material" class="col-form-label pl-4" style="color: white;">MATERIAL:</label>
                 <div class="col-sm-4 pl-1">
-                    <input id="linha" type="text" name="linha" class="form-control px-1" placeholder=""
+                    <input id="material" type="text" name="material" class="form-control px-1" placeholder=""
                         style="width: 110px">
                 </div>
-                <label for="linha" class="col-form-label pl-5" style="color: white;">VALOR:</label>
+                <label for="valor" class="col-form-label pl-5" style="color: white;">VALOR:</label>
                 <div class="col-sm-4 pl-1">
-                    <input id="linha" type="number" name="linha" class="form-control  px-1" style="width: 70px"
+                    <input id="valor" type="number" name="valor" class="form-control  px-1" style="width: 70px"
                         placeholder="">
                 </div>
             </div>
