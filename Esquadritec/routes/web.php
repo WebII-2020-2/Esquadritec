@@ -45,6 +45,9 @@ Route::get('/4', function () {
 Route::get('/5', function () {
     return view('materiais/newMaterial');
 });
+Route::get('/6', function () {
+    return view('teste');
+});
 
 // POST
 Route::post('user_in', [User::class, 'store'])->name('user_store')->middleware('Validate');
