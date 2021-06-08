@@ -46,7 +46,7 @@ Route::get('/5', function () {
     return view('materiais/newMaterial');
 });
 
-<<< HEAD
+<<<<<<< HEAD
 
 =======
 Route::get('/6', function () {
