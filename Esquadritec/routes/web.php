@@ -40,12 +40,34 @@ Route::get('/3', function () {
 });
 
 Route::get('/4', function () {
-    return view('auth/new_produte');
+    return view('produto/new_produte');
 });
 Route::get('/5', function () {
     return view('materiais/newMaterial');
 });
 
+<<< HEAD
+
+=======
+Route::get('/6', function () {
+    return view('modelo/list_model');
+});
+Route::get('/7', function () {
+    return view('produto/list_line');
+});
+Route::get('/8', function () {
+    return view('materiais/list_material');
+});
+Route::get('/9', function () {
+    return view('user/list_worker');
+});
+Route::get('/10', function () {
+    return view('cliente/list_client');
+});
+Route::get('/11', function () {
+    return view('user/list_orcamento');
+});
+>>>>>>> 3753208f6cf02622a2c47977cbec56a6a6854994
 
 // POST
 Route::post('user_in', [User::class, 'store'])->name('user_store')->middleware('Validate');
