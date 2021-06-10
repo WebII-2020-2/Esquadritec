@@ -13,9 +13,13 @@
         <label for="email" >EMAIL: </label>
         <h4 id="email">{{ $user->email }}</h4>
 
-        <a href="{{route('logout')}}">LOGOUT</a>
-        <a href="{{route('user_create')}}">NEW</a>
-        <a href="{{route('new_material')}}">NEW_MATERIAL</a>
+        <ul style="display:block;">
+            <li><a href="{{route('user_create')}}">Novo usuário</a></li>
+            <li><a href="{{route('new_material')}}">Novo material</a></li>
+            <li><a href="{{route('new_cliente')}}">Novo Cliente</a></li>
+
+            <li><a href="{{route('logout')}}">Sair</a></li>
+        </ul>
 
         @if(session()->has('succes'))
             <div class="alert alert-success">

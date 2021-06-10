@@ -5,18 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class endereco extends Model
+class Telefone extends Model
 {
     use HasFactory;
-    protected $table = 'endereco';
+    protected $table = 'telefone';
 
     protected $fillable = [
-        'cidade',
-        'rua',
-        'cliente',
-        'bairro',
         'numero',
-        'observacao',
         'cliente',
     ];
 }

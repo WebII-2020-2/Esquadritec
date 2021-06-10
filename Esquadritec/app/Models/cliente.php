@@ -11,7 +11,12 @@ class cliente extends Model
 
     protected $table = 'cliente';
 
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'cpf',
+        'cnpj',
+        'email',
+    ];
 
 
     public function endereco()

@@ -9,12 +9,12 @@
         <link rel="stylesheet" href="{{asset('site/style.css')}}">
     </head>
     <body>
-        <form method="POST" action="{{ route('user_store') }}">
+        <form method="POST" action="{{ route('user_create_do') }}">
             @csrf
             <input type="text" name="name" placeholder="NOME">
             <input type="text" name="email" placeholder="EMAIL">
-            <input type="text" name="password" placeholder="SENHA">
-            <input type="text" name="password_2" placeholder="CONFIRMAR SENHA">
+            <input type="password" name="password" placeholder="SENHA">
+            <input type="password" name="password_2" placeholder="CONFIRMAR SENHA">
             <label for="admin">ADMIN</label>
             <input id="admin" type="checkbox" name="admin" value="1">
             <input type="submit" class="btn btn-orange" value="ENVIAR">

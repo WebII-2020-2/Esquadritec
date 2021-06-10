@@ -84,11 +84,11 @@
         <h2 class="text-main font-monospace py-4">NOVO CLIENTE</h2>
 
         <div class="card center-div text-white pr-5" style="min-width: 500px;height: 100%;">
-            <form class="" style="height: 100%;">
+            <form class="" style="height: 100%;" method="POST" action="{{route('new_cliente_do')}}">
                 @csrf
                 <div class="full-width pr-5 right mb-2">
                     <label for="name">NOME:</label>
-                    <input class="input-3" type="text" name="name">
+                    <input class="input-3" type="text" name="name" required>
                 </div>
 
                 <div class="full-width pr-5 right mb-2">
@@ -103,43 +103,43 @@
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="email">EMAIL:</label>
-                    <input class="input-3" type="text" name="email">
+                    <input class="input-3" type="text" name="email" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="tel">TELEFONE:</label>
-                    <input class="input-3" type="text" name="tel">
+                    <input class="input-3" type="text" name="telefone" required>
                 </div>
 
                 <h5 class="mt-3" style="color: black;">ENDEREÇO</h5>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="city">CIDADE:</label>
-                    <input class="input-3" id="city" type="text" name="city">
+                    <input class="input-3" id="city" type="text" name="cidade" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="road">RUA:</label>
-                    <input class="input-3" id="road" type="text" name="road">
+                    <input class="input-3" id="road" type="text" name="rua" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="district">BAIRRO:</label>
-                    <input class="input-3" type="text" name="district">
+                    <input class="input-3" type="text" name="bairro" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="number">NÚMERO:</label>
-                    <input class="input-3" type="text" name="number">
+                    <input class="input-3" type="text" name="numero" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
-                    <textarea id="observation" placeholder="Coloque observações aqui..."
+                    <textarea id="observation" name="observacao" placeholder="Coloque observações aqui..."
                         style="height: 100px; width: 65%;"></textarea>
                 </div>
 
                 <div class="pt-4">
-                    <button class="rounded-pill btn btn-sm btn-danger mr-5" type="reset">Cancelar</button>
+                    <a href="{{route('dashboard')}}" class="rounded-pill btn btn-sm btn-danger mr-5" type="reset">Cancelar</a>
                     <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Confirmar</button>
                 </div>
             </form>

@@ -85,15 +85,20 @@
                             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                     </svg>
                 </div>
-                <form class="g-5">
+                <form class="g-5" action="{{ route('loginDo') }}" method="POST">
                     @csrf
-                    <input type="text" class="input full-width form-control" placeholder="Usuário" style="width: 300px"
+                    <input type="text" name="email" class="input full-width form-control" placeholder="Usuário" style="width: 300px"
                         required autofocus>
-                    <input type="password" class="input full-width form-control" placeholder="Senha"
+                    <input type="password" name="password" class="input full-width form-control" placeholder="Senha"
                         style="width: 300px" required>
                     <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="width: 50%;"
                         type="submit">Entrar</button>
                 </form>
+                @if($errors->all())
+                    @foreach($errors->all() as $error)
+                        <p>{{$error}}</p>
+                    @endforeach
+                @endif
             </div>
         </div>
     </div>

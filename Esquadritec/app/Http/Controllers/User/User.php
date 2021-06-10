@@ -48,7 +48,6 @@ class User extends Controller
         // $user->email = $request->email;
         // $user->password = $request->password;
         // $user->cpf = $request->cpf;
-        // $user->cnpj = $request->cnpj;
         // $user->admin = $request->admin;
 
         $user->save();
