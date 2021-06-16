@@ -17,17 +17,23 @@
             <li><a href="{{route('user_create')}}">Novo usuário</a></li>
             <li><a href="{{route('new_material')}}">Novo material</a></li>
             <li><a href="{{route('new_cliente')}}">Novo Cliente</a></li>
+            <li><a href="{{route('list_modelo')}}">Modelo</a></li>
+            <li><a href="{{route('new_modelo')}}">Novo Modelo</a></li>
 
             <li><a href="{{route('logout')}}">Sair</a></li>
         </ul>
 
-        @if(session()->has('succes'))
-            <div class="alert alert-success">
-                {{ session()->get('succes') }}
+        @if(session()->has('errors'))
+            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+                <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
+            </div>
+        @elseif(session()->has('succes'))
+            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+                <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
             </div>
         @endif
-        <script src="{{ asset('site/jquery.js') }}"  async defer></script>
+
+        <script src="{{ asset('site/jquery.js') }}" async defer></script>
         <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
-        <!-- <script src="{{ asset('site/bootstrap.bundle.js.map') }}" async defer></script> -->
     </body>
 </html>

@@ -17,6 +17,7 @@ class Materiais extends Migration
             $table->bigIncrements('id', true);
             $table->foreignId('unidade_medida');
             $table->string('nome',50);
+            $table->string('codigo',50);
             $table->decimal('valor', 8, 2);
             $table->foreign('unidade_medida')->references('id')->on('unidade_medida')->onDelete('CASCADE');
             $table->timestamps();

@@ -63,17 +63,7 @@
 </style>
 
 <body>
-    <!--
-    @if($errors->all())
-    @foreach($errors->all() as $error)
-    <p>{{$error}}</p>
-    @endforeach
-    @endif
-    -->
-
-    <!--/<div class="bg-image"  style="background-image: url('/img/index_back.png');">
-    </div>-->
-
+    <x-AuthLayout/>
     <div class="container card center bg-white-opacity" style="width: 400px; height:350px;">
         <div class="row justify-content-md-center">
             <div class="col-md-auto px-5">
@@ -94,10 +84,15 @@
                     <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="width: 50%;"
                         type="submit">Entrar</button>
                 </form>
-                @if($errors->all())
-                    @foreach($errors->all() as $error)
-                        <p>{{$error}}</p>
-                    @endforeach
+                
+                @if(session()->has('errors'))
+                    <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+                        <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
+                    </div>
+                @elseif(session()->has('succes'))
+                    <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+                        <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
+                    </div>
                 @endif
             </div>
         </div>

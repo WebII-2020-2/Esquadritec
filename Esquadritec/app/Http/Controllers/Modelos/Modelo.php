@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\Modelos;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Modelo as Model;
 
-use App\Models\User as Users;
-
-class User extends Controller
+class Modelo extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,8 @@ class User extends Controller
      */
     public function index()
     {
-        return view('user/dashboard', ['user' => Auth::user()]);
+        $modelo = Model::all();
+        return view('modelo/list_model', ['Modelos'=>$modelo]);
     }
 
     /**
@@ -27,7 +26,7 @@ class User extends Controller
      */
     public function create()
     {
-        return view('user/new_user');
+        return view('modelo/formModelo');
     }
 
     /**
@@ -39,15 +38,11 @@ class User extends Controller
     public function store(Request $request)
     {
         try{
-            if($request->password != $request->password_2){
-                return redirect()->route('user_create')->withErrors('Senhas não Batem');
-            }
-            $user = new Users($request->except(['_token']));
-    
-            $user->save();
-            return redirect()->route('dashboard')->with('succes', 'cadastrado');
+            $modelo = new Model($request->except(['_token']));
+            $modelo->save();
+            return redirect()->route('list_modelo')->with('succes', 'cadastrado');
         }catch(Exception $e){
-            return redirect()->route('dashboard')->withErrors('Falha de rede!');
+            return redirect()->route('list_modelo')->with('error', 'Falha de rede!');
         }
     }
 
@@ -59,10 +54,7 @@ class User extends Controller
      */
     public function show($id)
     {
-        $user = Users::where('id', $id)->first();
-        // $user = Users::get();
-        return view('user/show', ['user' => $user]);
-        // dd($user);
+        //
     }
 
     /**
@@ -71,10 +63,11 @@ class User extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-
     public function edit($id)
     {
-        //
+        dd($id);
+        $modelo = Model::where('id', $id);
+        return view('modelo/editModelo', ['modelo'=>$modelo]);
     }
 
     /**

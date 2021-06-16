@@ -9,13 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
     <script>
-    // corrigir essa funçaõ para passar valor pela url
         function submitForm(id, type){
-            if(type == 1){
+            if(type == 'editar'){
                 var form = document.getElementById('form');
                 var input = document.getElementById('idInput');
-                form.action="http://localhost/Laravel-api/Esquadritec/public/dashboard/editModelo?id=" + id;
-                form.method="get";
+                form.action="";
+                input.value=id;
                 form.submit();
             }
         }
@@ -36,15 +35,17 @@
                 </tr>
             </thead>
             <tbody>
-                <form id="form" method="POST" action="">
-                    <input id="idInput" name="id" type="hidden" value=""/>
+                <form it="form" method="POST" action="">
+                    <input it="idInput" name="id" type="hidden" value=""/>
                 </form>
                     @foreach ($Modelos as $model)
                         <tr>
                             <td class="table_rows">{{$model->modelo}}</td>
                             <td class="table_rows">
-                                <button onClick="submitForm({{$model->id}}, 1)">
-                                <button onClick="submitForm({{$model->id}}, 2)">
+                                <button onClick=<?php echo "submitForm($model->id, 'editar')"; ?>>
+                                    <?php echo $model->id; ?>
+                                </button>
+                                <button onClick=<?php echo "submitForm($model->id, 'excluir')"; ?>>
                             </td>
                         </tr>
                     @endforeach

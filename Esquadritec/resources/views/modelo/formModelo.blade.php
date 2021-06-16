@@ -61,78 +61,38 @@
         position: relative;
     }
 </style>
+    <body>
+        <x-layout/>
+        <div class="py-4 center" style="min-height: 200px;">
+            <h2 class="text-main font-monospace ">NOVO MODELO</h2>
 
-<body>
-
-    <nav class="navbar navbar-light bg-main">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <a class="navbar-brand text-white px-2 m-0" href="#">ESQUADRITEC</a>
-
+            <div class="card center-div" style="width: 500px;min-height: 100%;">
+                <form class="" style="height: 100%;" method="POST" action="{{ route('new_modelo_do') }}">
+                    @csrf
+                    <div class="row p-3 center-div pt-5" style="width: 300px;">
+                        <label for="modelo" class="pr-2 col-form-label" style="color: white">MODELO:</label>
+                        <input id="modelo" type="text" name="modelo" class="form-control" placeholder="">
+                    </div>
+                    <div class="center-div bottom-div w-auto">
+                        <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Cancelar</button>
+                        <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
+                    </div>
+                </form>
             </div>
-            <div class="inner-addon right-addon">
-                <i class="glyphicon glyphicon-search"></i>
-                <input type="text" class="form-control" placeholder="Search" />
-            </div>
-
-            <a class="navbar-brand text-white" href="#">User</a>
-
-
-    </nav>
-
-    <div class="collapse navbar-collapse  bg-main" id="navbarTogglerDemo03">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="#">Funcionário</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="#">Cliente</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="#">Orçamento</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="#">Material</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active text-white" href="#">Modelo</a>
-            </li>
-        </ul>
-    </div>
-
-    </div>
-
-    </nav>
-
-
-
-    <div class="py-4 center" style="min-height: 200px;">
-        <h2 class="text-main font-monospace ">NOVO MODELO</h2>
-
-        <div class="card center-div" style="width: 500px;min-height: 100%;">
-            <form class="" style="height: 100%;">
-                @csrf
-                <div class="row p-3 center-div pt-5" style="width: 300px;">
-                    <label for="modelo" class="pr-2 col-form-label" style="color: white">MODELO:</label>
-                    <input id="modelo" type="text" name="modelo" class="form-control" placeholder="">
-                </div>
-                <div class="center-div bottom-div w-auto">
-                    <button class="rounded-pill btn btn-md btn-cancelar mx-4" type="submit">Cancelar</button>
-                    <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
-                </div>
-            </form>
         </div>
-    </div>
-</body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-</script>
+        @if(session()->has('errors'))
+            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+                <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
+            </div>
+        @elseif(session()->has('succes'))
+            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+                <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
+            </div>
+        @endif
 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
+        </script>
+    </body>
 </html>
    
