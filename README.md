@@ -11,8 +11,8 @@
 
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
-> -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png" width="3.5%"/> Mysql Workbench 
-> -  - <img src="https://img.icons8.com/fluent/48/000000/figma.png" width="2.3%"/> Figma
+> -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png" width="5.5%"/> Mysql Workbench 
+> -  - <img src="https://img.icons8.com/fluent/48/000000/figma.png" width="4.3%"/> Figma
 > - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
 > - **Ferramentas para codificar**
@@ -22,8 +22,8 @@
 >  - - <img src="https://img.icons8.com/color/20/000000/heroku.png"/> Heroku
 
 ### Frameworks Utilizados:
->  - <img src="https://img.icons8.com/color/48/000000/bootstrap.png" width="2.3%"/> Bootstrap
->  - <img src="https://img.icons8.com/fluent/48/000000/laravel.png" width="2.3%"/> Laravel
+>  - <img src="https://img.icons8.com/color/48/000000/bootstrap.png" width="4.3%"/> Bootstrap
+>  - <img src="https://img.icons8.com/fluent/48/000000/laravel.png" width="4.3%"/> Laravel
 
  ### Linguagens Utilizadas:
 > - <img src="https://img.icons8.com/ios-filled/20/4a90e2/php-logo.png"/> PHP
