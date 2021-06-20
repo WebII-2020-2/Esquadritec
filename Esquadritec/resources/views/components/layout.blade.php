@@ -51,7 +51,7 @@
 </style>
 
 <div class="menu_bar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-main">
         <div class="container-fluid  row">
         <!-- barra de menu slice -->
             <span style="cursor: pointer;" class="navbar-brand" onclick="openNav()">
@@ -59,7 +59,7 @@
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </span>
-            <div id="mySidenav" class="sidenav">
+            <div id="mySidenav" class="sidenav text-white">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                 <a href="{{route('user_create')}}">Novo usuário</a>
                 <a href="{{route('new_material')}}">Novo material</a>
