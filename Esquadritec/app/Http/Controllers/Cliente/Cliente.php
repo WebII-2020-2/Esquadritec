@@ -18,7 +18,10 @@ class Cliente extends Controller
      */
     public function index()
     {
-        //
+        $cliente = Clientes::all();
+        return view('cliente/listClient', [
+            'cliente' => $cliente,
+        ]);
     }
 
     /**
@@ -54,7 +57,6 @@ class Cliente extends Controller
             $endereco = array(
                 'cidade'=>$request->cidade,
                 'rua'=>$request->rua,
-                'cliente'=>$request->cliente,
                 'bairro'=>$request->bairro,
                 'numero'=>$request->numero,
                 'observacao'=>$request->observacao,
@@ -86,9 +88,18 @@ class Cliente extends Controller
      */
     public function show($id)
     {
-        $cliente = Clientes::where('id', $id)->first();
-        $endereco = $cliente->endereco()->first();
-        return view('cliente/show', ['cliente' => $cliente, 'endereco' => $endereco]);
+        try{
+            $cliente = Clientes::where('id', $id)->first();
+            $endereco = Endereco::where('cliente', 1)->get();
+            $telefone = Telefone::where('cliente', $id)->get();
+            return view('cliente/showCliente', [
+                'cliente' => $cliente,
+                'endereco' => $endereco,
+                'telefone' => $telefone,
+            ]);
+        }catch(Exception $e){
+            return redirect()->route('list_modelo')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -99,7 +110,18 @@ class Cliente extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            $cliente = Clientes::where('id', $id)->first();
+            $endereco = Endereco::where('cliente', $id)->first();
+            $telefone = Telefone::where('cliente', $id)->first();
+            return view('cliente/edit_cliente', [
+                'cliente' => $cliente,
+                'endereco' => $endereco,
+                'telefone' => $telefone,
+            ]);
+        }catch(Exception $e){
+            return redirect()->route('list_modelo')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -109,9 +131,40 @@ class Cliente extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try{
+            $id = $request->id;
+            $cliente = array(
+                'name'=>$request->name,
+                'cpf'=>$request->cpf,
+                'cnpj'=>$request->cnpj,
+                'email'=>$request->email,
+            );
+            Clientes::where('id', $id)->update($cliente);
+
+            // dd($new_cliente->id);
+
+            $endereco = array(
+                'cidade'=>$request->cidade,
+                'rua'=>$request->rua,
+                'bairro'=>$request->bairro,
+                'numero'=>$request->numero,
+                'observacao'=>$request->observacao,
+            );
+            
+            Endereco::where('cliente', $id)->update($endereco);
+
+            $telefone = array(
+                'numero'=>$request->telefone,
+            );
+            
+            Telefone::where('cliente', $id)->update($telefone);
+
+            return redirect()->route('list_cliente')->with('succes', 'Atualizado');
+        } catch(Throwable $e) {
+            return redirect()->route('list_cliente')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -122,6 +175,11 @@ class Cliente extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            Clientes::where('id', $id)->delete();
+            return redirect()->route('list_cliente')->with('succes', 'Deletado!!');
+        }catch(Exception $e){
+            return redirect()->route('list_cliente')->with('error', 'Falha de rede!');
+        }
     }
 }
