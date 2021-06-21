@@ -137,7 +137,8 @@
                 <a href="#" onclick="icons('content_1')" class="content" style="margin-top:60px">Cliente</a>
                 <ul id="content_1" class="content_menu">
                     <li>
-                        <a href="{{route('list_cliente')}}" class="content">Listar Clientes</a>
+                        <!--Mudei a rota aqui pq a original tá com problema-->
+                        <a href="{{route('new_cliente')}}" class="content">Listar Clientes</a>
                     </li>
                     <li>
                         <a href="{{route('new_cliente')}}" class="content">Novo Cliente</a>
@@ -147,7 +148,7 @@
                 <a href="#" onclick="icons('content_2')" class="content">Usuário</a>
                 <ul id="content_2" class="content_menu">
                     <li>
-                        <a href="{{route('list_cliente')}}" class="content">Listar Usuários</a>
+                        <a href="{{route('new_cliente')}}" class="content">Listar Usuários</a>
                     </li>
                     <li>
                         <a href="{{route('user_create')}}" class="content">Novo Usuário</a>

@@ -13,32 +13,14 @@
         <label for="email" >EMAIL: </label>
         <h4 id="email">{{ $user->email }}</h4>
 
-        <div class="row center">
-            <div class="card">
-                <a href="{{route('user_create')}}">Novo usuário</a>
-            </div>
-                <a href="{{route('new_material')}}">Novo material</a>
-            <div class="card">
-            </div>
-                <a href="{{route('new_cliente')}}">Novo Cliente</a>
-            <div class="card">
-            </div>
-        </div>
-
-        <div>
-            <div>
-                <a href="{{route('listModelo')}}">Modelo</a>
-            </div>
-            <div>
-                <a href="{{route('new_modelo')}}">Novo Modelo</a>
-            </div>
-            <div>
-                <a href="{{route('logout')}}">Sair</a>
-            </div>
-        </div>
     
-        
+        <a href="{{route('user_create')}}">Novo usuário</a>
+        <a href="{{route('new_material')}}">Novo material</a>
+        <a href="{{route('new_cliente')}}">Novo Cliente</a>
+        <a href="{{route('listModelo')}}">Modelo</a>
+        <a href="{{route('new_modelo')}}">Novo Modelo</a>
 
+        <a href="{{route('logout')}}">Sair</a>
         
 
         @if(session()->has('errors'))
