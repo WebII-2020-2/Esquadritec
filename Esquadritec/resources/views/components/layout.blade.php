@@ -42,32 +42,49 @@
         display: flex;
         justify-content: center;
         text-decoration: none;
-        color:black;
+        color:white;
     }
     .toHome:hover{
         text-decoration: none;
-        color:black;
+        color: white;
     }
+
+    .sidenav {    
+        -webkit-box-shadow: 20px 20px 20px #3a3a3ae5;
+        -moz-box-shadow: 20px 20px 20px #3a3a3ae5;
+        box-shadow: 20px 20px 20px #3a3a3ae5;
+    }
+
+    #menu_bar {
+        background-image: url("{{asset('img/logo.png')}}");
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        top: 0;
+    }
+
 </style>
 
 <div class="menu_bar">
     <nav class="navbar navbar-expand-lg navbar-light bg-main">
         <div class="container-fluid  row">
         <!-- barra de menu slice -->
-            <span style="cursor: pointer;" class="navbar-brand" onclick="openNav()">
+            <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </span>
-            <div id="mySidenav" class="sidenav text-white">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="{{route('user_create')}}">Novo usuário</a>
-                <a href="{{route('new_material')}}">Novo material</a>
-                <a href="{{route('new_cliente')}}">Novo Cliente</a>
-                <a href="{{route('listModelo')}}">Modelo</a>
-                <a href="{{route('new_modelo')}}">Novo Modelo</a>
 
-                <a href="{{route('logout')}}">Sair</a>
+            <div id="mySidenav" class="sidenav bg-main">
+                <div id="menu_bar" class="logo"></div>
+                <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
+                <a href="{{route('user_create')}}" class="text-light text-decoration-none">Novo usuário</a>
+                <a href="{{route('new_material')}}" class="text-light text-decoration-none">Novo material</a>
+                <a href="{{route('new_cliente')}}" class="text-light text-decoration-none">Novo Cliente</a>
+                <a href="{{route('listModelo')}}" class="text-light text-decoration-none">Modelo</a>
+                <a href="{{route('new_modelo')}}" class="text-light text-decoration-none">Novo Modelo</a>
+
+                <a href="{{route('logout')}}" class="text-light text-decoration-none">Sair</a>
             </div>
             <div>
                 <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
@@ -91,7 +108,6 @@
         </div>
     </nav>
 </div>
-
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
