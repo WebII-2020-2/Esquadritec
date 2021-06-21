@@ -84,7 +84,7 @@
                     <select id="inputUnidadeMedida" class="form-select form-control px-1" style="width: 92px;">
 
                         @foreach ($unidades as $unidade)
-
+                        $id = unidade->id;
                         <option>{{ $unidade->unidade }}</option>
 
                         @endforeach

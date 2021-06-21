@@ -17,6 +17,7 @@ class Material extends Controller
     {
         $unidades = Unidades::all();
         // $unidades=['Kg', 'Cm', 'mm', 'm'];
+        dd($unidades);
         return view('materiais/newMaterial', ['unidades' => $unidades]);
     }
 
