@@ -16,8 +16,9 @@
         <ul style="display:block;">
             <li><a href="{{route('user_create')}}">Novo usuário</a></li>
             <li><a href="{{route('new_material')}}">Novo material</a></li>
+            <li><a href="{{route('list_cliente')}}">Cliente</a></li>
             <li><a href="{{route('new_cliente')}}">Novo Cliente</a></li>
-            <li><a href="{{route('listModelo')}}">Modelo</a></li>
+            <li><a href="{{route('list_modelo')}}">Modelo</a></li>
             <li><a href="{{route('new_modelo')}}">Novo Modelo</a></li>
 
             <li><a href="{{route('logout')}}">Sair</a></li>
