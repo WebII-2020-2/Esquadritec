@@ -131,7 +131,7 @@
             </span>
 
             <div id="mySidenav" class="sidenav bg-main">
-                <div id="menu_bar" class="logo"></div>
+                <div id="menu_bar" class="logo"><!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>--></div>
                 <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
 
                 <a href="#" onclick="icons('content_1')" class="content" style="margin-top:60px">Cliente</a>

@@ -61,7 +61,7 @@
 
     </div>
     <div class="card center-div" style="width: 600px;min-height: 100%;">
-        <form class=" g-3 pt-4">
+        <form action="{{ route('new_material_do') }}" class=" g-3 pt-4" method="POST">
             @csrf
             <div class="full-width form-group row px-0">
                 <label for="material" class="col-form-label pl-4" style="color: white;">MATERIAL:</label>
@@ -80,19 +80,25 @@
                 <label for="inputUnidadeMedida" class="col-form-label pl-4">UNIDADE DE
                     MEDIDA:</label>
                 <div class="col-sm-8 pl-1">
+
                     <select id="inputUnidadeMedida" class="form-select form-control px-1" style="width: 92px;">
-                        <option selected>Kg</option>
-                        <option>Metro</option>
+
+                        @foreach ($unidades as $unidade)
+                        $id = unidade->id;
+                        <option>{{ $unidade->unidade }}</option>
+
+                        @endforeach
+
                     </select>
 
                 </div>
             </div>
 
             <div class="full-width row pt-4" style="text-align: center">
-                <div class="col-sm-6 pr-0">
-                    <button class="rounded-pill btn btn-md btn-cancelar " type="submit">Cancelar</button>
-                </div>
-                <div class="col-sm-6 pl-0">
+
+                <div class="center-div w-auto">
+                    <button class="rounded-pill btn btn-md btn-cancelar mx-5" onClick="goBack()"
+                        type="reset">Cancelar</button>
                     <button class="rounded-pill btn btn-md btn-green " type="submit">Adicionar</button>
                 </div>
             </div>
