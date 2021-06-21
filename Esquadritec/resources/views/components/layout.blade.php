@@ -49,12 +49,6 @@
         color: white;
     }
 
-    .sidenav {    
-        -webkit-box-shadow: 20px 20px 20px #3a3a3ae5;
-        -moz-box-shadow: 20px 20px 20px #3a3a3ae5;
-        box-shadow: 20px 20px 20px #3a3a3ae5;
-    }
-
     #menu_bar {
         background-image: url("{{asset('img/logo.png')}}");
         position: absolute;
@@ -63,7 +57,68 @@
         top: 0;
     }
 
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav .content{
+        width: 220px;
+        padding: 5px 0px 0px 9px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0px;
+        height: 20px;
+        padding: 0px;
+        width: 30px;
+        right: 10px;
+        font-size: 20px;
+        margin-left: 100%;
+    }
+
+    @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+    }
+    .content_menu{
+        display: none;
+        font-size: 20px;
+    }
+    ul {
+        list-style-type: none;
+        padding-left:0px;
+        margin-left:15px;
+    }
+
 </style>
+<script>
+    function icons(id){
+        var doc = document.getElementById(id);
+        if (doc.style.display != "block"){
+            doc.style.display = "block"
+        }else{
+            doc.style.display = "none"
+        }
+    }
+</script>
 
 <div class="menu_bar">
     <nav class="navbar navbar-expand-lg navbar-light bg-main">
@@ -78,23 +133,53 @@
             <div id="mySidenav" class="sidenav bg-main">
                 <div id="menu_bar" class="logo"></div>
                 <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
-                <a href="{{route('user_create')}}" class="text-light text-decoration-none">Novo usuário</a>
-                <a href="{{route('new_material')}}" class="text-light text-decoration-none">Novo material</a>
-                <a href="{{route('new_cliente')}}" class="text-light text-decoration-none">Novo Cliente</a>
-                <a href="{{route('listModelo')}}" class="text-light text-decoration-none">Modelo</a>
-                <a href="{{route('new_modelo')}}" class="text-light text-decoration-none">Novo Modelo</a>
 
-                <a href="{{route('logout')}}" class="text-light text-decoration-none">Sair</a>
+                <a href="#" onclick="icons('content_1')" class="content" style="margin-top:60px">Cliente</a>
+                <ul id="content_1" class="content_menu">
+                    <li>
+                        <a href="{{route('list_cliente')}}" class="content">Listar Clientes</a>
+                    </li>
+                    <li>
+                        <a href="{{route('new_cliente')}}" class="content">Novo Cliente</a>
+                    </li>
+                </ul>
+
+                <a href="#" onclick="icons('content_2')" class="content">Usuário</a>
+                <ul id="content_2" class="content_menu">
+                    <li>
+                        <a href="{{route('list_cliente')}}" class="content">Listar Usuários</a>
+                    </li>
+                    <li>
+                        <a href="{{route('user_create')}}" class="content">Novo Usuário</a>
+                    </li>
+                </ul>
+
+                <a href="#" onclick="icons('content_3')" class="content">Material</a>
+                <ul id="content_3" class="content_menu">
+                    <li>
+                        <a href="#" class="content">Listar Materiais</a>
+                    </li>
+                    <li>
+                        <a href="{{route('new_material')}}" class="content">Novo Material</a>
+                    </li>
+                </ul>
+
+                <a href="#" onclick="icons('content_4')" class="content">Modelo</a>
+                <ul id="content_4" class="content_menu">
+                    <li>
+                        <a href="{{route('listModelo')}}" class="content">Listar Modelos</a>
+                    </li>
+                    <li>
+                        <a href="{{route('new_modelo')}}" class="content">Novo Modelo</a>
+                    </li>
+                </ul>
+
+                <a href="{{route('logout')}}" class="content">Sair</a>
             </div>
             <div>
                 <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
             </div>
         <!-- ------------------------------------------- -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                </svg>
-            </button>
             <div style="text-align: center; display: flex;justify-content: center; width:100%;" class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
