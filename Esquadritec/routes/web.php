@@ -27,10 +27,13 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/new_cliente', [Cliente::class, 'create'])->name('new_cliente');
     Route::post('/dashboard/new_cliente/do', [Cliente::class, 'store'])->name('new_cliente_do');
 
-    Route::get('/dashboard/newModelo', [Modelo::class, 'create'])->name('new_modelo');
-    Route::post('/dashboard/newModelo/do', [Modelo::class, 'store'])->name('new_modelo_do');
-    Route::get('/dashboard/listModelo', [Modelo::class, 'index'])->name('list_modelo');
-    Route::get('/dashboard/editModelo/{id}', [Modelo::class, 'edit'])->name('edite_modelo');
+    Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
+    Route::get('/dashboard/modelo/new', [Modelo::class, 'create'])->name('new_modelo');
+    Route::post('/dashboard/modelo/new/do', [Modelo::class, 'store'])->name('new_modelo_do');
+    Route::get('/dashboard/modelo/edit/{id}', [Modelo::class, 'edit'])->name('edite_modelo');
+    Route::get('/dashboard/modelo/show/{id}', [Modelo::class, 'show'])->name('show_modelo');
+    Route::post('/dashboard/modelo/edit/do', [Modelo::class, 'update'])->name('edite_modelo_do');
+    Route::get('/dashboard/modelo/delete/{id}', [Modelo::class, 'destroy'])->name('delete_modelo');
 
 
     Route::get('/dashboard/newModelo/list', function () {
@@ -38,35 +41,35 @@ Route::middleware(['Validate'])->group(function () {
     });
 
 
-    Route::get('/3', function () {
+    Route::get('/dashboard/3', function () {
         return view('produto/new_line');
     });
 
-    Route::get('/4', function () {
+    Route::get('/dashboard/4', function () {
         return view('produto/new_produte');
     });
 
-    Route::get('/5', function () {
+    Route::get('/dashboard/5', function () {
         return view('materiais/newMaterial');
     });
 
-    Route::get('/7', function () {
+    Route::get('/dashboard/7', function () {
         return view('produto/list_line');
     });
 
-    Route::get('/8', function () {
+    Route::get('/dashboard/8', function () {
         return view('materiais/list_material');
     });
 
-    Route::get('/9', function () {
-        return view('user/list_worker');
+    Route::get('/dashboard/9', function () {
+        return view('funcionario/list_funcionarios');
     });
 
-    Route::get('/10', function () {
+    Route::get('/dashboard/10', function () {
         return view('cliente/list_client');
     });
 
-    Route::get('/11', function () {
+    Route::get('/dashboard/11', function () {
         return view('user/list_orcamento');
     });
 

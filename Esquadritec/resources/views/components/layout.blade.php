@@ -74,6 +74,7 @@
                     <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                 </svg>
             </span>
+<<<<<<< HEAD
             <div id="mySidenav" class="sidenav bg-main">
                 <div id="menu_bar" class="logo"></div>
                 <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
@@ -82,6 +83,15 @@
                 <a href="{{route('new_cliente')}}" class="text-light text-decoration-none">Novo Cliente</a>
                 <a href="{{route('list_modelo')}}" class="text-light text-decoration-none">Modelo</a>
                 <a href="{{route('new_modelo')}}" class="text-light text-decoration-none">Novo Modelo</a>
+=======
+            <div id="mySidenav" class="sidenav text-white">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="{{route('user_create')}}">Novo usuário</a>
+                <a href="{{route('new_material')}}">Novo material</a>
+                <a href="{{route('new_cliente')}}">Novo Cliente</a>
+                <a href="{{route('listModelo')}}">Modelo</a>
+                <a href="{{route('new_modelo')}}">Novo Modelo</a>
+>>>>>>> a06d1968c487d9cad8025ef05ead9e0deb7cdd0d
 
                 <a href="{{route('logout')}}" class="text-light text-decoration-none">Sair</a>
             </div>
