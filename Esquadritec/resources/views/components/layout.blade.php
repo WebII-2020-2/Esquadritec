@@ -76,7 +76,7 @@
             </span>
 
             <div id="mySidenav" class="sidenav bg-main">
-                <div id="menu_bar" class="logo"></div>
+                <div id="menu_bar" class="logo"><!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>--></div>
                 <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
                 <a href="{{route('user_create')}}" class="text-light text-decoration-none">Novo usuário</a>
                 <a href="{{route('new_material')}}" class="text-light text-decoration-none">Novo material</a>
