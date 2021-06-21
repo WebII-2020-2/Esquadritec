@@ -16,7 +16,7 @@ class Modelo extends Controller
     public function index()
     {
         $modelo = Model::all();
-        return view('modelo/list_model', ['Modelos'=>$modelo]);
+        return view('modelo/listModel', ['Modelos'=>$modelo]);
     }
 
     /**
@@ -40,9 +40,9 @@ class Modelo extends Controller
         try{
             $modelo = new Model($request->except(['_token']));
             $modelo->save();
-            return redirect()->route('list_modelo')->with('succes', 'cadastrado');
+            return redirect()->route('listModelo')->with('succes', 'cadastrado');
         }catch(Exception $e){
-            return redirect()->route('list_modelo')->with('error', 'Falha de rede!');
+            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
         }
     }
 
@@ -54,7 +54,12 @@ class Modelo extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $modelo = Model::where('id', $id)->first();
+            return view('modelo/showModel', ['modelo'=>$modelo]);
+        }catch(Exception $e){
+            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -65,9 +70,12 @@ class Modelo extends Controller
      */
     public function edit($id)
     {
-        dd($id);
-        $modelo = Model::where('id', $id);
-        return view('modelo/editModelo', ['modelo'=>$modelo]);
+        try{
+            $modelo = Model::where('id', $id)->first();
+            return view('modelo/editModelo', ['modelo'=>$modelo]);
+        }catch(Exception $e){
+            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -77,9 +85,14 @@ class Modelo extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try{
+            $modelo = Model::where('id', $request->id)->update(['modelo' => $request->modelo]);
+            return redirect()->route('listModelo')->with('succes', 'Atualizado');
+        }catch(Exception $e){
+            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -90,6 +103,11 @@ class Modelo extends Controller
      */
     public function destroy($id)
     {
-        //
+        try{
+            $modelo = Model::where('id', $id)->delete();
+            return redirect()->route('listModelo')->with('succes', 'Deletado!!');
+        }catch(Exception $e){
+            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
+        }
     }
 }
