@@ -22,7 +22,7 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/user/{id}', [User::class, 'show'])->name('user_show');
 
     Route::get('/dashboard/new_material', [Material::class, 'index'])->name('new_material');
-    Route::post('/dashboard/new_material/do', [Material::class, 'create'])->name('new_material_do');
+    Route::post('/dashboard/new_material/do', [Material::class, 'storeMaterial'])->name('new_material_do');
 
     Route::get('/dashboard/new_cliente', [Cliente::class, 'create'])->name('new_cliente');
     Route::post('/dashboard/new_cliente/do', [Cliente::class, 'store'])->name('new_cliente_do');

@@ -15,9 +15,9 @@ class Material extends Controller
      */
     public function index()
     {
-        $unidades = Unidades::get();
+        $unidades = Unidades::all();
         // $unidades=['Kg', 'Cm', 'mm', 'm'];
-        return view('materiais/material',['unidades'=>$unidades]);
+        return view('materiais/newMaterial', ['unidades' => $unidades]);
     }
 
     /**
@@ -36,9 +36,18 @@ class Material extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function storeMaterial(Request $request)
     {
-        //
+        $material = new Material();
+        $material->nome = $request->nome;
+        $material->valor = $request->valor;
+        $material->unidade_medida = $request->unidade_medida;
+        $material->save();
+        dd($material);
+
+        var_dump($request->all());
+
+        // return redirect()->route('dashboard');
     }
 
     /**
