@@ -52,7 +52,7 @@
 
         .card {
             padding: 20px;
-            background-color: #318A90;
+            background-color: #295C8A;
             border-radius: 28px;
         }
 
