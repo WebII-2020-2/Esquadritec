@@ -81,13 +81,13 @@
 <body>
 
     <div class="py-4 center">
-        <h2 class="text-main font-monospace py-4">NOVO CLIENTE</h2>
+        <h2 class="text-main font-monospace py-4">Novo Cliente</h2>
 
         <div class="card center-div text-white pr-5" style="min-width: 500px;height: 100%;">
             <form class="" style="height: 100%;" method="POST" action="{{route('new_cliente_do')}}">
                 @csrf
                 <div class="full-width pr-5 right mb-2">
-                    <label for="name">NOME:</label>
+                    <label for="name">Nome:</label>
                     <input class="input-3" type="text" name="name" required>
                 </div>
 
@@ -102,34 +102,34 @@
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
-                    <label for="email">EMAIL:</label>
+                    <label for="email">Email:</label>
                     <input class="input-3" type="text" name="email" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
-                    <label for="tel">TELEFONE:</label>
+                    <label for="tel">Telefone:</label>
                     <input class="input-3" type="text" name="telefone" required>
                 </div>
 
-                <h5 class="mt-3" style="color: black;">ENDEREÇO</h5>
+                <h5 class="mt-3">Endereço</h5>
 
                 <div class="full-width mb-2 right pr-5">
-                    <label for="city">CIDADE:</label>
+                    <label for="city">Cidade:</label>
                     <input class="input-3" id="city" type="text" name="cidade" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
-                    <label for="road">RUA:</label>
+                    <label for="road">Rua:</label>
                     <input class="input-3" id="road" type="text" name="rua" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
-                    <label for="district">BAIRRO:</label>
+                    <label for="district">Bairro:</label>
                     <input class="input-3" type="text" name="bairro" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
-                    <label for="number">NÚMERO:</label>
+                    <label for="number">Número:</label>
                     <input class="input-3" type="text" name="numero" required>
                 </div>
 
