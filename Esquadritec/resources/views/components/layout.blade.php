@@ -134,48 +134,48 @@
                 <div id="menu_bar" class="logo"><!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>--></div>
                 <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
 
-                <a href="#" onclick="icons('content_1')" class="content" style="margin-top:60px">Cliente</a>
+                <a href="#" onclick="icons('content_1')" class="content text-light" style="margin-top:60px">Cliente</a>
                 <ul id="content_1" class="content_menu">
                     <li>
-                        <!--Mudei a rota aqui pq a original tá com problema-->
-                        <a href="{{route('new_cliente')}}" class="content">Listar Clientes</a>
+                        <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
+                        <a href="{{route('new_cliente')}}" class="content text-light">Listar Clientes</a>
                     </li>
                     <li>
-                        <a href="{{route('new_cliente')}}" class="content">Novo Cliente</a>
+                        <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
                     </li>
                 </ul>
 
-                <a href="#" onclick="icons('content_2')" class="content">Usuário</a>
+                <a href="#" onclick="icons('content_2')" class="content text-light">Usuário</a>
                 <ul id="content_2" class="content_menu">
                     <li>
-                        <a href="{{route('new_cliente')}}" class="content">Listar Usuários</a>
+                        <a href="{{route('new_cliente')}}" class="content text-light">Listar Usuários</a>
                     </li>
                     <li>
-                        <a href="{{route('user_create')}}" class="content">Novo Usuário</a>
+                        <a href="{{route('user_create')}}" class="content text-light">Novo Usuário</a>
                     </li>
                 </ul>
 
-                <a href="#" onclick="icons('content_3')" class="content">Material</a>
-                <ul id="content_3" class="content_menu">
+                <a href="#" onclick="icons('content_3')" class="content text-light">Material</a>
+                <ul id="content_3" class="content_menu text-light">
                     <li>
-                        <a href="#" class="content">Listar Materiais</a>
+                        <a href="#" class="content text-light">Listar Materiais</a>
                     </li>
                     <li>
-                        <a href="{{route('new_material')}}" class="content">Novo Material</a>
+                        <a href="{{route('new_material')}}" class="content text-light">Novo Material</a>
                     </li>
                 </ul>
 
-                <a href="#" onclick="icons('content_4')" class="content">Modelo</a>
+                <a href="#" onclick="icons('content_4')" class="content text-light">Modelo</a>
                 <ul id="content_4" class="content_menu">
                     <li>
-                        <a href="{{route('listModelo')}}" class="content">Listar Modelos</a>
+                        <a href="{{route('listModelo')}}" class="content text-light">Listar Modelos</a>
                     </li>
                     <li>
-                        <a href="{{route('new_modelo')}}" class="content">Novo Modelo</a>
+                        <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>
                     </li>
                 </ul>
 
-                <a href="{{route('logout')}}" class="content">Sair</a>
+                <a href="{{route('logout')}}" class="content text-light">Sair</a>
             </div>
             <div>
                 <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>

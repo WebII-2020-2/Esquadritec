@@ -13,7 +13,6 @@
 </head>
 <style>
     .card {
-        background-color: #318A90;
         border-radius: 28px;
         height: 255px;
     }
@@ -76,7 +75,7 @@
                 </div>
             @endif
 
-            <div class="card center-div" style="width: 500px;min-height: 100%;">
+            <div class="card center-div bg-main" style="width: 500px;min-height: 100%;">
                 <form class="" style="height: 100%;" method="POST" action="{{ route('edite_modelo_do') }}">
                     @csrf
                     <div class="row p-3 center-div pt-5" style="width: 300px;">
