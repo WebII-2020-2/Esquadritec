@@ -67,6 +67,8 @@
 
         .input-3 {
             width: 65%;
+            border-radius: 10px;
+            border: solid 1px white;
         }
 
         h2 {
@@ -80,57 +82,58 @@
 
 <body>
 
+    <x-layout/>
     <div class="py-4 center">
         <h2 class="text-main font-monospace py-4">Novo Cliente</h2>
 
-        <div class="card center-div text-white pr-5" style="min-width: 500px;height: 100%;">
+        <div class="card center-div text-white pr-5" style="min-width: 700px;height: 100%;">
             <form class="" style="height: 100%;" method="POST" action="{{route('new_cliente_do')}}">
                 @csrf
                 <div class="full-width pr-5 right mb-2">
                     <label for="name">Nome:</label>
-                    <input class="input-3" type="text" name="name" required>
+                    <input id="name" class="input-3" type="text" name="name" required>
                 </div>
 
                 <div class="full-width pr-5 right mb-2">
                     <label for="cpf">CPF:</label>
-                    <input class="input-3" type="text" name="cpf">
+                    <input id="cpf" class="input-3" type="text" name="cpf">
                 </div>
 
                 <div class="full-width pr-5 right mb-2">
                     <label for="cnpj">CNPJ:</label>
-                    <input class="input-3" type="text" name="cnpj">
+                    <input id="cnpj" class="input-3" type="text" name="cnpj">
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="email">Email:</label>
-                    <input class="input-3" type="text" name="email" required>
+                    <input id="email" class="input-3" type="text" name="email" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="tel">Telefone:</label>
-                    <input class="input-3" type="text" name="telefone" required>
+                    <input id="tel" class="input-3" type="text" name="telefone" required>
                 </div>
 
                 <h5 class="mt-3">Endereço</h5>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="city">Cidade:</label>
-                    <input class="input-3" id="city" type="text" name="cidade" required>
+                    <input id="city" class="input-3" id="city" type="text" name="cidade" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="road">Rua:</label>
-                    <input class="input-3" id="road" type="text" name="rua" required>
+                    <input id="road" class="input-3" id="road" type="text" name="rua" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="district">Bairro:</label>
-                    <input class="input-3" type="text" name="bairro" required>
+                    <input id="district" class="input-3" type="text" name="bairro" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">
                     <label for="number">Número:</label>
-                    <input class="input-3" type="text" name="numero" required>
+                    <input id="number" class="input-3" type="text" name="numero" required>
                 </div>
 
                 <div class="full-width mb-2 right pr-5">

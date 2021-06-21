@@ -9,81 +9,83 @@
         <link rel="stylesheet" href="{{asset('site/style.css')}}">
 
         <style>
-        .card {
-            background-color: #318A90;
-            border-radius: 28px;
-            height: 255px;
-        }
+            .card {
+                background-color: #318A90;
+                border-radius: 28px;
+                height: 255px;
+            }
 
-        .center {
-            text-align: center;
-        }
+            .center {
+                text-align: center;
+            }
 
-        .center-div {
-            margin: auto;
-            width: 50%;
-            padding: 10px;
-        }
+            .center-div {
+                margin: auto;
+                width: 50%;
+                padding: 10px;
+            }
 
-        .form-control {
-            width: 65%;
-        }
+            .form-control {
+                width: 65%;
+            }
 
-        .bottom-div {
-            position: absolute;
-            bottom: 20%;
-            left: 25%;
-        }
+            .bottom-div {
+                position: absolute;
+                bottom: 20%;
+                left: 25%;
+            }
 
-        #body {
-            color: blue;
-        }
+            #body {
+                color: blue;
+            }
 
-        .full-width {
-            width: 100%;
-        }
+            .full-width {
+                width: 100%;
+            }
 
-        .input {
-            position: relative;
-            padding-top: 10px;
-            margin-top: 10px;
-        }
+            .input {
+                position: relative;
+                padding-top: 10px;
+                margin-top: 10px;
+            }
 
-        .card {
-            padding: 20px;
-            background-color: #295C8A;
-            border-radius: 28px;
-        }
+            .card {
+                padding: 20px;
+                background-color: #295C8A;
+                border-radius: 28px;
+            }
 
-        .btn {
-            height: 30px;
-            text-align: center;
-        }
+            .btn {
+                height: 30px;
+                text-align: center;
+            }
 
-        .right {
-            text-align: right;
-        }
+            .right {
+                text-align: right;
+            }
 
-        .input-3 {
-            width: 30%;
-            border-radius: 10px;
-            border: solid 1px white;
-        }
+            .input-3 {
+                width: 30%;
+                border-radius: 10px;
+                border: solid 1px white;
+            }
 
-        .space {
-            margin-left: 89px;
-        }
+            .space {
+                margin-left: 89px;
+            }
 
-        h2 {
-            font-size: 30px;
-            font-weight: 650;
+            h2 {
+                font-size: 30px;
+                font-weight: 650;
 
-        }
+            }
 
-    </style>
+        </style>
+
     </head>
-    <body>
 
+    <body>
+    
         <x-layout/>
         <div class="py-4 center">
             <h2 class="text-main font-monospace py-4">Cadastrar Funcionário</h2>
@@ -102,10 +104,10 @@
 
                     <div class="full-width mb-2 center">
                         <label for="password" style="margin-left: 12px;">Senha:</label>
-                        <input class="input-3" type="password" name="senha">
+                        <input id="password" class="input-3" type="password" name="senha">
 
-                        <label for="password" style="margin-left: 10px;">Confirmar Senha:</label>
-                        <input class="input-3" type="password" name="confir_senha">
+                        <label for="conf_password" style="margin-left: 10px;">Confirmar Senha:</label>
+                        <input id="conf_password" class="input-3" type="password" name="confir_senha">
                     </div>
 
                     <div class="mb-2" style="text-align: left;">
@@ -125,6 +127,7 @@
             <div class="alert alert-success">
                 {{ session()->get('message') }}
             </div>
+
         @endif
 
         @if($errors->all())
