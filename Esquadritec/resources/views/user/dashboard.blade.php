@@ -13,15 +13,33 @@
         <label for="email" >EMAIL: </label>
         <h4 id="email">{{ $user->email }}</h4>
 
-        <ul style="display:block;">
-            <li><a href="{{route('user_create')}}">Novo usuário</a></li>
-            <li><a href="{{route('new_material')}}">Novo material</a></li>
-            <li><a href="{{route('new_cliente')}}">Novo Cliente</a></li>
-            <li><a href="{{route('listModelo')}}">Modelo</a></li>
-            <li><a href="{{route('new_modelo')}}">Novo Modelo</a></li>
+        <div class="row center">
+            <div class="card">
+                <a href="{{route('user_create')}}">Novo usuário</a>
+            </div>
+                <a href="{{route('new_material')}}">Novo material</a>
+            <div class="card">
+            </div>
+                <a href="{{route('new_cliente')}}">Novo Cliente</a>
+            <div class="card">
+            </div>
+        </div>
 
-            <li><a href="{{route('logout')}}">Sair</a></li>
-        </ul>
+        <div>
+            <div>
+                <a href="{{route('listModelo')}}">Modelo</a>
+            </div>
+            <div>
+                <a href="{{route('new_modelo')}}">Novo Modelo</a>
+            </div>
+            <div>
+                <a href="{{route('logout')}}">Sair</a>
+            </div>
+        </div>
+    
+        
+
+        
 
         @if(session()->has('errors'))
             <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
