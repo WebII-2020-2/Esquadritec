@@ -66,9 +66,13 @@
             }
 
             .input-3 {
-                width: 65%;
+                width: 60%;
                 border-radius: 10px;
                 border: solid 1px white;
+            }
+
+            .space {
+                margin-left: 89px;
             }
 
             h2 {
@@ -114,7 +118,7 @@
                         <input id="tel" class="input-3" type="text" name="telefone" required>
                     </div>
 
-                    <h5 class="mt-3">Endereço</h5>
+                    <h5 class="mt-3 space">Endereço</h5>
 
                     <div class="full-width mb-2 right pr-5">
                         <label for="city">Cidade:</label>

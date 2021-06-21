@@ -106,8 +106,8 @@
                         <label for="password" style="margin-left: 12px;">Senha:</label>
                         <input id="password" class="input-3" type="password" name="senha">
 
-                        <label for="conf_password" style="margin-left: 10px;">Confirmar Senha:</label>
-                        <input id="conf_password" class="input-3" type="password" name="confir_senha">
+                        <label for="confir_password" style="margin-left: 10px;">Confirmar Senha:</label>
+                        <input id="confir_password" class="input-3" type="password" name="confir_senha">
                     </div>
 
                     <div class="mb-2" style="text-align: left;">
