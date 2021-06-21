@@ -17,6 +17,7 @@ Route::post('/login/do', [Login::class, 'loginDo'])->name('loginDo');
 
 Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard', [User::class, 'index'])->name('dashboard');
+<<<<<<< HEAD
     Route::get('/dashboard/new', [User::class, 'create'])->name('user_create');
     Route::post('/dashboard/new/do', [User::class, 'store'])->name('user_create_do');
     Route::get('/dashboard/user/{id}', [User::class, 'show'])->name('user_show');
@@ -28,17 +29,39 @@ Route::middleware(['Validate'])->group(function () {
     Route::post('/dashboard/new_cliente/do', [Cliente::class, 'store'])->name('new_cliente_do');
 
     Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
+=======
+    Route::get('/dashboard/user/new', [User::class, 'create'])->name('user_create');
+    Route::post('/dashboard/user/new/do', [User::class, 'store'])->name('user_create_do');
+    Route::get('/dashboard/user/show/{id}', [User::class, 'show'])->name('user_show');
+
+    Route::get('/dashboard/material/new', [Material::class, 'index'])->name('new_material');
+    Route::post('/dashboard/material/new/do', [Material::class, 'create'])->name('new_material_do');
+
+    Route::get('/dashboard/cliente', [Cliente::class, 'index'])->name('list_cliente');
+    Route::get('/dashboard/cliente/new', [Cliente::class, 'create'])->name('new_cliente');
+    Route::post('/dashboard/cliente/new/do', [Cliente::class, 'store'])->name('new_cliente_do');
+    Route::get('/dashboard/cliente/edit/{id}', [Cliente::class, 'edit'])->name('edite_cliente');
+    Route::post('/dashboard/cliente/edit/do', [Cliente::class, 'update'])->name('edite_cliente_do');
+    Route::get('/dashboard/cliente/show/{id}', [Cliente::class, 'show'])->name('show_cliente');
+    Route::get('/dashboard/cliente/delete/{id}', [Cliente::class, 'destroy'])->name('delete_cliente');
+
+    Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('list_modelo');
+>>>>>>> 7b35e975d2f179b9eeaa2f675eba2da205b09059
     Route::get('/dashboard/modelo/new', [Modelo::class, 'create'])->name('new_modelo');
     Route::post('/dashboard/modelo/new/do', [Modelo::class, 'store'])->name('new_modelo_do');
     Route::get('/dashboard/modelo/edit/{id}', [Modelo::class, 'edit'])->name('edite_modelo');
-    Route::get('/dashboard/modelo/show/{id}', [Modelo::class, 'show'])->name('show_modelo');
     Route::post('/dashboard/modelo/edit/do', [Modelo::class, 'update'])->name('edite_modelo_do');
+    Route::get('/dashboard/modelo/show/{id}', [Modelo::class, 'show'])->name('show_modelo');
     Route::get('/dashboard/modelo/delete/{id}', [Modelo::class, 'destroy'])->name('delete_modelo');
 
+    Route::get('/dashboard/linha', [Modelo::class, 'index'])->name('listModelo');
+    Route::get('/dashboard/linha/new', [Modelo::class, 'create'])->name('new_modelo');
+    Route::post('/dashboard/linha/new/do', [Modelo::class, 'store'])->name('new_modelo_do');
+    Route::get('/dashboard/linha/edit/{id}', [Modelo::class, 'edit'])->name('edite_modelo');
+    Route::get('/dashboard/linha/show/{id}', [Modelo::class, 'show'])->name('show_modelo');
+    Route::post('/dashboard/linha/edit/do', [Modelo::class, 'update'])->name('edite_modelo_do');
+    Route::get('/dashboard/linha/delete/{id}', [Modelo::class, 'destroy'])->name('delete_modelo');
 
-    Route::get('/dashboard/newModelo/list', function () {
-        return view('modelo/list_model');
-    });
 
 
     Route::get('/dashboard/3', function () {
