@@ -3,13 +3,14 @@
 namespace App\Http\Controllers\materiais;
 
 use App\Http\Controllers\Controller;
-use App\Models\Material as ModelsMaterial;
+use App\Models;
+use App\Models\Materiais as ModelsMateriais;
+use App\Models\unidade;
 use Illuminate\Http\Request;
-use App\Models\unidade as Unidades;
-use Illuminate\Support\Arr;
-use Throwable;
+use Materiais;
+use UnidadeMedida;
 
-class Material extends Controller
+class materialController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +19,7 @@ class Material extends Controller
      */
     public function index()
     {
-        $unidades = Unidades::all();
-        // $unidades=['Kg', 'Cm', 'mm', 'm'];
-        return view('materiais/newMaterial', ['unidades' => $unidades]);
+        //
     }
 
     /**
@@ -30,9 +29,8 @@ class Material extends Controller
      */
     public function create()
     {
-        $unidades = Unidades::all();
-        // $unidades=['Kg', 'Cm', 'mm', 'm'];
-        return view('materiais/newMaterial', ['unidades' => $unidades]);
+        $unidades = unidade::all();
+        return view('materiais.newMaterial', ['unidades' => $unidades]);
     }
 
     /**
@@ -41,27 +39,15 @@ class Material extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeMaterial(Request $request)
+    public function store(Request $request)
     {
-
-        // var_dump($request);
-        $new_material = new ModelsMaterial();
+        $new_material = new ModelsMateriais($request->except(['_token']));
         $new_material->nome = $request->material;
         $new_material->valor = $request->valor;
+        $new_material->unidade_medida = $request->inputUnidadeMedida;
+        dd($request);
+
         $new_material->save();
-
-
-
-
-
-
-        // $unidade_medida = new Unidades($unidade_medida);
-        // $unidade_medida->save();
-
-
-        // var_dump($request->all());
-
-        // return redirect()->route('dashboard');
     }
 
     /**

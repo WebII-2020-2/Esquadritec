@@ -11,7 +11,11 @@
 </head>
 
 <body>
+
+    <x-layout/>
+    
     <h2>Lista de Orçamento</h2>
+
     <button type="button" class="btn btn-primary btn-sm">ADICIONAR +</button>
 
     <div class="card table">
