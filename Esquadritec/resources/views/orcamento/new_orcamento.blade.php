@@ -94,30 +94,18 @@
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('user_create_do')}}">
                     @csrf
                     <div class="full-width mb-2 center">
-                        <label for="user">Usuário:</label>
-                        <input id="user" class="input-3" type="text" name="user" required>
-
-                        <label for="email" class="space">Email:</label>
-                        <input id="email" class="input-3" type="text" name="email">
-
+                        <label for="cliente">Cliente:</label>
+                        <input id="cliente" class="input-3" type="text" name="cliente" required>
                     </div>
 
-                    <div class="full-width mb-2 center">
-                        <label for="password" style="margin-left: 12px;">Senha:</label>
-                        <input id="password" class="input-3" type="password" name="senha">
-
-                        <label for="confir_password" style="margin-left: 10px;">Confirmar Senha:</label>
-                        <input id="confir_password" class="input-3" type="password" name="confir_senha">
-                    </div>
-
-                    <div class="mb-2" style="text-align: left;">
-                        <label for="admin" style="margin-left: 55px;">Admin:</label>
-                        <input id="admin" type="checkbox" name="admin" value="1">
+                    <div class="full-width mb-2 right pr-5">
+                        <textarea id="observation" name="observacao" placeholder="Coloque observações aqui..."
+                            style="height: 100px; width: 65%;"></textarea>
                     </div>
 
                     <div class="pt-4">
                         <a href="{{route('dashboard')}}" class="rounded-pill btn btn-sm btn-danger mr-5" type="reset">Cancelar</a>
-                        <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Confirmar</button>
+                        <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Seguir</button>
                     </div>
                 </form>
             </div>
