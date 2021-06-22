@@ -88,7 +88,7 @@
     
         <x-layout/>
         <div class="py-4 center">
-            <h2 class="text-main font-monospace py-4">Cadastrar Funcionário</h2>
+            <h2 class="text-main font-monospace py-4">Novo Orçamento</h2>
 
             <div class="card center-div text-white" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('user_create_do')}}">
@@ -99,7 +99,7 @@
                     </div>
 
                     <div class="full-width mb-2 right pr-5">
-                        <textarea id="observation" name="observacao" placeholder="Coloque observações aqui..."
+                        <textarea id="observation" name="observacao" placeholder="Observações"
                             style="height: 100px; width: 65%;"></textarea>
                     </div>
 
