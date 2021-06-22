@@ -4,40 +4,46 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Lista de Clientes</title>
+    <title>Lista de Linhas</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
+    <script>
+    // corrigir essa funçaõ para passar valor pela url
+    </script>
 </head>
 
 <body>
     <x-layout/>
-    <h2>Lista de Clientes</h2>
+    <h2 class="text-center">Lista de Linhas</h2>
     <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
-        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_cliente')}}">ADICIONAR +</a>
+        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_linha')}}">ADICIONAR +</a>
     </div>
 
+    @if(session()->has('errors'))
+        <div style="position: absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+            <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
+        </div>
+    @elseif(session()->has('succes'))
+        <div style="position: absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
+            <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
+        </div>
+    @endif
+
     <div class="card table">
-        <table class="table table-sm center">
+        <table class="table table-sm">
             <thead>
                 <tr>
-                <th scope="col" class="table_first_row">NOME</th>
-                <th scope="col" class="table_first_row">CPF</th>
-                <th scope="col" class="table_first_row">CNPJ</th>
-                <th scope="col" class="table_first_row">EMAIL</th>
-                <th scope="col" class="table_first_row">AÇÕES</th>
+                    <th scope="col" class="table_first_row">NOME</th>
+                    <th scope="col" class="table_first_row">AÇÕES</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    @foreach($cliente as $cli)
-                        <td class="table_rows">{{$cli->name}}</td>
-                        <td class="table_rows">{{$cli->cpf}}</td>
-                        <td class="table_rows">{{$cli->cnpj}}</td>
-                        <td class="table_rows">{{$cli->email}}</td>
-
+                    @foreach ($linhas as $linha)
+                    <tr>
+                        <td>{{$linha->linha}}</td>
                         <td class="row">
-                            <form method="GET" action="{{route('show_cliente', ['id'=>$cli->id])}}">
+                            <form method="GET" action="{{route('show_linha', ['id'=>$linha->id])}}">
                                 <button class="btn" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
@@ -46,7 +52,7 @@
                                 </button>
                             </form>
 
-                            <form method="GET" action="{{route('edite_cliente', ['id'=>$cli->id])}}">
+                            <form method="GET" action="{{route('edite_linha', ['id'=>$linha->id])}}">
                                 <button class="btn" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
@@ -55,7 +61,7 @@
                                 </button>
                             </form>
 
-                            <form method="GET" action="{{route('delete_cliente', ['id'=>$cli->id])}}">
+                            <form method="GET" action="{{route('delete_linha', ['id'=>$linha->id])}}">
                                 <button class="btn" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -64,8 +70,8 @@
                                 </button>
                             </form>
                         </td>
+                    </tr>
                     @endforeach
-                </tr>
             </tbody>
         </table>
     </div>

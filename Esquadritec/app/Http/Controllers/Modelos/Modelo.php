@@ -16,8 +16,12 @@ class Modelo extends Controller
      */
     public function index()
     {
-        $modelo = Model::all();
-        return view('modelo/listModel', ['Modelos' => $modelo]);
+        try{
+            $modelo = Model::all();
+            return view('modelo/listModel', ['Modelos' => $modelo]);
+        }catch(Exception $e){
+            return redirect()->route('dashboard')->with('error', 'Falha de rede!');
+        }
     }
 
     /**

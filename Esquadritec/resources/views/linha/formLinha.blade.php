@@ -51,18 +51,19 @@
 </style>
 
 <body>
+    <x-layout/>
     <div class="py-4 center" style="min-height: 200px;">
         <h2 class="text-main font-monospace ">NOVA LINHA</h2>
 
         <div class="card center-div" style="width: 500px;min-height: 100%;">
-            <form class="" style="height: 100%;">
+            <form class="" style="height: 100%;" action="{{route('new_linha_do')}}" method="POST">
                 @csrf
                 <div class="row p-3 center-div pt-5" style="width: 300px;">
                     <label for="linha" class="pr-2 col-form-label   " style="color: white">LINHA:</label>
                     <input id="linha" type="text" name="linha" class="form-control" placeholder="">
                 </div>
                 <div class="center-div bottom-div w-auto">
-                    <button class="rounded-pill btn btn-md btn-cancelar mx-4" type="submit">Cancelar</button>
+                    <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Cancelar</button>
                     <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
                 </div>
             </form>

@@ -11,8 +11,14 @@
 </head>
 
 <body>
+
+    <x-layout/>
+    
     <h2>Lista de Orçamento</h2>
-    <button type="button" class="btn btn-primary btn-sm">ADICIONAR +</button>
+
+    <div class="col-lg-12" style="text-align: right; margin-bottom: 0.5%;">
+        <a type="button" class="btn btn-primary btn-sm">ADICIONAR +</a>
+    </div>>
 
     <div class="card table">
         <table class="table table-sm center">
