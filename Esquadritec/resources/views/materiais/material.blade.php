@@ -23,7 +23,7 @@
         <input type="number" name="valor" placeholder="VALOR">
         <input type="submit" value="ENVIAR">
     </form>
-    <script src="" async defer></script>
+    <x-footer/>
 </body>
 
 </html>

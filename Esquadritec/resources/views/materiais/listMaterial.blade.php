@@ -199,7 +199,6 @@
 
             <thead>
                 <tr>
-                    <th scope="col" class="table_first_row">#</th>
                     <th scope="col" class="table_first_row">Nome</th>
                     <th scope="col" class="table_first_row">Unidade de Medida</th>
                     <th scope="col" class="table_first_row">Valor</th>
@@ -210,8 +209,6 @@
 
                 @foreach ($materiais as $material)
                 <tr>
-
-                    <td class="table_rows">{{ $material->id }}</td>
                     <td class="table_rows">{{ $material->nome}}</td>
                     <td class="table_rows">{{ $material->unidade_medida->unidade }}</td>
                     <td class="table_rows">{{ $material->valor }}</td>
@@ -278,8 +275,7 @@
         }
     </script>
 
-    <script src="{{ asset('site/jquery.js') }}" async defer></script>
-    <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
+    <x-footer/>
 </body>
 
 </html>

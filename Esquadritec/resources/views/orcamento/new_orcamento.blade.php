@@ -120,7 +120,6 @@
             @endforeach
         @endif
 
-        <script src="{{ asset('site/jquery.js') }}" async defer></script>
-        <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
+        <x-footer/>
     </body>
 </html>
