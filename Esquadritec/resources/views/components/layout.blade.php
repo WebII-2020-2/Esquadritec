@@ -1,50 +1,92 @@
 <style>
     @-webkit-keyframes opacity {
-        0%{ opacity: 0; }
-        30%{ opacity: 1; }
-        100%{ opacity: 0; }
-    }
-    @-moz-keyframes opacity {
-        0%{ opacity: 0; }
-        30%{ opacity: 1; }
-        100%{ opacity: 0; }
-    }
-    @-o-keyframes opacity {
-        0%{ opacity: 0; }
-        30%{ opacity: 1; }
-        100%{ opacity: 0; }
-    }
-    @keyframes opacity {
-        0%{ opacity: 0; }
-        30%{ opacity: 1; }
-        100%{ opacity: 0; }
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
     }
 
-    body{
-        padding:10px;
+    @-moz-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
     }
-    .menu_bar{
-        margin-left:-10px;
-        margin-right:-10px;
-        margin-top:-10px;
-        margin-bottom:20px;
+
+    @-o-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    body {
+        padding: 10px;
+    }
+
+    .menu_bar {
+        margin-left: -10px;
+        margin-right: -10px;
+        margin-top: -10px;
+        margin-bottom: 20px;
     }
 
     #alert {
         opacity: 0;
-        -webkit-animation:opacity 5s; /* Safari 4+ */
-        -moz-animation:opacity 5s; /* Fx 5+ */
-        -o-animation:opacity 5s; /* Opera 12+ */
-        animation:opacity 5s; /* IE 10+, Fx 29+ */
+        -webkit-animation: opacity 5s;
+        /* Safari 4+ */
+        -moz-animation: opacity 5s;
+        /* Fx 5+ */
+        -o-animation: opacity 5s;
+        /* Opera 12+ */
+        animation: opacity 5s;
+        /* IE 10+, Fx 29+ */
     }
-    .toHome{
+
+    .toHome {
         text-align: center;
         display: flex;
         justify-content: center;
         text-decoration: none;
-        color:white;
+        color: white;
     }
-    .toHome:hover{
+
+    .toHome:hover {
         text-decoration: none;
         color: white;
     }
@@ -69,13 +111,13 @@
         padding-top: 60px;
     }
 
-    .sidenav {    
+    .sidenav {
         -webkit-box-shadow: 20px 20px 20px #3a3a3ae5;
         -moz-box-shadow: 20px 20px 20px #3a3a3ae5;
         box-shadow: 20px 20px 20px #3a3a3ae5;
     }
 
-    .sidenav .content{
+    .sidenav .content {
         width: 220px;
         padding: 5px 0px 0px 9px;
         text-decoration: none;
@@ -101,19 +143,25 @@
     }
 
     @media screen and (max-height: 450px) {
-        .sidenav {padding-top: 15px;}
-        .sidenav a {font-size: 18px;}
+        .sidenav {
+            padding-top: 15px;
+        }
+
+        .sidenav a {
+            font-size: 18px;
+        }
     }
-    .content_menu{
+
+    .content_menu {
         display: none;
         font-size: 20px;
     }
+
     ul {
         list-style-type: none;
-        padding-left:0px;
-        margin-left:15px;
+        padding-left: 0px;
+        margin-left: 15px;
     }
-
 </style>
 <script>
     function icons(id){
@@ -129,16 +177,21 @@
 <div class="menu_bar">
     <nav class="navbar navbar-expand-lg navbar-light bg-main">
         <div class="container-fluid  row">
-        <!-- barra de menu slice -->
+            <!-- barra de menu slice -->
             <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                    viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                 </svg>
             </span>
 
             <div id="mySidenav" class="sidenav bg-main">
-                <div id="menu_bar" class="logo"><!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>--></div>
-                <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()"><b>&times;</b></a>
+                <div id="menu_bar" class="logo">
+                    <!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>-->
+                </div>
+                <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
+                    onclick="closeNav()"><b>&times;</b></a>
 
                 <a href="#" onclick="icons('content_1')" class="content text-light" style="margin-top:60px">Cliente</a>
                 <ul id="content_1" class="content_menu">
@@ -164,7 +217,7 @@
                 <a href="#" onclick="icons('content_3')" class="content text-light">Material</a>
                 <ul id="content_3" class="content_menu text-light">
                     <li>
-                        <a href="#" class="content text-light">Listar Materiais</a>
+                        <a href="{{ route('list_material') }}" class="content text-light">Listar Materiais</a>
                     </li>
                     <li>
                         <a href="{{route('new_material')}}" class="content text-light">Novo Material</a>
@@ -186,13 +239,16 @@
             <div>
                 <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
             </div>
-        <!-- ------------------------------------------- -->
-            <div style="text-align: center; display: flex;justify-content: center; width:100%;" class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- ------------------------------------------- -->
+            <div style="text-align: center; display: flex;justify-content: center; width:100%;"
+                class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                     <button class="btn btn-outline-success" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-search" viewBox="0 0 16 16">
+                            <path
+                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                         </svg>
                     </button>
                 </form>

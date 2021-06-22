@@ -24,13 +24,19 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/user/{id}', [User::class, 'show'])->name('user_show');
 
     //Material
+    Route::get('/dashboard/list_material', [materialController::class, 'index'])->name('list_material');
     Route::get('/dashboard/new_material', [materialController::class, 'create'])->name('new_material');
-    Route::post('/dashboard/new_material/do',  ['as' => 'id.unidade', materialController::class, 'store'])->name('new_material_do');
+    Route::post('/dashboard/new_material/do',  [materialController::class, 'store'])->name('new_material_do');
+    Route::get('/dashboard/material/edit/{id}', [materialController::class, 'edit'])->name('edite_material');
+    Route::post('/dashboard/material/edit/do', [materialController::class, 'update'])->name('edite_material');
+    Route::get('/dashboard/material/show/{id}', [materialController::class, 'show'])->name('show_material');
+    Route::get('/dashboard/material/delete/{id}', [materialController::class, 'destroy'])->name('delete_material');
 
 
     //Cliente
     Route::get('/dashboard/new_cliente', [Cliente::class, 'create'])->name('new_cliente');
     Route::post('/dashboard/new_cliente/do', [Cliente::class, 'store'])->name('new_cliente_do');
+
 
     Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
 

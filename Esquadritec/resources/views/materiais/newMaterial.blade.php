@@ -67,23 +67,32 @@
             @csrf
             <div class="full-width form-group row px-0">
                 <label for="material" class="col-form-label pl-4" style="color: white;">Material:</label>
+
                 <div class="col-sm-4 pl-1">
-                    <input id="material" type="text" name="material" class="form-control px-1" placeholder=""
+                    <input id="material" type="text" name="nome" class="form-control px-1" placeholder=""
                         style="width: 110px">
                 </div>
+                <label for="codigo" class="col-form-label pl-4" style="color: white;">Código:</label>
+
+                <div class="col-sm-4 pl-1">
+                    <input id="codigo" type="text" name="codigo" class="form-control px-1" placeholder=""
+                        style="width: 110px">
+                </div>
+
                 <label for="valor" class="col-form-label pl-5" style="color: white;">Valor:</label>
                 <div class="col-sm-4 pl-1">
                     <input id="valor" type="number" name="valor" class="form-control  px-1" style="width: 70px"
                         placeholder="">
                 </div>
             </div>
+
             <div class="full-width form-group row pt-3">
 
                 <label for="inputUnidadeMedida" class="col-form-label pl-4">Unidade de
                     Medida:</label>
                 <div class="col-sm-8 pl-1">
 
-                    <select id="inputUnidadeMedida" name="unidade" class="form-select form-control px-1"
+                    <select id="inputUnidadeMedida" name="unidade_medida" class="form-select form-control px-1"
                         style="width: 92px;">
 
                         @foreach ($unidades as $unidade)

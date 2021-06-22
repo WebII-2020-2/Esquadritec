@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Modelos;
 
+use App\Http\Controllers\Modelos\Exception;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Modelo as Model;
@@ -44,7 +45,6 @@ class Modelo extends Controller
             return redirect()->route('listModelo')->with('succes', 'cadastrado');
         } catch (Exception $e) {
             return redirect()->route('listModelo')->with('error', 'Falha de rede!');
-
         }
     }
 
@@ -62,7 +62,6 @@ class Modelo extends Controller
             return view('modelo/showModel', ['modelo' => $modelo]);
         } catch (Exception $e) {
             return redirect()->route('listModelo')->with('error', 'Falha de rede!');
-
         }
     }
 
@@ -80,7 +79,6 @@ class Modelo extends Controller
             return view('modelo/editModelo', ['modelo' => $modelo]);
         } catch (Exception $e) {
             return redirect()->route('listModelo')->with('error', 'Falha de rede!');
-
         }
     }
 
@@ -99,7 +97,6 @@ class Modelo extends Controller
             return redirect()->route('listModelo')->with('succes', 'Atualizado');
         } catch (Exception $e) {
             return redirect()->route('listModelo')->with('error', 'Falha de rede!');
-
         }
     }
 
