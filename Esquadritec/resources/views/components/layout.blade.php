@@ -69,6 +69,12 @@
         padding-top: 60px;
     }
 
+    .sidenav {    
+        -webkit-box-shadow: 20px 20px 20px #3a3a3ae5;
+        -moz-box-shadow: 20px 20px 20px #3a3a3ae5;
+        box-shadow: 20px 20px 20px #3a3a3ae5;
+    }
+
     .sidenav .content{
         width: 220px;
         padding: 5px 0px 0px 9px;
@@ -132,7 +138,7 @@
 
             <div id="mySidenav" class="sidenav bg-main">
                 <div id="menu_bar" class="logo"><!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>--></div>
-                <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()">&times;</a>
+                <a href="javascript:void(0)" class="closebtn text-light text-decoration-none" onclick="closeNav()"><b>&times;</b></a>
 
                 <a href="#" onclick="icons('content_1')" class="content text-light" style="margin-top:60px">Cliente</a>
                 <ul id="content_1" class="content_menu">
