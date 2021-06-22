@@ -3,11 +3,10 @@
 namespace App\Http\Controllers\materiais;
 
 use App\Http\Controllers\Controller;
-use App\Models\Material as ModelsMaterial;
+use App\Models;
+use App\Models\Material as Materiais;
+use App\Models\unidade;
 use Illuminate\Http\Request;
-use App\Models\unidade as Unidades;
-use Illuminate\Support\Arr;
-use Throwable;
 
 class Material extends Controller
 {
@@ -18,10 +17,17 @@ class Material extends Controller
      */
     public function index()
     {
-        $unidades = Unidades::all();
-        // $unidades=['Kg', 'Cm', 'mm', 'm'];
-        return view('materiais/newMaterial', ['unidades' => $unidades]);
+        $materiais = Materiais::all();
+        foreach ($materiais as $key => $material) {
+            $materiais[$key]->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
+        }
+        return view('materiais/list_material', [
+            'materiais' => $materiais,
+        ]);
+
+        // dd($materiais);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -30,9 +36,8 @@ class Material extends Controller
      */
     public function create()
     {
-        $unidades = Unidades::all();
-        // $unidades=['Kg', 'Cm', 'mm', 'm'];
-        return view('materiais/newMaterial', ['unidades' => $unidades]);
+        $unidades = unidade::all();
+        return view('materiais.newMaterial', ['unidades' => $unidades]);
     }
 
     /**
@@ -41,27 +46,16 @@ class Material extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function storeMaterial(Request $request)
+    public function store(Request $request)
     {
+        try {
+            $new_material = new Materiais($request->except(['_token']));
+            $new_material->save();
+            return redirect()->route('list_material')->with('succes', 'cadastrado');
+        } catch (Expection $e) {
 
-        // var_dump($request);
-        $new_material = new ModelsMaterial();
-        $new_material->nome = $request->material;
-        $new_material->valor = $request->valor;
-        $new_material->save();
-
-
-
-
-
-
-        // $unidade_medida = new Unidades($unidade_medida);
-        // $unidade_medida->save();
-
-
-        // var_dump($request->all());
-
-        // return redirect()->route('dashboard');
+            return redirect()->route('new_material')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -72,7 +66,18 @@ class Material extends Controller
      */
     public function show($id)
     {
-        //
+
+
+        try {
+
+            $materiais = Materiais::where('id', $id)->first();
+            foreach ($materiais as $key => $material) {
+                $materiais[$key]->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
+            }
+            return view('materiais/show_material', ['material' => $materiais]);
+        } catch (Exception $e) {
+            return redirect()->route('list_material')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
