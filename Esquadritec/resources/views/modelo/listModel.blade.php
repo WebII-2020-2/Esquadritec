@@ -16,7 +16,7 @@
 <body>
     <x-layout/>
     <h2 class="text-center">Lista de Modelos</h2>
-    <a type="button" class="btn btn-primary btn-sm position-relative" style="margin-left: 997px; margin-top: 1%; margin-bottom: 1%;" href="{{route('new_modelo')}}">ADICIONAR +</a>
+    <a type="button" class="btn btn-primary btn-sm position-relative" style="margin-left: 990px; margin-top: 1%; margin-bottom: 1%;" href="{{route('new_modelo')}}">ADICIONAR +</a>
 
     @if(session()->has('errors'))
         <div style="position: absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
