@@ -8,6 +8,11 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User as Users;
 
+use App\Models\cliente as Clientes;
+use App\Models\Funcionario as Funcionarios;
+use App\Models\unidade as Unidades;
+use App\Models\Modelo as Model;
+
 class User extends Controller
 {
     /**
@@ -17,7 +22,17 @@ class User extends Controller
      */
     public function index()
     {
-        return view('user/dashboard', ['user' => Auth::user()]);
+        $clientes = Clientes::all();
+        $funcionarios = Funcionarios::all();
+        $unidades = Unidades::all();
+        $modelos = Model::all();
+        return view('user/dashboard', [
+            'user' => Auth::user(),
+            'clientes' => count($clientes),
+            'funcionarios' => count($funcionarios),
+            'unidades' => count($unidades),
+            'modelos' => count($modelos),
+        ]);
     }
 
     /**

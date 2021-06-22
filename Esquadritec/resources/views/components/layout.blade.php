@@ -154,10 +154,10 @@
                 <a href="#" onclick="icons('content_2')" class="content text-light">Usuário</a>
                 <ul id="content_2" class="content_menu">
                     <li>
-                        <a href="{{route('new_cliente')}}" class="content text-light">Listar Usuários</a>
+                        <a href="{{route('list_funcionario')}}" class="content text-light">Listar Usuários</a>
                     </li>
                     <li>
-                        <a href="{{route('user_create')}}" class="content text-light">Novo Usuário</a>
+                        <a href="{{route('new_funcionario')}}" class="content text-light">Novo Usuário</a>
                     </li>
                 </ul>
 

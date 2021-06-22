@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\Login;
 use App\Http\Controllers\Materiais\Material;
 use App\Http\Controllers\Modelos\Modelo;
 use App\Http\Controllers\Cliente\Cliente;
+use App\Http\Controllers\Funcionario\Funcionario;
 use App\Http\Controllers\modelo\formModelo;
 use App\Http\Controllers\produto\new_line;
 
@@ -40,6 +41,14 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/linha/show/{id}', [Modelo::class, 'show'])->name('show_modelo');
     Route::post('/dashboard/linha/edit/do', [Modelo::class, 'update'])->name('edite_modelo_do');
     Route::get('/dashboard/linha/delete/{id}', [Modelo::class, 'destroy'])->name('delete_modelo');
+
+    Route::get('/dashboard/funcionario', [Funcionario::class, 'index'])->name('list_funcionario');
+    Route::get('/dashboard/funcionario/new', [Funcionario::class, 'create'])->name('new_funcionario');
+    Route::post('/dashboard/funcionario/new/do', [Funcionario::class, 'store'])->name('new_funcionario_do');
+    Route::get('/dashboard/funcionario/edit/{id}', [Funcionario::class, 'edit'])->name('edite_funcionario');
+    Route::post('/dashboard/funcionario/edit/do', [Funcionario::class, 'update'])->name('edite_funcionario_do');
+    Route::get('/dashboard/funcionario/show/{id}', [Funcionario::class, 'show'])->name('show_funcionario');
+    Route::get('/dashboard/funcionario/delete/{id}', [Funcionario::class, 'destroy'])->name('delete_funcionario');
 
 
 

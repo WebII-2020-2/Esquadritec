@@ -20,7 +20,7 @@
                     <h6 class="text-center text-light">Orçamentos cadastrados</h6>
                         <div class="row text-center">
                             <div class="col">
-                                <h1 class="text-light" style="font-size: 70px;">29</h1>
+                                <h1 class="text-light" style="font-size: 70px;">--</h1>
                             </div>
                             <div class="col">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-file-earmark-text text-light" viewBox="0 0 16 16">
@@ -37,7 +37,7 @@
                         <h6 class="text-center text-light">Clientes cadastrados</h6>
                         <div class="row text-center">
                             <div class="col">
-                                <h1 class="text-light" style="font-size: 70px;">29</h1>
+                                <h1 class="text-light" style="font-size: 70px;">{{$clientes}}</h1>
                             </div>
                             <div class="col">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-file-earmark-text text-light" viewBox="0 0 16 16">
@@ -54,7 +54,7 @@
                     <h6 class="text-center text-light">Materiais cadastrados</h6>
                     <div class="row text-center">
                         <div class="col">
-                            <h1 class="text-light" style="font-size: 70px;">29</h1>
+                            <h1 class="text-light" style="font-size: 70px;">--</h1>
                         </div>
                         <div class="col">
                             <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-file-earmark-text text-light" viewBox="0 0 16 16">
@@ -73,7 +73,7 @@
                     <h6 class="text-center text-light">Modelos cadastrados</h6>
                     <div class="row text-center">
                         <div class="col">
-                            <h1 class="text-light" style="font-size: 70px;">29</h1>
+                            <h1 class="text-light" style="font-size: 70px;">{{$modelos}}</h1>
                         </div>
                         <div class="col">
                             <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-file-earmark-text text-light" viewBox="0 0 16 16">
@@ -90,7 +90,7 @@
                     <h6 class="text-center text-light">Linhas cadastrados</h6>
                     <div class="row text-center">
                         <div class="col">
-                            <h1 class="text-light" style="font-size: 70px;">29</h1>
+                            <h1 class="text-light" style="font-size: 70px;">--</h1>
                         </div>
                         <div class="col">
                             <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-file-earmark-text text-light" viewBox="0 0 16 16">
@@ -107,7 +107,7 @@
                     <h6 class="text-center text-light">Funcionários cadastrados</h6>
                     <div class="row text-center">
                         <div class="col">
-                            <h1 class="text-light" style="font-size: 70px;">29</h1>
+                            <h1 class="text-light" style="font-size: 70px;">{{$funcionarios}}</h1>
                         </div>
                         <div class="col">
                             <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" fill="currentColor" class="bi bi-file-earmark-text text-light" viewBox="0 0 16 16">
@@ -115,7 +115,7 @@
                                 <path d="M9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4.5L9.5 0zm0 1v2A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5z"/>
                             </svg>
                             <div class="card bg-light" style="margin-top: 8%; margin-bottom: 3%; border-radius: 7.5%;">
-                                <a href="{{route('listModelo')}}" class="text-main text-decoration-none"><b>Ver todos</b></a>
+                                <a href="{{route('list_funcionario')}}" class="text-main text-decoration-none"><b>Ver todos</b></a>
                             </div>
                         </div>
                     </div>
