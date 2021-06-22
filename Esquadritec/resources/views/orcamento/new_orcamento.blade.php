@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Novo Usuário</title>
+        <title>Novo Orçamento</title>
         <meta name="description" content="Tela de novo usuário">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('site/style.css')}}">
@@ -65,13 +65,9 @@
             }
 
             .input-3 {
-                width: 30%;
+                width: 45%;
                 border-radius: 10px;
                 border: solid 1px white;
-            }
-
-            .space {
-                margin-left: 89px;
             }
 
             h2 {
@@ -98,9 +94,9 @@
                         <input id="cliente" class="input-3" type="text" name="cliente" required>
                     </div>
 
-                    <div class="full-width mb-2 right pr-5">
+                    <div class="full-width mb-2 center">
                         <textarea id="observation" name="observacao" placeholder="Observações"
-                            style="height: 100px; width: 65%;"></textarea>
+                            style="height: 100px; width: 65%; border-radius: 10px;"></textarea>
                     </div>
 
                     <div class="pt-4">
