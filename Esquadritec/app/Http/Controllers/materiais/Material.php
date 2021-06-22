@@ -21,7 +21,7 @@ class Material extends Controller
         foreach ($materiais as $key => $material) {
             $materiais[$key]->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
         }
-        return view('materiais/list_material', [
+        return view('materiais/listMaterial', [
             'materiais' => $materiais,
         ]);
 
@@ -37,7 +37,7 @@ class Material extends Controller
     public function create()
     {
         $unidades = unidade::all();
-        return view('materiais.newMaterial', ['unidades' => $unidades]);
+        return view('materiais/newMaterial', ['unidades' => $unidades]);
     }
 
     /**
@@ -51,10 +51,10 @@ class Material extends Controller
         try {
             $new_material = new Materiais($request->except(['_token']));
             $new_material->save();
-            return redirect()->route('list_material')->with('succes', 'cadastrado');
+            return redirect()->route('listMaterial')->with('succes', 'cadastrado');
         } catch (Expection $e) {
 
-            return redirect()->route('new_material')->with('error', 'Falha de rede!');
+            return redirect()->route('listMaterial')->with('error', 'Falha de rede!');
         }
     }
 

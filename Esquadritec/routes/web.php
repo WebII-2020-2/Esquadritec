@@ -24,13 +24,13 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/user/{id}', [User::class, 'show'])->name('show_user');
 
     //Material
-    Route::get('/dashboard/material/list', [materialController::class, 'index'])->name('list_material');
-    Route::get('/dashboard/material/new', [materialController::class, 'create'])->name('new_material');
-    Route::post('/dashboard/material/new/do',  [materialController::class, 'store'])->name('new_material_do');
-    Route::get('/dashboard/material/edit/{id}', [materialController::class, 'edit'])->name('edite_material');
-    Route::post('/dashboard/material/edit/do', [materialController::class, 'update'])->name('edite_material');
-    Route::get('/dashboard/material/show/{id}', [materialController::class, 'show'])->name('show_material');
-    Route::get('/dashboard/material/delete/{id}', [materialController::class, 'destroy'])->name('delete_material');
+    Route::get('/dashboard/material/list', [Material::class, 'index'])->name('list_material');
+    Route::get('/dashboard/material/new', [Material::class, 'create'])->name('new_material');
+    Route::post('/dashboard/material/new/do',  [Material::class, 'store'])->name('new_material_do');
+    Route::get('/dashboard/material/edit/{id}', [Material::class, 'edit'])->name('edite_material');
+    Route::post('/dashboard/material/edit/do', [Material::class, 'update'])->name('edite_material');
+    Route::get('/dashboard/material/show/{id}', [Material::class, 'show'])->name('show_material');
+    Route::get('/dashboard/material/delete/{id}', [Material::class, 'destroy'])->name('delete_material');
 
 
     Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
