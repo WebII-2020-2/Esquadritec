@@ -79,6 +79,10 @@ Route::middleware(['Validate'])->group(function () {
         return view('user/list_orcamento');
     });
 
+    Route::get('/dashboard/12', function () {
+        return view('orcamento/new_orcamento');
+    });
+
     // POST
     Route::post('user_in', [User::class, 'store'])->name('user_store')->middleware('Validate');
 });
