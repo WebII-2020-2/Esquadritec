@@ -24,9 +24,9 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/user/{id}', [User::class, 'show'])->name('show_user');
 
     //Material
-    Route::get('/dashboard/list_material', [materialController::class, 'index'])->name('list_material');
-    Route::get('/dashboard/new_material', [materialController::class, 'create'])->name('new_material');
-    Route::post('/dashboard/new_material/do',  [materialController::class, 'store'])->name('new_material_do');
+    Route::get('/dashboard/material/list', [materialController::class, 'index'])->name('list_material');
+    Route::get('/dashboard/material/new', [materialController::class, 'create'])->name('new_material');
+    Route::post('/dashboard/material/new/do',  [materialController::class, 'store'])->name('new_material_do');
     Route::get('/dashboard/material/edit/{id}', [materialController::class, 'edit'])->name('edite_material');
     Route::post('/dashboard/material/edit/do', [materialController::class, 'update'])->name('edite_material');
     Route::get('/dashboard/material/show/{id}', [materialController::class, 'show'])->name('show_material');
