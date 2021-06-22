@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Novo Usuário</title>
+        <title>Novo Orçamento</title>
         <meta name="description" content="Tela de novo usuário">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('site/style.css')}}">
@@ -65,19 +65,14 @@
             }
 
             .input-3 {
-                width: 30%;
+                width: 45%;
                 border-radius: 10px;
                 border: solid 1px white;
-            }
-
-            .space {
-                margin-left: 89px;
             }
 
             h2 {
                 font-size: 30px;
                 font-weight: 650;
-
             }
 
         </style>
@@ -88,7 +83,8 @@
     
         <x-layout/>
         <div class="py-4 center">
-            <h2 class="text-main font-monospace py-4">Novo Orçamento</h2>
+
+            <h2 class="text-dark font-monospace py-4">Novo Orçamento</h2>
 
             <div class="card center-div text-white" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('user_create_do')}}">
@@ -98,9 +94,9 @@
                         <input id="cliente" class="input-3" type="text" name="cliente" required>
                     </div>
 
-                    <div class="full-width mb-2 right pr-5">
+                    <div class="full-width mb-2 center">
                         <textarea id="observation" name="observacao" placeholder="Observações"
-                            style="height: 100px; width: 65%;"></textarea>
+                            style="height: 100px; width: 65%; border-radius: 10px;"></textarea>
                     </div>
 
                     <div class="pt-4">

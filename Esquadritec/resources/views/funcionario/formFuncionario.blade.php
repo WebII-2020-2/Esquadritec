@@ -87,7 +87,7 @@
     <body>
         <x-layout/>
         <div class="py-4 center">
-            <h2 class="text-main font-monospace py-4">Cadastrar Funcionário</h2>
+            <h2 class="text-dark font-monospace py-4">Cadastrar Funcionário</h2>
 
             @if(session()->has('errors'))
                 <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
