@@ -197,20 +197,20 @@
                 <ul id="content_1" class="content_menu">
                     <li>
                         <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
-                        <a href="{{route('new_cliente')}}" class="content text-light">Listar Clientes</a>
+                        <a href="{{route('list_cliente')}}" class="content text-light">Listar Clientes</a>
                     </li>
                     <li>
                         <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
                     </li>
                 </ul>
 
-                <a href="#" onclick="icons('content_2')" class="content text-light">Usuário</a>
+                <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
                 <ul id="content_2" class="content_menu">
                     <li>
-                        <a href="{{route('list_funcionario')}}" class="content text-light">Listar Usuários</a>
+                        <a href="{{route('list_funcionario')}}" class="content text-light">Listar Funcionários</a>
                     </li>
                     <li>
-                        <a href="{{route('new_funcionario')}}" class="content text-light">Novo Usuário</a>
+                        <a href="{{route('new_funcionario')}}" class="content text-light">Novo Funcionário</a>
                     </li>
                 </ul>
 

@@ -33,11 +33,6 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/material/delete/{id}', [materialController::class, 'destroy'])->name('delete_material');
 
 
-    //Cliente
-    Route::get('/dashboard/new_cliente', [Cliente::class, 'create'])->name('new_cliente');
-    Route::post('/dashboard/new_cliente/do', [Cliente::class, 'store'])->name('new_cliente_do');
-
-
     Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
 
     //Modelo
