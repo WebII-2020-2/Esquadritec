@@ -72,7 +72,7 @@ Route::middleware(['Validate'])->group(function () {
     });
 
     Route::get('/dashboard/11', function () {
-        return view('user/list_orcamento');
+        return view('orcamento/list_orcamento');
     });
 
     Route::get('/dashboard/12', function () {

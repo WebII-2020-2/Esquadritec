@@ -73,7 +73,6 @@
             h2 {
                 font-size: 30px;
                 font-weight: 650;
-
             }
 
         </style>
@@ -84,7 +83,8 @@
     
         <x-layout/>
         <div class="py-4 center">
-            <h2 class="text-main font-monospace py-4">Novo Orçamento</h2>
+
+            <h2 class="text-dark font-monospace py-4">Novo Orçamento</h2>
 
             <div class="card center-div text-white" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('user_create_do')}}">
