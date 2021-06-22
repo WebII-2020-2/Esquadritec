@@ -51,25 +51,27 @@
 
 <body>
 
-
+    <x-layout />
     <div class="container" style="width: 100%">
         <div class="row">
             <div class="col">
-                <h2 class="text-main font-monospace ">NOVA MATERIAL</h2>
+                <h2 class="text-main font-monospace ">Novo Material</h2>
             </div>
         </div>
 
     </div>
+
     <div class="card center-div" style="width: 600px;min-height: 100%;">
-        <form action="{{ route('new_material_do') }}" class=" g-3 pt-4" method="post">
+
+        <form action="{{route('new_material_do')}}" class=" g-3 pt-4" method="POST">
             @csrf
             <div class="full-width form-group row px-0">
-                <label for="material" class="col-form-label pl-4" style="color: white;">MATERIAL:</label>
+                <label for="material" class="col-form-label pl-4" style="color: white;">Material:</label>
                 <div class="col-sm-4 pl-1">
                     <input id="material" type="text" name="material" class="form-control px-1" placeholder=""
                         style="width: 110px">
                 </div>
-                <label for="valor" class="col-form-label pl-5" style="color: white;">VALOR:</label>
+                <label for="valor" class="col-form-label pl-5" style="color: white;">Valor:</label>
                 <div class="col-sm-4 pl-1">
                     <input id="valor" type="number" name="valor" class="form-control  px-1" style="width: 70px"
                         placeholder="">
@@ -77,8 +79,8 @@
             </div>
             <div class="full-width form-group row pt-3">
 
-                <label for="inputUnidadeMedida" class="col-form-label pl-4">UNIDADE DE
-                    MEDIDA:</label>
+                <label for="inputUnidadeMedida" class="col-form-label pl-4">Unidade de
+                    Medida:</label>
                 <div class="col-sm-8 pl-1">
 
                     <select id="inputUnidadeMedida" name="unidade" class="form-select form-control px-1"

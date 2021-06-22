@@ -20,6 +20,6 @@ class Validate
         if(Auth::check()){
             return $next($request);
         }
-        return  redirect()->route('login')->withErrors(['Precisa estar logado']);
+        return redirect()->route('login')->with('error', 'Precisa estar logado');
     }
 }

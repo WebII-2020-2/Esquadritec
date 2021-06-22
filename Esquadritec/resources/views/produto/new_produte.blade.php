@@ -14,7 +14,6 @@
         color: white;
     }
     .background_card {
-        background-color: #318A90;
         border-radius: 28px;
         height: 455px;
     }
@@ -74,7 +73,7 @@
         </div>
 
     </div>
-    <div class="card center-div background_card" style="width: 600px;min-height: 100%;">
+    <div class="card center-div background_card bg-main" style="width: 600px;min-height: 100%;">
         <form class=" g-3 pt-4">
             @csrf
             <div class="form-group">

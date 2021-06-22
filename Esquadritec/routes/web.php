@@ -27,6 +27,7 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/new_material', [materialController::class, 'create'])->name('new_material');
     Route::post('/dashboard/new_material/do',  ['as' => 'id.unidade', materialController::class, 'store'])->name('new_material_do');
 
+
     //Cliente
     Route::get('/dashboard/new_cliente', [Cliente::class, 'create'])->name('new_cliente');
     Route::post('/dashboard/new_cliente/do', [Cliente::class, 'store'])->name('new_cliente_do');
@@ -43,6 +44,17 @@ Route::middleware(['Validate'])->group(function () {
 
     //Linha
     Route::get('/dashboard/linha', [Modelo::class, 'index'])->name('listModelo');
+
+    Route::get('/dashboard/cliente', [Cliente::class, 'index'])->name('list_cliente');
+    Route::get('/dashboard/cliente/new', [Cliente::class, 'create'])->name('new_cliente');
+    Route::post('/dashboard/cliente/new/do', [Cliente::class, 'store'])->name('new_cliente_do');
+    Route::get('/dashboard/cliente/edit/{id}', [Cliente::class, 'edit'])->name('edite_cliente');
+    Route::post('/dashboard/cliente/edit/do', [Cliente::class, 'update'])->name('edite_cliente_do');
+    Route::get('/dashboard/cliente/show/{id}', [Cliente::class, 'show'])->name('show_cliente');
+    Route::get('/dashboard/cliente/delete/{id}', [Cliente::class, 'destroy'])->name('delete_cliente');
+
+    Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
+
     Route::get('/dashboard/linha/new', [Modelo::class, 'create'])->name('new_modelo');
     Route::post('/dashboard/linha/new/do', [Modelo::class, 'store'])->name('new_modelo_do');
     Route::get('/dashboard/linha/edit/{id}', [Modelo::class, 'edit'])->name('edite_modelo');
@@ -82,6 +94,10 @@ Route::middleware(['Validate'])->group(function () {
 
     Route::get('/dashboard/11', function () {
         return view('user/list_orcamento');
+    });
+
+    Route::get('/dashboard/12', function () {
+        return view('orcamento/new_orcamento');
     });
 
     // POST
