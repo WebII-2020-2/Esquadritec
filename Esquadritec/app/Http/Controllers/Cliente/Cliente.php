@@ -98,7 +98,7 @@ class Cliente extends Controller
                 'telefone' => $telefone,
             ]);
         }catch(Exception $e){
-            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
+            return redirect()->route('list_cliente')->with('error', 'Falha de rede!');
         }
     }
 
@@ -120,7 +120,7 @@ class Cliente extends Controller
                 'telefone' => $telefone,
             ]);
         }catch(Exception $e){
-            return redirect()->route('listModelo')->with('error', 'Falha de rede!');
+            return redirect()->route('list_cliente')->with('error', 'Falha de rede!');
         }
     }
 
@@ -161,9 +161,9 @@ class Cliente extends Controller
             
             Telefone::where('cliente', $id)->update($telefone);
 
-            return redirect()->route('list_client')->with('succes', 'Atualizado');
+            return redirect()->route('list_cliente')->with('succes', 'Atualizado');
         } catch(Throwable $e) {
-            return redirect()->route('list_client')->with('error', 'Falha de rede!');
+            return redirect()->route('list_cliente')->with('error', 'Falha de rede!');
         }
     }
 
@@ -177,9 +177,9 @@ class Cliente extends Controller
     {
         try{
             Clientes::where('id', $id)->delete();
-            return redirect()->route('list_client')->with('succes', 'Deletado!!');
+            return redirect()->route('list_cliente')->with('succes', 'Deletado!!');
         }catch(Exception $e){
-            return redirect()->route('list_client')->with('error', 'Falha de rede!');
+            return redirect()->route('list_cliente')->with('error', 'Falha de rede!');
         }
     }
 }

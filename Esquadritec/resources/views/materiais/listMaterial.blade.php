@@ -187,94 +187,12 @@
             }
         }
     </script>
-
-    <div class="menu_bar">
-        <nav class="navbar navbar-expand-lg navbar-light bg-main">
-            <div class="container-fluid  row">
-                <!-- barra de menu slice -->
-                <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                        class="bi bi-list" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                    </svg>
-                </span>
-
-                <div id="mySidenav" class="sidenav bg-main">
-                    <div id="menu_bar" class="logo">
-                        <!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>-->
-                    </div>
-                    <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
-                        onclick="closeNav()"><b>&times;</b></a>
-
-                    <a href="#" onclick="icons('content_1')" class="content text-light"
-                        style="margin-top:60px">Cliente</a>
-                    <ul id="content_1" class="content_menu">
-                        <li>
-                            <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
-                            <a href="{{route('new_cliente')}}" class="content text-light">Listar Clientes</a>
-                        </li>
-                        <li>
-                            <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
-                        </li>
-                    </ul>
-
-                    <a href="#" onclick="icons('content_2')" class="content text-light">Usuário</a>
-                    <ul id="content_2" class="content_menu">
-                        <li>
-                            <a href="{{route('new_cliente')}}" class="content text-light">Listar Usuários</a>
-                        </li>
-                        <li>
-                            <a href="{{route('user_create')}}" class="content text-light">Novo Usuário</a>
-                        </li>
-                    </ul>
-
-                    <a href="#" onclick="icons('content_3')" class="content text-light">Material</a>
-                    <ul id="content_3" class="content_menu text-light">
-                        <li>
-                            <a href="{{ route('list_material') }}" class="content text-light">Listar Materiais</a>
-                        </li>
-                        <li>
-                            <a href="{{route('new_material')}}" class="content text-light">Novo Material</a>
-                        </li>
-                    </ul>
-
-                    <a href="#" onclick="icons('content_4')" class="content text-light">Modelo</a>
-                    <ul id="content_4" class="content_menu">
-                        <li>
-                            <a href="{{route('listModelo')}}" class="content text-light">Listar Modelos</a>
-                        </li>
-                        <li>
-                            <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>
-                        </li>
-                    </ul>
-
-                    <a href="{{route('logout')}}" class="content text-light">Sair</a>
-                </div>
-                <div>
-                    <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
-                </div>
-                <!-- ------------------------------------------- -->
-                <div style="text-align: center; display: flex;justify-content: center; width:100%;"
-                    class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                        <button class="btn btn-outline-success" type="submit">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-search" viewBox="0 0 16 16">
-                                <path
-                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                            </svg>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </nav>
-    </div>
-
+    <x-layout/>
 
     <h2>Lista de Materiais</h2>
-    <button type="button" class="btn btn-primary btn-sm">ADICIONAR +</button>
+    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
+        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_material')}}">ADICIONAR +</a>
+    </div>
 
     <div class="card table">
         <table class="table table-sm center">

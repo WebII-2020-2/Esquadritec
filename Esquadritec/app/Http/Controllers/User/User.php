@@ -13,6 +13,7 @@ use App\Models\Funcionario as Funcionarios;
 use App\Models\unidade as Unidades;
 use App\Models\Modelo as Model;
 use App\Models\Linha as Linha;
+use App\Models\Material as Material;
 
 class User extends Controller
 {
@@ -61,6 +62,7 @@ class User extends Controller
         $unidades = Unidades::all();
         $modelos = Model::all();
         $linhas = Linha::all();
+        $materiais = Material::all();
         return view('user/dashboard', [
             'user' => Auth::user(),
             'clientes' => count($clientes),
@@ -68,6 +70,7 @@ class User extends Controller
             'unidades' => count($unidades),
             'modelos' => count($modelos),
             'linhas' => count($linhas),
+            'materiais' => count($materiais),
             'dataPoints' => $dataPoints,
         ]);
     }

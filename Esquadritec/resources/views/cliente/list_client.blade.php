@@ -29,8 +29,8 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    @foreach($cliente as $cli)
+                @foreach($cliente as $cli)
+                    <tr>
                         <td class="table_rows">{{$cli->name}}</td>
                         <td class="table_rows">{{$cli->cpf}}</td>
                         <td class="table_rows">{{$cli->cnpj}}</td>
@@ -64,8 +64,8 @@
                                 </button>
                             </form>
                         </td>
-                    @endforeach
-                </tr>
+                    </tr>
+                @endforeach
             </tbody>
         </table>
     </div>

@@ -50,7 +50,7 @@ class Funcionario extends Controller
             );
             $funcionarios = new Funcionarios($newUser);
             $funcionarios->save();
-            return redirect()->route('dashboard')->with('succes', 'cadastrado');
+            return redirect()->route('list_funcionario')->with('succes', 'cadastrado');
         }catch(Exception $e){
             return redirect()->route('new_funcionario')->with('error', 'Falha ao registrar!');
         }
