@@ -61,7 +61,7 @@
 
     </div>
     <div class="card center-div" style="width: 600px;min-height: 100%;">
-        <form action="{{ route('new_material_do') }}" class=" g-3 pt-4" method="POST">
+        <form action="{{ route('new_material_do') }}" class=" g-3 pt-4" method="post">
             @csrf
             <div class="full-width form-group row px-0">
                 <label for="material" class="col-form-label pl-4" style="color: white;">MATERIAL:</label>
@@ -81,11 +81,12 @@
                     MEDIDA:</label>
                 <div class="col-sm-8 pl-1">
 
-                    <select id="inputUnidadeMedida" class="form-select form-control px-1" style="width: 92px;">
+                    <select id="inputUnidadeMedida" name="unidade" class="form-select form-control px-1"
+                        style="width: 92px;">
 
                         @foreach ($unidades as $unidade)
-                        $id = unidade->id;
-                        <option>{{ $unidade->unidade }}</option>
+
+                        <option value="{{ $unidade->id }}">{{ $unidade->unidade }}</option>
 
                         @endforeach
 
