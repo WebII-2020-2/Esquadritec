@@ -40,8 +40,8 @@
             <tbody>
                 <tr>
                     <td>{{$modelo->modelo}}</td>
-                    <td>{{$modelo->created_at->format('d/m/Y')}} as {{$modelo->created_at->format('H/i')}}</td>
-                    <td>{{$modelo->updated_at->format('d/m/Y')}} as {{$modelo->updated_at->format('H/i')}}</td>
+                    <td>{{$modelo->created_at->format('d/m/Y')}} as {{$modelo->created_at->format('H:i')}}</td>
+                    <td>{{$modelo->updated_at->format('d/m/Y')}} as {{$modelo->updated_at->format('H:i')}}</td>
                 </tr>
             </tbody>
         </table>

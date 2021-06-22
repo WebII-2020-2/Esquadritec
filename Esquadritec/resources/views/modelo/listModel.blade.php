@@ -16,7 +16,7 @@
 <body>
     <x-layout/>
     <h2 class="text-center">Lista de Modelos</h2>
-    <div class="col-lg-12" style="text-align: right; margin-bottom: 0.5%;">
+    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
         <a type="button" class="btn btn-primary btn-sm" href="{{route('new_modelo')}}">ADICIONAR +</a>
     </div>
 

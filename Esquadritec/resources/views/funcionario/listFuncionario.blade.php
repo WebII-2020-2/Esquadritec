@@ -12,7 +12,9 @@
 
 <body>
     <h2>Lista de Funcionários</h2>
-    <a type="button" class="btn btn-primary btn-sm" href="{{route('new_funcionario')}}">ADICIONAR +</a>
+    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
+        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_funcionario')}}">ADICIONAR +</a>
+    </div>
 
     <div class="card table">
         <table class="table table-sm center">
