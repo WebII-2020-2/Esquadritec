@@ -105,7 +105,6 @@ class Material extends Controller
     public function update(Request $request)
     {
         try {
-            dd($request);
             $material = Materiais::where('id', $request->id)->update(['materiais' => $request->modelo]);
         } catch (Exception $e) {
             return redirect()->route('list_material')->with('error', 'Falha de rede!');
