@@ -51,7 +51,7 @@ class Material extends Controller
         try {
             $new_material = new Materiais($request->except(['_token']));
             $new_material->save();
-            return redirect()->route('listMaterial')->with('succes', 'cadastrado');
+            return redirect()->route('list_material')->with('succes', 'cadastrado');
         } catch (Expection $e) {
 
             return redirect()->route('listMaterial')->with('error', 'Falha de rede!');
@@ -70,6 +70,7 @@ class Material extends Controller
         try {
 
             $material = Materiais::where('id', $id)->first();
+            $material->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
 
             return view('materiais/showMaterial', ['material' => $material]);
         } catch (Exception $e) {
