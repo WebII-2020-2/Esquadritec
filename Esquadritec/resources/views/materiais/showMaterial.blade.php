@@ -16,8 +16,9 @@
 <body>
     <x-layout />
     <h2>{{$material->nome}}</h2>
-    <a type="button" class="btn btn-primary btn-sm" href="{{route('new_modelo')}}">ADICIONAR +</a>
-
+    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
+        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_material')}}">ADICIONAR +</a>
+    </div>
     @if(session()->has('errors'))
     <div style="position: absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
         <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
@@ -32,30 +33,28 @@
         <table class="table table-sm center">
             <thead>
                 <tr>
-                    <th class="table_first_row">id</th>
                     <th class="table_first_row">NOME</th>
                     <th class="table_first_row">UNIDADE DE MEDIDA</th>
                     <th class="table_first_row">VALOR</th>
                     <th class="table_first_row">CODIGO</th>
+                    <th class="table_first_row">CRIADO</th>
+                    <th class="table_first_row">ATUALIZADO</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    @foreach ($material as $material)
-
-                    <td class="table_rows">{{ $material->id }}</td>
                     <td class="table_rows">{{ $material->nome}}</td>
                     <td class="table_rows">{{ $material->unidade_medida->unidade }}</td>
                     <td class="table_rows">{{ $material->valor }}</td>
                     <td class="table_rows">{{ $material->codigo }}</td>
-
-                    @endforeach
+                    <td>{{$material->created_at->format('d/m/Y')}} as {{$material->created_at->format('H:i')}}</td>
+                    <td>{{$material->updated_at->format('d/m/Y')}} as {{$material->updated_at->format('H:i')}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <x-footer/>
+    <x-footer />
 </body>
 
 </html>

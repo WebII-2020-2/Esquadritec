@@ -27,9 +27,9 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/material/list', [Material::class, 'index'])->name('list_material');
     Route::get('/dashboard/material/new', [Material::class, 'create'])->name('new_material');
     Route::post('/dashboard/material/new/do',  [Material::class, 'store'])->name('new_material_do');
-    Route::get('/dashboard/material/edit/{id}', [Material::class, 'edit'])->name('edite_material');
-    Route::post('/dashboard/material/edit/do', [Material::class, 'update'])->name('edite_material');
     Route::get('/dashboard/material/show/{id}', [Material::class, 'show'])->name('show_material');
+    Route::get('/dashboard/material/edit/{id}', [Material::class, 'edit'])->name('edite_material');
+    Route::post('/dashboard/material/edit/do', [Material::class, 'update'])->name('edite_material_do');
     Route::get('/dashboard/material/delete/{id}', [Material::class, 'destroy'])->name('delete_material');
 
 

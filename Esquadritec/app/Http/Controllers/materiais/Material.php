@@ -67,14 +67,11 @@ class Material extends Controller
     public function show($id)
     {
 
-
         try {
 
-            $materiais = Materiais::where('id', $id)->first();
-            foreach ($materiais as $key => $material) {
-                $materiais[$key]->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
-            }
-            return view('materiais/show_material', ['material' => $materiais]);
+            $material = Materiais::where('id', $id)->first();
+
+            return view('materiais/showMaterial', ['material' => $material]);
         } catch (Exception $e) {
             return redirect()->route('list_material')->with('error', 'Falha de rede!');
         }
@@ -88,7 +85,14 @@ class Material extends Controller
      */
     public function edit($id)
     {
-        //
+
+        try {
+            $material = Materiais::where('id', $id)->first();
+            $material->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
+            return view('materiais/editMaterial', ['material' => $material], ['material' => $material]);
+        } catch (Exception $e) {
+            return redirect()->route('showMaterial')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -98,9 +102,14 @@ class Material extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try {
+            dd($request);
+            $material = Materiais::where('id', $request->id)->update(['materiais' => $request->modelo]);
+        } catch (Exception $e) {
+            return redirect()->route('list_material')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -111,6 +120,12 @@ class Material extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            $material = Materiais::where('id', $id)->delete();
+
+            return redirect()->route('list_material')->with('succes', 'Deletado!!');
+        } catch (Exception $e) {
+            return redirect()->route('list_material')->with('error', 'Falha de rede!');
+        }
     }
 }
