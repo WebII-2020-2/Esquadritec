@@ -15,7 +15,8 @@
 
 <body>
     <x-layout/>
-    <h2 class="text-center">Lista de Linhas</h2>
+    <h2 class="text-black font-monospace py-4 text-center">Lista de Linhas</h2>
+    
     <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
         <a type="button" class="btn btn-primary btn-sm" href="{{route('new_linha')}}">ADICIONAR +</a>
     </div>

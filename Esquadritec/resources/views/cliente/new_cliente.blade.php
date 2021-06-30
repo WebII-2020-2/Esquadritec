@@ -11,7 +11,7 @@
 
         <style>
             .card {
-                background-color: #318A90;
+                background-color: #295C8A;
                 border-radius: 28px;
                 height: 255px;
             }
@@ -88,7 +88,7 @@
 
         <x-layout/>
         <div class="py-4 center">
-            <h2 class="text-main font-monospace py-4">Novo Cliente</h2>
+            <h2 class="text-black font-monospace py-4">Novo Cliente</h2>
 
             <div class="card center-div text-white pr-5" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%;" method="POST" action="{{route('new_cliente_do')}}">

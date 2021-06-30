@@ -63,7 +63,7 @@
     <body>
         <x-layout/>
         <div class="py-4 center" style="min-height: 200px;">
-            <h2 class="text-main font-monospace ">NOVO MODELO</h2>
+            <h2 class="text-black font-monospace ">Novo Modelo</h2>
 
             @if(session()->has('errors'))
                 <div style="position:absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
@@ -79,7 +79,7 @@
                 <form class="" style="height: 100%;" method="POST" action="{{ route('new_modelo_do') }}">
                     @csrf
                     <div class="row p-3 center-div pt-5" style="width: 300px;">
-                        <label for="modelo" class="pr-2 col-form-label" style="color: white">MODELO:</label>
+                        <label for="modelo" class="pr-2 col-form-label" style="color: white">Modelo:</label>
                         <input id="modelo" type="text" name="modelo" class="form-control" placeholder="">
                     </div>
                     <div class="center-div bottom-div w-auto">

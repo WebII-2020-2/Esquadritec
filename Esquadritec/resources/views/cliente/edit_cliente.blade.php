@@ -11,7 +11,7 @@
 
     <style>
         .card {
-            background-color: #318A90;
+            background-color: #295C8A;
             border-radius: 28px;
             height: 255px;
         }
@@ -52,7 +52,7 @@
 
         .card {
             padding: 20px;
-            background-color: #318A90;
+            background-color: #295C8A;
             border-radius: 28px;
         }
 
@@ -80,8 +80,10 @@
 
 <body>
 
+    <x-layout />
+
     <div class="py-4 center">
-        <h2 class="text-main font-monospace py-4">Editar Cliente {{$cliente->name}}</h2>
+        <h2 class="text-black font-monospace py-4">Editar Cliente {{$cliente->name}}</h2>
 
         <div class="card center-div text-white pr-5" style="min-width: 500px;height: 100%;">
             <form class="" style="height: 100%;" method="POST" action="{{route('edite_cliente_do',['id'=>$cliente->id])}}">
