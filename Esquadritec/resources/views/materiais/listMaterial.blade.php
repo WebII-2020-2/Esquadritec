@@ -203,6 +203,7 @@
                     <th scope="col" class="table_first_row">Unidade de Medida</th>
                     <th scope="col" class="table_first_row">Valor</th>
                     <th scope="col" class="table_first_row">Código</th>
+                    <th scope="col" class="table_first_row">Ações</th>
                 </tr>
             </thead>
             <tbody>
