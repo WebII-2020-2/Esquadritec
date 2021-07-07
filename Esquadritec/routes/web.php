@@ -9,6 +9,7 @@ use App\Http\Controllers\Modelos\Modelo;
 use App\Http\Controllers\Cliente\Cliente;
 use App\Http\Controllers\Linha\Linha;
 use App\Http\Controllers\Funcionario\Funcionario;
+use App\Http\Controllers\Orcamento\Orcamento;
 use App\Http\Controllers\produto\new_line;
 
 
@@ -32,19 +33,13 @@ Route::middleware(['Validate'])->group(function () {
     Route::post('/dashboard/material/edit/do', [Material::class, 'update'])->name('edite_material_do');
     Route::get('/dashboard/material/delete/{id}', [Material::class, 'destroy'])->name('delete_material');
 
-
-    Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
-
-    //Modelo
+    Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('list_modelo');
     Route::get('/dashboard/modelo/new', [Modelo::class, 'create'])->name('new_modelo');
     Route::post('/dashboard/modelo/new/do', [Modelo::class, 'store'])->name('new_modelo_do');
     Route::get('/dashboard/modelo/edit/{id}', [Modelo::class, 'edit'])->name('edite_modelo');
     Route::post('/dashboard/modelo/edit/do', [Modelo::class, 'update'])->name('edite_modelo_do');
     Route::get('/dashboard/modelo/show/{id}', [Modelo::class, 'show'])->name('show_modelo');
     Route::get('/dashboard/modelo/delete/{id}', [Modelo::class, 'destroy'])->name('delete_modelo');
-
-    //Linha
-    Route::get('/dashboard/linha', [Modelo::class, 'index'])->name('listModelo');
 
     Route::get('/dashboard/cliente', [Cliente::class, 'index'])->name('list_cliente');
     Route::get('/dashboard/cliente/new', [Cliente::class, 'create'])->name('new_cliente');
@@ -53,8 +48,6 @@ Route::middleware(['Validate'])->group(function () {
     Route::post('/dashboard/cliente/edit/do', [Cliente::class, 'update'])->name('edite_cliente_do');
     Route::get('/dashboard/cliente/show/{id}', [Cliente::class, 'show'])->name('show_cliente');
     Route::get('/dashboard/cliente/delete/{id}', [Cliente::class, 'destroy'])->name('delete_cliente');
-
-    Route::get('/dashboard/modelo', [Modelo::class, 'index'])->name('listModelo');
 
     Route::get('/dashboard/linha', [Linha::class, 'index'])->name('list_linha');
     Route::get('/dashboard/linha/new', [Linha::class, 'create'])->name('new_linha');
@@ -71,6 +64,21 @@ Route::middleware(['Validate'])->group(function () {
     Route::post('/dashboard/funcionario/edit/do', [Funcionario::class, 'update'])->name('edite_funcionario_do');
     Route::get('/dashboard/funcionario/show/{id}', [Funcionario::class, 'show'])->name('show_funcionario');
     Route::get('/dashboard/funcionario/delete/{id}', [Funcionario::class, 'destroy'])->name('delete_funcionario');
+
+    Route::get('/dashboard/orcamento', [Orcamento::class, 'index'])->name('list_orcamento');
+    Route::get('/dashboard/orcamento/new', [Orcamento::class, 'create'])->name('new_orcamento');
+    Route::get('/dashboard/orcamento/new/produto', [Orcamento::class, 'orcamento_p'])->name('orcamento_p');
+    Route::get('/dashboard/orcamento/new/produto/add', [Orcamento::class, 'orcamento_p_add'])->name('orcamento_p_add');
+    Route::get('/dashboard/orcamento/new/material', [Orcamento::class, 'orcamento_material'])->name('orcamento_material');
+    Route::post('/dashboard/orcamento/new/material/add', [Orcamento::class, 'orcamento_material_add'])->name('orcamento_material_add');
+    Route::post('/dashboard/orcamento/new/produto/set', [Orcamento::class, 'orcamento_p_set'])->name('orcamento_p_set');
+    Route::post('/dashboard/orcamento/new/set', [Orcamento::class, 'orcamento_set'])->name('orcamento_set');
+    Route::get('/dashboard/orcamento/new/next', [Orcamento::class, 'orcamento_next'])->name('orcamento_next');
+    Route::post('/dashboard/orcamento/new/do', [Orcamento::class, 'store'])->name('new_orcamento_do');
+    Route::get('/dashboard/orcamento/edit/{id}', [Orcamento::class, 'edit'])->name('edite_orcamento');
+    Route::post('/dashboard/orcamento/edit/do', [Orcamento::class, 'update'])->name('edite_orcamento_do');
+    Route::get('/dashboard/orcamento/show/{id}', [Orcamento::class, 'show'])->name('show_orcamento');
+    Route::get('/dashboard/orcamento/delete/{id}', [Orcamento::class, 'destroy'])->name('delete_orcamento');
 
 
     Route::get('/dashboard/3', function () {
@@ -99,14 +107,6 @@ Route::middleware(['Validate'])->group(function () {
 
     Route::get('/dashboard/10', function () {
         return view('cliente/list_client');
-    });
-
-    Route::get('/dashboard/11', function () {
-        return view('orcamento/list_orcamento');
-    });
-
-    Route::get('/dashboard/12', function () {
-        return view('orcamento/new_orcamento');
     });
 
     // POST

@@ -1,64 +1,39 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Novo Orçamento</title>
+        <meta name="description" content="Tela de novo usuário">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{{asset('site/style.css')}}">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Lista de Orçamento</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('site/style.css')}}">
-</head>
+    </head>
 
-<body>
-
-    <x-layout/>
+    <body>
     
-    <h2>Lista de Orçamento</h2>
-
-    <div class="col-lg-12" style="text-align: right; margin-bottom: 0.5%;">
-        <a type="button" href="{{route('new_orcamento')}}" class="btn btn-primary btn-sm">ADICIONAR +</a>
-    </div>
-
-    <div class="card table">
-        <table class="table table-sm center">
+        <x-layout/>
+        <h2 class="text-dark font-monospace py-4">Produtos</h2>
+        <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
+            <a type="button" class="btn btn-primary btn-sm" href="{{route('orcamento_p_add')}}">+ PRODUTO</a>
+        </div>
+        <div class="card table">
+        <table class="table table-sm">
             <thead>
                 <tr>
-                <th scope="col" class="table_first_row">CLIENTE</th>
-                <th scope="col" class="table_first_row">CPF</th>
-                <th scope="col" class="table_first_row">CNPJ</th>
-                <th scope="col" class="table_first_row">TELEFONE</th>
-                <th scope="col" class="table_first_row">EMAIL</th>
-                <th scope="col" class="table_first_row">ENDERECO PRINCIPAL</th>
-                <th scope="col" class="table_first_row">DATA DE EMISSÃO</th>
-                <th scope="col" class="table_first_row">Q. PRODUTO</th>
-                <th scope="col" class="table_first_row">VALOR TOTAL</th>
-                <th scope="col" class="table_first_row">VALOR DESCONTO</th>
-                <th scope="col" class="table_first_row">VALOR FINAL</th>
-                <th scope="col" class="table_first_row">STATUS</th>
-                <th scope="col" class="table_first_row">AÇÕES</th>
+                    <th scope="col" class="table_first_row text-center">NOME</th>
+                    <th scope="col" class="table_first_row text-center">LINHA</th>
+                    <th scope="col" class="table_first_row text-center">MODELO</th>
+                    <th scope="col" class="table_first_row text-center">AÇÕES</th>
                 </tr>
             </thead>
             <tbody>
+                    @foreach ($orcamento['produtos'] as $key => $produto)
                     <tr>
-                    @foreach($orcamentos as $orcamento)
-                        <td class="table_rows">{{$orcamento['cliente']->name}}</td>
-                        <td class="table_rows">{{$orcamento['cliente']->cpf}}</td>
-                        <td class="table_rows">{{$orcamento['cliente']->cnpj}}</td>
-                        <td class="table_rows">{{$orcamento['cliente']->telefone}}</td>
-                        <td class="table_rows">{{$orcamento['cliente']->email}}</td>
-                        <td class="table_rows">
-                        {{$orcamento['cliente']->endereco[0]['cidade']}};
-                        Rua {{$orcamento['cliente']->endereco[0]['rua']}};
-                        Bairro {{$orcamento['cliente']->endereco[0]['bairro']}};
-                        Nº {{$orcamento['cliente']->endereco[0]['numero']}}
-                        </td>
-                        <td>{{$orcamento['created_at']->format('d/m/Y')}} as {{$orcamento['created_at']->format('H:i')}}</td>
-                        <td class="table_rows">{{$orcamento['quantidade_produto']}}</td>
-                        <td class="table_rows">R$ {{$orcamento['valor_t_b']}}</td>
-                        <td class="table_rows">{{$orcamento['desconto']}}%</td>
-                        <td class="table_rows">R${{$orcamento['valor_f']}}</td>
-                        <td class="table_rows">{{$orcamento['status']}}</td>
+                        <td>{{$produto['nome']}}</td>
+                        <td>{{$produto['linha']['linha']}}</td>
+                        <td>{{$produto['modelo']['modelo']}}</td>
+
                         <td class="row">
                             <form method="GET">
                                 <button class="btn" type="submit">
@@ -87,12 +62,32 @@
                                 </button>
                             </form>
                         </td>
+                    </tr>
                     @endforeach
             </tbody>
         </table>
+        <form method="GET" action="{{route('orcamento_next')}}">
+            <div class="pt-4">
+                <a class="rounded-pill btn btn-md btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
+                <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Voltar</button>
+                <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Seguir</button>
+            </div>
+        </form>
     </div>
 
-    <x-footer/>
-</body>
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
 
+        @endif
+
+        @if($errors->all())
+            @foreach($errors->all() as $error)
+                <p>{{$error}}</p>
+            @endforeach
+        @endif
+
+        <x-footer/>
+    </body>
 </html>

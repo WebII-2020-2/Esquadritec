@@ -204,6 +204,16 @@
                     </li>
                 </ul>
 
+                <a href="#" onclick="icons('content_4')" class="content text-light">Orçamento</a>
+                <ul id="content_4" class="content_menu">
+                    <li>
+                        <a href="{{route('list_orcamento')}}" class="content text-light">Listar Orçamento</a>
+                    </li>
+                    <li>
+                        <a href="{{route('new_orcamento')}}" class="content text-light">Novo Orçamento</a>
+                    </li>
+                </ul>
+
                 <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
                 <ul id="content_2" class="content_menu">
                     <li>
@@ -227,7 +237,7 @@
                 <a href="#" onclick="icons('content_4')" class="content text-light">Modelo</a>
                 <ul id="content_4" class="content_menu">
                     <li>
-                        <a href="{{route('listModelo')}}" class="content text-light">Listar Modelos</a>
+                        <a href="{{route('list_modelo')}}" class="content text-light">Listar Modelos</a>
                     </li>
                     <li>
                         <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>

@@ -14,6 +14,7 @@ use App\Models\unidade as Unidades;
 use App\Models\Modelo as Model;
 use App\Models\Linha as Linha;
 use App\Models\Material as Material;
+use App\Models\Orcamento as Orcamento;
 
 class User extends Controller
 {
@@ -62,6 +63,7 @@ class User extends Controller
         $unidades = Unidades::all();
         $modelos = Model::all();
         $linhas = Linha::all();
+        $orcamentos = Orcamento::all();
         $materiais = Material::all();
         return view('user/dashboard', [
             'user' => Auth::user(),
@@ -71,6 +73,7 @@ class User extends Controller
             'modelos' => count($modelos),
             'linhas' => count($linhas),
             'materiais' => count($materiais),
+            'orcamentos' => count($orcamentos),
             'dataPoints' => $dataPoints,
         ]);
     }

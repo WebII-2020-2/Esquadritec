@@ -18,10 +18,9 @@ class cliente extends Model
         'email',
     ];
 
-
     public function endereco()
     {
-        $endereco = $this->hasOne(endereco::class, 'cliente', 'id');
+        $endereco = $this->hasMany(endereco::class, 'cliente', 'id');
         return $endereco;
     }
 }

@@ -53,7 +53,6 @@ class Material extends Controller
             $new_material->save();
             return redirect()->route('list_material')->with('succes', 'cadastrado');
         } catch (Expection $e) {
-
             return redirect()->route('listMaterial')->with('error', 'Falha de rede!');
         }
     }
