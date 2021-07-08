@@ -10,6 +10,24 @@
     function goBack() {
         window.history.back();
     }
+    function setStatus(){
+        var button = document.getElementById("status")
+        var buttonHid = document.getElementById("statusHid")
+
+        if (button.value == "PENDENTE"){
+            button.value = "APROVADO";
+            buttonHid.value = "APROVADO";
+            button.style.backgroundColor = "green";
+        } else if(button.value == "APROVADO"){
+            button.value = "RECUSADO";
+            buttonHid.value = "RECUSADO";
+            button.style.backgroundColor = "red";
+        } else{
+            button.value = "PENDENTE";
+            buttonHid.value = "PENDENTE";
+            button.style.backgroundColor = "blue";
+        }
+    }
 </script>
 
 <style>

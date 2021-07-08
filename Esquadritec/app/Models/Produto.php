@@ -18,4 +18,10 @@ class Produto extends Model
         'nome',
         'valor'
     ];
+    public function materiais()
+    {
+        $produto = $this->hasMany(materialProduto::class, 'produto');
+        $produto[0]['modelo'] = $this->hasOne(Modelo::class, 'id', 'modelo');
+        return $produto;
+    }
 }

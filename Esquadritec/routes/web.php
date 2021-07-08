@@ -68,9 +68,11 @@ Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard/orcamento', [Orcamento::class, 'index'])->name('list_orcamento');
     Route::get('/dashboard/orcamento/new', [Orcamento::class, 'create'])->name('new_orcamento');
     Route::get('/dashboard/orcamento/new/produto', [Orcamento::class, 'orcamento_p'])->name('orcamento_p');
+    Route::get('/dashboard/orcamento/new/produto/rem/{id}', [Orcamento::class, 'orcamento_p_rem'])->name('orcamento_p_rem');
     Route::get('/dashboard/orcamento/new/produto/add', [Orcamento::class, 'orcamento_p_add'])->name('orcamento_p_add');
     Route::get('/dashboard/orcamento/new/material', [Orcamento::class, 'orcamento_material'])->name('orcamento_material');
     Route::post('/dashboard/orcamento/new/material/add', [Orcamento::class, 'orcamento_material_add'])->name('orcamento_material_add');
+    Route::get('/dashboard/orcamento/new/material/rem/{id}', [Orcamento::class, 'orcamento_material_rem'])->name('orcamento_material_rem');
     Route::post('/dashboard/orcamento/new/produto/set', [Orcamento::class, 'orcamento_p_set'])->name('orcamento_p_set');
     Route::post('/dashboard/orcamento/new/set', [Orcamento::class, 'orcamento_set'])->name('orcamento_set');
     Route::get('/dashboard/orcamento/new/next', [Orcamento::class, 'orcamento_next'])->name('orcamento_next');

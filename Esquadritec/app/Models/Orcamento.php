@@ -18,4 +18,9 @@ class Orcamento extends Model
         'valor_f'
     ];
     use HasFactory;
+
+    public function produtos()
+    {
+        return $this->hasMany(Produto::class, 'orcamento', 'id');
+    }
 }

@@ -76,10 +76,31 @@ class Orcamento extends Controller
     public function orcamento_p()
     {
         $orcamento = session()->get('newOrcamento');
+        foreach($orcamento['produtos'] as $key=>$produto){
+            $valor=0;
+            foreach($produto['materiais'] as $material){
+                $valor+=$material['material']['valor']*$material['quantidade'];
+            }
+            $orcamento['produtos'][$key]['valor'] = $valor;
+        }
+        session()->put('newOrcamento', $orcamento);
         // dd($orcamento);
         return view('orcamento/orcamento_produto', [
             'orcamento'=>$orcamento,
         ]);
+    }
+
+    public function orcamento_p_rem($id)
+    {
+        try{
+            $orcamento = session()->get('newOrcamento');
+            unset($orcamento['produtos'][$id]);
+            session()->put('newOrcamento', $orcamento);
+
+            return redirect()->route('orcamento_p')->with('succes', 'Removido');
+        }catch(Ecxeption $e){
+            return redirect()->route('list_material')->with('error', 'Falha de rede!');
+        }
     }
 
     public function orcamento_p_add()
@@ -92,6 +113,19 @@ class Orcamento extends Controller
             'modelos'=>$modelos,
             'materiais'=>$materiais,
         ]);
+    }
+
+    public function orcamento_material_rem($id)
+    {
+        try{
+            $materiais = session()->get('materiais');
+            unset($materiais[$id]);
+            $materiais = session()->put('materiais',$materiais);
+
+            return redirect()->route('orcamento_p_add')->with('succes', 'Removido');
+        }catch(Ecxeption $e){
+            return redirect()->route('list_material')->with('error', 'Falha de rede!');
+        }
     }
 
     public function orcamento_material()
@@ -227,7 +261,34 @@ class Orcamento extends Controller
      */
     public function show($id)
     {
-        //
+        try{
+            $orcamento = Orcament::where('id', $id)->first();
+            $orcamento['cliente'] = (Cliente::where('id', $orcamento['cliente'])->first())->toArray();
+            $produtos = (Produto::where('orcamento', $id)->get())->toArray();
+            
+            foreach($produtos as $key=>$value){
+                $materiais = [];
+                $produtos[$key]['modelo'] = (Modelo::where('id', $value['modelo'])->first())->toArray();
+                $produtos[$key]['linha'] = (Linha::where('id', $value['linha'])->first())->toArray();
+                $material = materialProduto::where('produto', $value['id'])->get();
+
+                foreach($material as $mat){
+                    $value = (Material::where('id', $mat['material'])->first())->toArray();
+                    $value['quantidade'] = $mat['quantidade'];
+                    $value['unidade_medida'] = (unidade::where('id', $value['unidade_medida'])->first())->toArray();
+                    array_push($materiais, $value);
+                }
+                $produtos[$key]['materiais'] = $materiais;
+            }
+
+            // dd($produtos);
+            return view('orcamento/showOrcamento', [
+                'orcamento'=>$orcamento,
+                'produtos'=>$produtos,
+            ]);
+        }catch(Ecxeption $e){
+            return redirect()->route('list_orcamento')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -238,7 +299,33 @@ class Orcamento extends Controller
      */
     public function edit($id)
     {
-        //
+        try{
+            $orcamento = Orcament::where('id', $id)->first();
+            $orcamento['cliente'] = (Cliente::where('id', $orcamento['cliente'])->first())->toArray();
+            $produtos = (Produto::where('orcamento', $id)->get())->toArray();
+            
+            foreach($produtos as $key=>$value){
+                $materiais = [];
+                $produtos[$key]['modelo'] = (Modelo::where('id', $value['modelo'])->first())->toArray();
+                $produtos[$key]['linha'] = (Linha::where('id', $value['linha'])->first())->toArray();
+                $material = materialProduto::where('produto', $value['id'])->get();
+
+                foreach($material as $mat){
+                    $value = (Material::where('id', $mat['material'])->first())->toArray();
+                    $value['unidade_medida'] = (unidade::where('id', $value['unidade_medida'])->first())->toArray();
+                    array_push($materiais, $value);
+                }
+                $produtos[$key]['materiais'] = $materiais;
+            }
+
+            // dd($orcamento);
+            return view('orcamento/editOrcamento', [
+                'orcamento'=>$orcamento,
+                'produtos'=>$produtos,
+            ]);
+        }catch(Ecxeption $e){
+            return redirect()->route('list_orcamento')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -248,9 +335,24 @@ class Orcamento extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        try {
+            $valor = ($request->valor_t - ($request->valor_t * ($request->desconto/100)));
+            $orcamento = [
+                'observacao'=>$request->observacao,
+                'desconto'=>$request->desconto,
+                'valor_f'=>$valor,
+                'status'=>$request->status
+            ];
+            // dd($request);
+    
+            Orcament::where('id', $request->id)->update($orcamento);
+
+            return redirect()->route('list_orcamento')->with('succes', 'Atualizado');
+        } catch (Exception $e) {
+            return redirect()->route('list_orcamento')->with('error', 'Falha de rede!');
+        }
     }
 
     /**
@@ -261,6 +363,13 @@ class Orcamento extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            // dd($id);
+            $orcamento = Orcament::where('id', $id)->delete();
+
+            return redirect()->route('list_orcamento')->with('succes', 'Deletado!!');
+        } catch (Exception $e) {
+            return redirect()->route('list_orcamento')->with('error', 'Falha de rede!');
+        }
     }
 }
