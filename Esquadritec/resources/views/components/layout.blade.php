@@ -234,8 +234,8 @@
                     </li>
                 </ul>
 
-                <a href="#" onclick="icons('content_4')" class="content text-light">Modelo</a>
-                <ul id="content_4" class="content_menu">
+                <a href="#" onclick="icons('content_5')" class="content text-light">Modelo</a>
+                <ul id="content_5" class="content_menu">
                     <li>
                         <a href="{{route('list_modelo')}}" class="content text-light">Listar Modelos</a>
                     </li>
