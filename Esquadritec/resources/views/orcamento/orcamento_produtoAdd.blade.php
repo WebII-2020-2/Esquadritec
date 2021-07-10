@@ -17,7 +17,7 @@
 
             <h2 class="text-dark font-monospace py-4">Adicionar Produto</h2>
 
-            <div class="card center-div text-white" style="min-width: 700px;height: 100%;">
+            <div class="card-generico center-div text-white" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('orcamento_p_set')}}">
                     @csrf
                     <div class="row p-3 center-div pt-5" style="width: 300px;">
@@ -89,19 +89,6 @@
                 </div>
             </div>
         </div>
-
-        @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
-
-        @endif
-
-        @if($errors->all())
-            @foreach($errors->all() as $error)
-                <p>{{$error}}</p>
-            @endforeach
-        @endif
 
         <x-footer/>
     </body>

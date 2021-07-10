@@ -17,7 +17,7 @@
         <a type="button" class="btn btn-primary btn-sm" href="{{route('new_funcionario')}}">ADICIONAR +</a>
     </div>
 
-    <div class="card table" style="height:100%; padding-bottom: 0%;">
+    <div class="card-generico table" style="height:100%; padding-bottom: 0%;">
         <table class="table table-sm center">
             <thead>
                 <tr>

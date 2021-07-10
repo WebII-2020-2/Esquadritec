@@ -33,7 +33,7 @@
                 </tbody>
             </table>
 
-        <div class="card table">
+        <div class="card-generico table">
         <h2 class="text-dark font-monospace py-4">Produtos</h2>
         <table class="table table-sm">
             <thead>
@@ -64,19 +64,6 @@
             </div>
         </form>
     </div>
-
-        @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
-
-        @endif
-
-        @if($errors->all())
-            @foreach($errors->all() as $error)
-                <p>{{$error}}</p>
-            @endforeach
-        @endif
 
         <x-footer/>
     </body>

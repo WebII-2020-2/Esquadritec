@@ -27,7 +27,7 @@
         <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
             <a type="button" class="btn btn-primary btn-sm" href="{{route('orcamento_p_add')}}">+ PRODUTO</a>
         </div>
-        <div class="card table">
+        <div class="card-generico table">
         <table class="table table-sm">
             <thead>
                 <tr>
@@ -70,19 +70,6 @@
             </div>
         </form>
     </div>
-
-        @if(session()->has('message'))
-            <div class="alert alert-success">
-                {{ session()->get('message') }}
-            </div>
-
-        @endif
-
-        @if($errors->all())
-            @foreach($errors->all() as $error)
-                <p>{{$error}}</p>
-            @endforeach
-        @endif
 
         <x-footer/>
     </body>

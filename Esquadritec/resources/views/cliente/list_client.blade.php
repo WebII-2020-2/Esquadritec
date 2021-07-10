@@ -18,7 +18,7 @@
         <a type="button" class="btn btn-primary btn-sm" href="{{route('new_cliente')}}">ADICIONAR +</a>
     </div>
 
-    <div class="card table">
+    <div class="card-generico table">
         <table class="table table-sm center">
             <thead>
                 <tr>
@@ -70,6 +70,8 @@
             </tbody>
         </table>
     </div>
+
+    <x-footer/>
 
     <script src="{{ asset('site/jquery.js') }}" async defer></script>
     <script src="{{ asset('site/bootstrap.js') }}" async defer></script>

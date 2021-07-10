@@ -55,7 +55,7 @@
     <div class="py-4 center" style="min-height: 200px;">
         <h2 class="text-main font-monospace ">NOVA LINHA</h2>
 
-        <div class="card center-div" style="width: 500px;min-height: 100%;">
+        <div class="card-generico center-div" style="width: 500px;min-height: 100%;">
             <form class="" style="height: 100%;" action="{{route('edite_linha_do')}}" method="POST">
                 @csrf
                 <input type="hidden" value="{{$linha->id}}" name="id">

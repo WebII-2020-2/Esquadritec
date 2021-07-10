@@ -21,17 +21,7 @@
         <a type="button" class="btn btn-primary btn-sm" href="{{route('new_linha')}}">ADICIONAR +</a>
     </div>
 
-    @if(session()->has('errors'))
-        <div style="position: absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-            <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
-        </div>
-    @elseif(session()->has('succes'))
-        <div style="position: absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-            <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
-        </div>
-    @endif
-
-    <div class="card table">
+    <div class="card-generico table">
         <table class="table table-sm">
             <thead>
                 <tr>

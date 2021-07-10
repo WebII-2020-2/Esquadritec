@@ -13,19 +13,9 @@
     <body>
         <x-layout/>
 
-        @if(session()->has('errors'))
-            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
-                <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('error')}}</p>
-            </div>
-        @elseif(session()->has('succes'))
-            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
-                <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
-            </div>
-        @endif
-
         <div class="py-4 center">
            <h2 class="text-dark font-monospace py-4">Novo Funcionário</h2>
-            <div class="card center-div text-white" style="min-width: 700px;height: 100%;">
+            <div class="card-generico center-div text-white" style="min-width: 700px;height: 100%;">
                 <div class="right" style="margin-right: 20%;">
                     <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('new_funcionario_do')}}">
                         @csrf

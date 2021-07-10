@@ -90,7 +90,7 @@
         <div class="py-4 center">
             <h2 class="text-black font-monospace py-4">Novo Cliente</h2>
 
-            <div class="card center-div text-white pr-5" style="min-width: 700px;height: 100%;">
+            <div class="card-generico center-div text-white pr-5" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%;" method="POST" action="{{route('new_cliente_do')}}">
                     @csrf
                     <div class="full-width pr-5 right mb-2">
@@ -152,6 +152,8 @@
                 </form>
             </div>
         </div>
+
+        <x-footer/>
 
     </body>
 

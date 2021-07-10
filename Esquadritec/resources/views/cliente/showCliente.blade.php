@@ -45,6 +45,6 @@
             <h4 id="nome">{{$key+1}} - {{ $fone->numero }}</h4>
         @endforeach
 
-        
+        <x-footer/>
     </body>
 </html>

@@ -85,7 +85,7 @@
     <div class="py-4 center">
         <h2 class="text-black font-monospace py-4">Editar Cliente {{$cliente->name}}</h2>
 
-        <div class="card center-div text-white pr-5" style="min-width: 500px;height: 100%;">
+        <div class="card-generico center-div text-white pr-5" style="min-width: 500px;height: 100%;">
             <form class="" style="height: 100%;" method="POST" action="{{route('edite_cliente_do',['id'=>$cliente->id])}}">
                 @csrf
                 <input type="hidden" value="{{$cliente->id}}" name="id">
@@ -148,6 +148,8 @@
             </form>
         </div>
     </div>
+
+    <x-footer/>
 
 </body>
 

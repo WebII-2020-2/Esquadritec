@@ -7,16 +7,6 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('site/style.css')}}">
-        <style>
-            .coar_graphic{
-                width:100%;
-                border-radius: 10px;
-                border:solid 1px #295C8A;
-                display:inline-block;
-                padding:10px;
-                margin-top:20px;
-            }
-        </style>
 
         <script>
             window.onload = function () {
@@ -163,17 +153,7 @@
                     </div>
                 </div>
             </div>
-        </div>   
-
-        @if(session()->has('errors'))
-            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-                <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
-            </div>
-        @elseif(session()->has('succes'))
-            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-                <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
-            </div>
-        @endif
+        </div>
 
         <!-- grafico -->
         <div class="coar_graphic">
@@ -182,6 +162,8 @@
             </h2>
             <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         </div>
+
+        <x-footer/>
 
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <script src="{{ asset('site/jquery.js') }}" async defer></script>

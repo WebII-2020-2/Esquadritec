@@ -84,19 +84,11 @@
                     <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="width: 50%;"
                         type="submit">Entrar</button>
                 </form>
-                
-                @if(session()->has('errors'))
-                    <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-                        <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
-                    </div>
-                @elseif(session()->has('succes'))
-                    <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-                        <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
-                    </div>
-                @endif
             </div>
         </div>
     </div>
+
+    <x-footer/>
 
 
     <script src="{{ asset('site/jquery.js') }}" async defer></script>

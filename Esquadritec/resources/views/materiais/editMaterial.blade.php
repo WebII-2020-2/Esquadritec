@@ -57,17 +57,7 @@
     <div class="py-4 center" style="min-height: 200px;">
         <h2 class="text-main font-monospace ">EDITAR MATERIAL {{strtoupper($material->nome)}}</h2>
 
-        @if(session()->has('errors'))
-        <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-            <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
-        </div>
-        @elseif(session()->has('succes'))
-        <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:1;">
-            <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
-        </div>
-        @endif
-
-        <div class="card center-div bg-main" style="width: 500px;min-height: 100%;">
+        <div class="card-generico center-div bg-main" style="width: 500px;min-height: 100%;">
             <form class="" style="height: 100%;" method="POST" action="{{ route('edite_material_do') }}">
                 @csrf
                 <div class="row p-3 center-div pt-5" style="width: 300px;">
