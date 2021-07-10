@@ -80,11 +80,11 @@
                     @csrf
                     <div class="row p-3 center-div pt-5" style="width: 300px;">
                         <label for="modelo" class="pr-2 col-form-label" style="color: white">Modelo:</label>
-                        <input id="modelo" type="text" name="modelo" class="form-control" placeholder="">
+                        <input id="modelo" type="text" name="modelo" class="form-control input-3" placeholder="">
                     </div>
                     <div class="center-div bottom-div w-auto">
-                        <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Cancelar</button>
-                        <button class="rounded-pill btn btn-md btn-green" type="submit">Adicionar</button>
+                        <button class="rounded-pill btn btn-sm btn-danger ml-2" onClick="goBack()" type="reset">Cancelar</button>
+                        <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Adicionar</button>
                     </div>
                 </form>
             </div>
