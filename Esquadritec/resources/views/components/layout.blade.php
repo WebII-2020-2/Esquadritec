@@ -193,18 +193,7 @@
                 <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
                     onclick="closeNav()"><b>&times;</b></a>
 
-                <a href="#" onclick="icons('content_1')" class="content text-light" style="margin-top:60px">Cliente</a>
-                <ul id="content_1" class="content_menu">
-                    <li>
-                        <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
-                        <a href="{{route('list_cliente')}}" class="content text-light">Listar Clientes</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
-                    </li>
-                </ul>
-
-                <a href="#" onclick="icons('content_4')" class="content text-light">Orçamento</a>
+                <a href="#" onclick="icons('content_4')" class="content text-light" style="margin-top:60px">Orçamento</a>
                 <ul id="content_4" class="content_menu">
                     <li>
                         <a href="{{route('list_orcamento')}}" class="content text-light">Listar Orçamento</a>
@@ -214,13 +203,14 @@
                     </li>
                 </ul>
 
-                <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
-                <ul id="content_2" class="content_menu">
+                <a href="#" onclick="icons('content_1')" class="content text-light">Cliente</a>
+                <ul id="content_1" class="content_menu">
                     <li>
-                        <a href="{{route('list_funcionario')}}" class="content text-light">Listar Funcionários</a>
+                        <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
+                        <a href="{{route('list_cliente')}}" class="content text-light">Listar Clientes</a>
                     </li>
                     <li>
-                        <a href="{{route('new_funcionario')}}" class="content text-light">Novo Funcionário</a>
+                        <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
                     </li>
                 </ul>
 
@@ -241,6 +231,26 @@
                     </li>
                     <li>
                         <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>
+                    </li>
+                </ul>
+
+                <a href="#" onclick="icons('content_6')" class="content text-light">Linha</a>
+                <ul id="content_6" class="content_menu">
+                    <li>
+                        <a href="" class="content text-light">Listar Linhas</a>
+                    </li>
+                    <li>
+                        <a href="" class="content text-light">Nova Linha</a>
+                    </li>
+                </ul>
+
+                <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
+                <ul id="content_2" class="content_menu">
+                    <li>
+                        <a href="{{route('list_funcionario')}}" class="content text-light">Listar Funcionários</a>
+                    </li>
+                    <li>
+                        <a href="{{route('new_funcionario')}}" class="content text-light">Novo Funcionário</a>
                     </li>
                 </ul>
 
