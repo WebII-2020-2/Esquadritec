@@ -31,11 +31,11 @@
                     <div class="row" style="margin-bottom: 2%; margin-top:4%;">
                         <div class="col">
                             <label for="material">Material:</label>
-                            <input id="material" class="input-3" type="text" name="material" required>
+                            <input id="material" class="input-3" type="text" name="nome" required>
                         </div>
                         <div class="col">
                             <label for="value" class="">Valor:</label>
-                            <input id="value" class="input-3" style="width: 35%;" type="number" name="value">
+                            <input id="value" class="input-3" style="width: 35%;" type="number" name="valor">
                         </div>
                     </div>
                     <div class="row" style="margin-bottom: 2%;">

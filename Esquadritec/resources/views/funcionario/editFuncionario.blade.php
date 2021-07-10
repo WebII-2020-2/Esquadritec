@@ -7,81 +7,6 @@
         <meta name="description" content="Tela de novo usuário">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('site/style.css')}}">
-
-        <style>
-            .card {
-                background-color: #295C8A;
-                border-radius: 28px;
-                height: 255px;
-            }
-
-            .center {
-                text-align: center;
-            }
-
-            .center-div {
-                margin: auto;
-                width: 50%;
-                padding: 10px;
-            }
-
-            .form-control {
-                width: 65%;
-            }
-
-            .bottom-div {
-                position: absolute;
-                bottom: 20%;
-                left: 25%;
-            }
-
-            #body {
-                color: blue;
-            }
-
-            .full-width {
-                width: 100%;
-            }
-
-            .input {
-                position: relative;
-                padding-top: 10px;
-                margin-top: 10px;
-            }
-
-            .card {
-                padding: 20px;
-                background-color: #295C8A;
-                border-radius: 28px;
-            }
-
-            .btn {
-                height: 30px;
-                text-align: center;
-            }
-
-            .right {
-                text-align: right;
-            }
-
-            .input-3 {
-                width: 30%;
-                border-radius: 10px;
-                border: solid 1px white;
-            }
-
-            .space {
-                margin-left: 89px;
-            }
-
-            h2 {
-                font-size: 30px;
-                font-weight: 650;
-
-            }
-
-        </style>
-
     </head>
 
     <body>
@@ -104,21 +29,24 @@
                     @csrf
                     <input type="hidden" value="{{$funcionario->id}}" name="id">
                     <div class="full-width mb-2 center">
-                        <label for="user">Usuário:</label>
-                        <input id="user" class="input-3" type="text" name="name" value="{{$funcionario->name}}" required>
+                        <div>
+                            <label for="user">Usuário:</label>
+                            <input id="user" class="input-4" type="text" name="name" value="{{$funcionario->name}}" required>
+                        </div>
 
-                        <label for="email" class="space">Email:</label>
-                        <input id="email" class="input-3" type="text" name="email" value="{{$funcionario->email}}">
+                        <div>
+                            <label for="email" class="space">Email:</label>
+                            <input id="email" class="input-3" type="text" name="email" value="{{$funcionario->email}}">
+                        </div>
 
-                    </div>
-
-                    <div class="mb-2" style="text-align: left;">
-                        <label for="admin" style="margin-left: 55px;">Admin:</label>
-                        @if ($funcionario->admin == 1)
-                            <input id="admin" type="checkbox" name="admin" value="1" checked>
-                        @else
-                            <input id="admin" type="checkbox" name="admin" value="1">
-                        @endif
+                        <div class="mb-2" style="text-align: left;">
+                            <label for="admin" style="margin-left: 55px;">Admin:</label>
+                            @if ($funcionario->admin == 1)
+                                <input id="admin" type="checkbox" name="admin" value="1" checked>
+                            @else
+                                <input id="admin" type="checkbox" name="admin" value="1">
+                            @endif
+                        </div>
                     </div>
 
                     <div class="pt-4">

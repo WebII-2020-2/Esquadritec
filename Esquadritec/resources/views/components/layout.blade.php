@@ -237,10 +237,10 @@
                 <a href="#" onclick="icons('content_6')" class="content text-light">Linha</a>
                 <ul id="content_6" class="content_menu">
                     <li>
-                        <a href="" class="content text-light">Listar Linhas</a>
+                        <a href="{{route('list_linha')}}" class="content text-light">Listar Linhas</a>
                     </li>
                     <li>
-                        <a href="" class="content text-light">Nova Linha</a>
+                        <a href="{{route('new_linha')}}" class="content text-light">Nova Linha</a>
                     </li>
                 </ul>
 

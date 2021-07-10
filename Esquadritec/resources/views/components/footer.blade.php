@@ -92,6 +92,12 @@
         border: solid 1px white;
     }
 
+    .input-4 {
+        width: 40%;
+        border-radius: 10px;
+        border: solid 1px white;
+    }
+
     h2 {
         font-size: 30px;
         font-weight: 650;

@@ -12,18 +12,19 @@
 
     <body>
         <x-layout/>
+
+        @if(session()->has('errors'))
+            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
+                <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('error')}}</p>
+            </div>
+        @elseif(session()->has('succes'))
+            <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
+                <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
+            </div>
+        @endif
+
         <div class="py-4 center">
            <h2 class="text-dark font-monospace py-4">Novo Funcionário</h2>
-
-            @if(session()->has('errors'))
-                <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
-                    <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('errors')}}</p>
-                </div>
-            @elseif(session()->has('succes'))
-                <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
-                    <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
-                </div>
-            @endif
             <div class="card center-div text-white" style="min-width: 700px;height: 100%;">
                 <div class="right" style="margin-right: 20%;">
                     <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('new_funcionario_do')}}">
@@ -34,15 +35,15 @@
                         </div>
                         <div class="right" style="margin-bottom: 1%;">
                             <label for="email" class="space">Email:</label>
-                            <input id="email" style="width: 60%;"  class="input-3" type="text" name="email">
+                            <input id="email" style="width: 60%;"  class="input-3" type="text" name="email" required>
                         </div>
                         <div class="right" style="margin-bottom: 1%;">
                             <label for="password" style="margin-left: 12px;">Senha:</label>
-                            <input id="password" style="width: 60%;"  class="input-3" type="password" name="password">
+                            <input id="password" style="width: 60%;"  class="input-3" type="password" name="password" required>
                         </div>
                         <div class="right" style="margin-bottom: 1%;">
                             <label for="confir_password" style="margin-left: 10px;">Confirmar Senha:</label>
-                            <input id="confir_password" style="width: 60%;"  class="input-3" type="password" name="password_2">
+                            <input id="confir_password" style="width: 60%;"  class="input-3" type="password" name="password_2" required>
                         </div>
                         <div style="margin-right: 58.5%;">
                             <label for="admin" style="margin-left: 55px;">Admin:</label>
