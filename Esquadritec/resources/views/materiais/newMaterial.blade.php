@@ -9,80 +9,6 @@
 
     <title>Cadastro material</title>
 </head>
-
-<style>
-.card {
-                background-color: #318A90;
-                border-radius: 28px;
-                height: 255px;
-            }
-
-            .center {
-                text-align: center;
-            }
-
-            .center-div {
-                margin: auto;
-                width: 50%;
-                padding: 10px;
-            }
-
-            .form-control {
-                width: 65%;
-            }
-
-            .bottom-div {
-                position: absolute;
-                bottom: 20%;
-                left: 25%;
-            }
-
-            #body {
-                color: blue;
-            }
-
-            .full-width {
-                width: 100%;
-            }
-
-            .input {
-                position: relative;
-                padding-top: 10px;
-                margin-top: 10px;
-            }
-
-            .card {
-                padding: 20px;
-                background-color: #295C8A;
-                border-radius: 28px;
-            }
-
-            .btn {
-                height: 30px;
-                text-align: center;
-            }
-
-            .right {
-                text-align: right;
-            }
-
-            .input-3 {
-                width: 20%;
-                border-radius: 10px;
-                border: solid 1px white;
-            }
-
-            .space {
-                margin-left: 20%;
-            }
-
-            h2 {
-                font-size: 30px;
-                font-weight: 650;
-            }
-   
-</style>
-
 <body>
 
     <x-layout />
@@ -99,26 +25,29 @@
                 </div>
             @endif
 
-            <div class="card center-div text-white" style="min-width: 500px;height: 100%;">
+            <div class="card center-div text-white" style="width: 500px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('new_material_do')}}">
                     @csrf
-                    <div class="full-width mb-2 center">
-                        <label for="material">Material:</label>
-                        <input id="material" class="input-3" type="text" name="material" required>
-
-                        <label for="value" class="space">Valor:</label>
-                        <input id="value" class="input-3" style="width: 10%;" type="number" name="value">
-
+                    <div class="row" style="margin-bottom: 2%; margin-top:4%;">
+                        <div class="col">
+                            <label for="material">Material:</label>
+                            <input id="material" class="input-3" type="text" name="material" required>
+                        </div>
+                        <div class="col">
+                            <label for="value" class="">Valor:</label>
+                            <input id="value" class="input-3" style="width: 35%;" type="number" name="value">
+                        </div>
+                    </div>
+                    <div class="row" style="margin-bottom: 2%;">
+                        <div class="col-6" style="margin-left: 1%;">
+                        <label for="codigo">Código:</label>
+                        <input id="codigo"class="input-3" type="text" name="codigo">
+                        </div>
                     </div>
 
-                    <div class="full-width mb-2" style="margin-left: -19%;">
-                        <label for="codigo" style="margin-left: 12px;">Código:</label>
-                        <input id="codigo" class="input-3" type="text" name="codigo">
-                    </div>
-
-                    <div class="full-width mb-2" style="margin-left: -19%;">
+                    <div class="row" style="margin-left: 6%;">
                         <label for="inputInudadeMedida">Unidade de Medida:</label>
-                            <select id="inputUnidadeMedida" name="unidade_medida" class="form-select form-control space" style="width: 10%;">
+                            <select id="inputUnidadeMedida" name="unidade_medida" class="form-select form-control space" style="margin-left: 1%; width: 15%; font-size:11px;">
 
                                 @foreach ($unidades as $unidade)
 
@@ -129,7 +58,7 @@
                             </select>
                     </div>
 
-                    <div class="pt-4">
+                    <div class="pt-4" style="margin-bottom:4%;">
                         <a href="{{route('dashboard')}}" class="rounded-pill btn btn-sm btn-danger mr-5" type="reset">Cancelar</a>
                         <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Confirmar</button>
                     </div>
