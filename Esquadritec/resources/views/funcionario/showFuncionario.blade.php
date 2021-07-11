@@ -15,7 +15,7 @@
 
 <body>
     <x-layout/>
-    <h2>{{$funcionario->name}}</h2>
+    <h2 class="text-black font-monospace py-4">{{$funcionario->name}}</h2>
 
     <div class="card-generico table">
         <table class="table table-sm center">

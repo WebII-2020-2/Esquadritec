@@ -14,7 +14,7 @@
 
     <x-layout/>
     
-    <h2>Lista de Orçamento</h2>
+    <h2 class="text-black font-monospace py-4 text-center">Lista de Orçamento</h2>
 
     <div class="col-lg-12" style="text-align: right; margin-bottom: 0.5%;">
         <a type="button" href="{{route('new_orcamento')}}" class="btn btn-primary btn-sm">ADICIONAR +</a>
@@ -25,11 +25,8 @@
             <thead>
                 <tr>
                     <th scope="col" class="table_first_row">CLIENTE</th>
-                    <th scope="col" class="table_first_row">CPF</th>
-                    <th scope="col" class="table_first_row">CNPJ</th>
                     <th scope="col" class="table_first_row">TELEFONE</th>
                     <th scope="col" class="table_first_row">EMAIL</th>
-                    <th scope="col" class="table_first_row">ENDERECO PRINCIPAL</th>
                     <th scope="col" class="table_first_row">DATA DE EMISSÃO</th>
                     <th scope="col" class="table_first_row">Q. PRODUTO</th>
                     <th scope="col" class="table_first_row">VALOR TOTAL</th>
@@ -43,16 +40,8 @@
                     @foreach($orcamentos as $orcamento)
                         <tr>
                             <td class="table_rows">{{$orcamento['cliente']->name}}</td>
-                            <td class="table_rows">{{$orcamento['cliente']->cpf}}</td>
-                            <td class="table_rows">{{$orcamento['cliente']->cnpj}}</td>
                             <td class="table_rows">{{$orcamento['cliente']->telefone}}</td>
                             <td class="table_rows">{{$orcamento['cliente']->email}}</td>
-                            <td class="table_rows">
-                            {{$orcamento['cliente']->endereco[0]['cidade']}};
-                            Rua {{$orcamento['cliente']->endereco[0]['rua']}};
-                            Bairro {{$orcamento['cliente']->endereco[0]['bairro']}};
-                            Nº {{$orcamento['cliente']->endereco[0]['numero']}}
-                            </td>
                             <td>{{$orcamento['created_at']->format('d/m/Y')}} as {{$orcamento['created_at']->format('H:i')}}</td>
                             <td class="table_rows">{{$orcamento['quantidade_produto']}}</td>
                             <td class="table_rows">R$ {{$orcamento['valor_t_b']}}</td>

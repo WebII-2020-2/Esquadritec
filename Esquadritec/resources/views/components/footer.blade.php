@@ -33,11 +33,16 @@
 <style>
      .card-generico {
         padding: 20px;
+        padding-bottom: 0.5%;
         background-color: #295C8A;
         border-radius: 28px;
     }
 
     .card-generico tr{
+        color: white;
+    }
+
+    .card-generico button{
         color: white;
     }
 

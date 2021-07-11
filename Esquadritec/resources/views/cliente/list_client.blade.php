@@ -12,8 +12,7 @@
 
 <body>
     <x-layout/>
-    <h2 class="text-black font-monospace py-4 text-center">Lista de Clientes</h2>
-    
+    <h2 class="text-black font-monospace py-4 text-center">Lista de Clientes</h2> 
     <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
         <a type="button" class="btn btn-primary btn-sm" href="{{route('new_cliente')}}">ADICIONAR +</a>
     </div>
@@ -23,8 +22,7 @@
             <thead>
                 <tr>
                 <th scope="col" class="table_first_row">NOME</th>
-                <th scope="col" class="table_first_row">CPF</th>
-                <th scope="col" class="table_first_row">CNPJ</th>
+                <th scope="col" class="table_first_row">TELEFONE</th>
                 <th scope="col" class="table_first_row">EMAIL</th>
                 <th scope="col" class="table_first_row">AÇÕES</th>
                 </tr>
@@ -33,12 +31,11 @@
                 @foreach($cliente as $cli)
                     <tr>
                         <td class="table_rows">{{$cli->name}}</td>
-                        <td class="table_rows">{{$cli->cpf}}</td>
-                        <td class="table_rows">{{$cli->cnpj}}</td>
+                        <td class="table_rows">{{$cli->telefone}}</td>
                         <td class="table_rows">{{$cli->email}}</td>
 
                         <td class="row">
-                            <form method="GET" action="{{route('show_cliente', ['id'=>$cli->id])}}">
+                            <form method="GET" style="margin-left: 30%;" action="{{route('show_cliente', ['id'=>$cli->id])}}">
                                 <button class="btn" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
