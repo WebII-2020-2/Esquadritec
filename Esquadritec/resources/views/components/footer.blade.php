@@ -48,12 +48,14 @@
         padding: 3%;
         padding-bottom: 0.5%;
         border-radius: 28px;
+        border-color: blue;
     }
     .card-orcamento-previo{
         padding: 20px;
         padding-bottom: 0.5%;
         background-color: #CCCCCC;
         border-radius: 28px;
+        border-style: solid;
     }
 
     .card-orcamento-previo td{
