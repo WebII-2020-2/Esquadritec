@@ -78,6 +78,9 @@
         animation: opacity 5s;
         /* IE 10+, Fx 29+ */
     }
+    .space{
+        margin-bottom:50px;
+    }
 
     .toHome {
         text-align: center;
@@ -157,6 +160,12 @@
         display: none;
         font-size: 20px;
     }
+    .navItens{
+        padding: 0px;
+        margin:0px;
+        width:100%;
+        height: 50px;
+    }
 
     ul {
         list-style-type: none;
@@ -176,8 +185,8 @@
 </script>
 
 <div class="menu_bar">
-    <nav class="navbar navbar-expand-lg navbar-light bg-main">
-        <div class="container row col-12 d-flex justify-content-between" style="padding-right:0px;">
+    <nav class="navItens bg-main">
+        <div class="container row" style="padding-right:0px; width:100%;text-align:center">
             <!-- barra de menu slice -->
             <div class="">
                 <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
@@ -189,109 +198,107 @@
                 </span>
             </div>
 
+            <div class="align-items-center col d-flex" style="text-align:center">
+                <div id="mySidenav" class="sidenav bg-main">
+                    <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
+                        onclick="closeNav()"><b>&times;</b></a>
 
-            <div id="mySidenav" class="sidenav bg-main">
-                <div id="menu_bar" class="logo">
-                    <!-- <h5 class="text-light" style="position: absolute; bottom: 0;">ESQUADRITEC</h5>-->
+                    <a href="#" onclick="icons('content_4')" class="content text-light" style="margin-top:60px">Orçamento</a>
+                    <ul id="content_4" class="content_menu">
+                        <li>
+                            <a href="{{route('list_orcamento')}}" class="content text-light">Listar Orçamento</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_orcamento')}}" class="content text-light">Novo Orçamento</a>
+                        </li>
+                    </ul>
+
+                    <a href="#" onclick="icons('content_1')" class="content text-light">Cliente</a>
+                    <ul id="content_1" class="content_menu">
+                        <li>
+                            <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
+                            <a href="{{route('list_cliente')}}" class="content text-light">Listar Clientes</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
+                        </li>
+                    </ul>
+
+                    <a href="#" onclick="icons('content_3')" class="content text-light">Material</a>
+                    <ul id="content_3" class="content_menu text-light">
+                        <li>
+                            <a href="{{ route('list_material') }}" class="content text-light">Listar Materiais</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_material')}}" class="content text-light">Novo Material</a>
+                        </li>
+                    </ul>
+
+                    <a href="#" onclick="icons('content_5')" class="content text-light">Modelo</a>
+                    <ul id="content_5" class="content_menu">
+                        <li>
+                            <a href="{{route('list_modelo')}}" class="content text-light">Listar Modelos</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>
+                        </li>
+                    </ul>
+
+                    <a href="#" onclick="icons('content_6')" class="content text-light">Linha</a>
+                    <ul id="content_6" class="content_menu">
+                        <li>
+                            <a href="{{route('list_linha')}}" class="content text-light">Listar Linhas</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_linha')}}" class="content text-light">Nova Linha</a>
+                        </li>
+                    </ul>
+
+                    <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
+                    <ul id="content_2" class="content_menu">
+                        <li>
+                            <a href="{{route('list_funcionario')}}" class="content text-light">Listar Funcionários</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_funcionario')}}" class="content text-light">Novo Funcionário</a>
+                        </li>
+                    </ul>
+
+                    <a href="{{route('logout')}}" class="content text-light">Sair</a>
                 </div>
-                <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
-                    onclick="closeNav()"><b>&times;</b></a>
-
-                <a href="#" onclick="icons('content_4')" class="content text-light" style="margin-top:60px">Orçamento</a>
-                <ul id="content_4" class="content_menu">
-                    <li>
-                        <a href="{{route('list_orcamento')}}" class="content text-light">Listar Orçamento</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_orcamento')}}" class="content text-light">Novo Orçamento</a>
-                    </li>
-                </ul>
-
-                <a href="#" onclick="icons('content_1')" class="content text-light">Cliente</a>
-                <ul id="content_1" class="content_menu">
-                    <li>
-                        <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
-                        <a href="{{route('list_cliente')}}" class="content text-light">Listar Clientes</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
-                    </li>
-                </ul>
-
-                <a href="#" onclick="icons('content_3')" class="content text-light">Material</a>
-                <ul id="content_3" class="content_menu text-light">
-                    <li>
-                        <a href="{{ route('list_material') }}" class="content text-light">Listar Materiais</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_material')}}" class="content text-light">Novo Material</a>
-                    </li>
-                </ul>
-
-                <a href="#" onclick="icons('content_5')" class="content text-light">Modelo</a>
-                <ul id="content_5" class="content_menu">
-                    <li>
-                        <a href="{{route('list_modelo')}}" class="content text-light">Listar Modelos</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>
-                    </li>
-                </ul>
-
-                <a href="#" onclick="icons('content_6')" class="content text-light">Linha</a>
-                <ul id="content_6" class="content_menu">
-                    <li>
-                        <a href="{{route('list_linha')}}" class="content text-light">Listar Linhas</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_linha')}}" class="content text-light">Nova Linha</a>
-                    </li>
-                </ul>
-
-                <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
-                <ul id="content_2" class="content_menu">
-                    <li>
-                        <a href="{{route('list_funcionario')}}" class="content text-light">Listar Funcionários</a>
-                    </li>
-                    <li>
-                        <a href="{{route('new_funcionario')}}" class="content text-light">Novo Funcionário</a>
-                    </li>
-                </ul>
-
-                <a href="{{route('logout')}}" class="content text-light">Sair</a>
-            </div>
-            <div class="">
-                <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
-            </div>
-            <!-- ------------------------------------------- -->
-            <div style="text-align: center; display: flex;justify-content: center; width:100%;"
-                class="col-4 navbar-collapse" id="navbarSupportedContent">
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-                    <button class="btn btn-outline-success" type="submit">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-search" viewBox="0 0 16 16">
-                            <path
-                                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                        </svg>
-                    </button>
-                </form>
-            </div>
-            <div class="">
-                <form action="{{route('show_user', ['id'=>$user->id])}}">
-                    <button type="submit" style="background-color:transparent; border:none;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                            class="bi bi-person-circle" viewBox="0 0 16 16">
-                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                            <path fill-rule="evenodd"
-                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                        </svg>
-                    </button>
-                </form>
+                <div class=""  style="left:0px;">
+                    <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
+                </div>
+                <!-- ------------------------------------------- -->
+                <div class="">
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <button class="btn btn-outline-success" type="submit">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-search" viewBox="0 0 16 16">
+                                <path
+                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+                <div class="" style="right:0px;">
+                    <form action="{{route('show_user', ['id'=>$user->id])}}">
+                        <button type="submit" style="background-color:transparent; border:none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                                class="bi bi-person-circle" viewBox="0 0 16 16">
+                                <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                <path fill-rule="evenodd"
+                                    d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </nav>
 </div>
+<div class="space"></div>
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
