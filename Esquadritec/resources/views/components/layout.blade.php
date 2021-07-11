@@ -60,9 +60,10 @@
     }
 
     .menu_bar {
-        margin-left: -10px;
-        margin-right: -10px;
-        margin-top: -10px;
+        position: fixed;
+        z-index: 999;
+        border-bottom: solid 2px white;
+        width: 100%;
         margin-bottom: 20px;
     }
 
@@ -176,15 +177,18 @@
 
 <div class="menu_bar">
     <nav class="navbar navbar-expand-lg navbar-light bg-main">
-        <div class="container-fluid  row" style="padding-right:0px;">
+        <div class="container row col-12 d-flex justify-content-between" style="padding-right:0px;">
             <!-- barra de menu slice -->
-            <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
-                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
-                    viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
-                </svg>
-            </span>
+            <div class="">
+                <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
+                        viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
+                    </svg>
+                </span>
+            </div>
+
 
             <div id="mySidenav" class="sidenav bg-main">
                 <div id="menu_bar" class="logo">
@@ -256,12 +260,12 @@
 
                 <a href="{{route('logout')}}" class="content text-light">Sair</a>
             </div>
-            <div>
+            <div class="">
                 <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
             </div>
             <!-- ------------------------------------------- -->
             <div style="text-align: center; display: flex;justify-content: center; width:100%;"
-                class="collapse navbar-collapse" id="navbarSupportedContent">
+                class="col-4 navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                     <button class="btn btn-outline-success" type="submit">
@@ -273,16 +277,18 @@
                     </button>
                 </form>
             </div>
-            <form action="{{route('show_user', ['id'=>$user->id])}}">
-                <button type="submit" style="background-color:transparent; border:none;">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
-                        class="bi bi-person-circle" viewBox="0 0 16 16">
-                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                        <path fill-rule="evenodd"
-                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
-                    </svg>
-                </button>
-            </form>
+            <div class="">
+                <form action="{{route('show_user', ['id'=>$user->id])}}">
+                    <button type="submit" style="background-color:transparent; border:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
+                            class="bi bi-person-circle" viewBox="0 0 16 16">
+                            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                            <path fill-rule="evenodd"
+                                d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </nav>
 </div>
