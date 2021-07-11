@@ -16,9 +16,6 @@
 <body>
     <x-layout />
     <h2>{{$material->nome}}</h2>
-    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
-        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_material')}}">ADICIONAR +</a>
-    </div>
 
     <div class="card-generico table">
         <table class="table table-sm center">
