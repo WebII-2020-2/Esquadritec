@@ -42,7 +42,7 @@
 
                     <div class="pt-4">
                         <a class="rounded-pill btn btn-sm btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
-                        <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Seguir</button>
+                        <button class="rounded-pill btn btn-sm btn-success ml-5" style="width:70.89px;" type="submit">Seguir</button>
                     </div>
                 </form>
             </div>

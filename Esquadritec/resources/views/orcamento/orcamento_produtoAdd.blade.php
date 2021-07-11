@@ -42,7 +42,7 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-lg-7" style="text-align: right; margin-bottom: 2%; margin-top:2%;">
+                    <div style="margin-bottom: 2%; margin-top:2%;">
                         <a type="button" class="btn btn-success btn-sm" href="{{route('orcamento_material')}}">+ MATERIAL</a>
                     </div>
                     <div style="margin-bottom: 2%;">
