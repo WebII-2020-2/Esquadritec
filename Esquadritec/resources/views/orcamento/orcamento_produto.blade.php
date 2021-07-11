@@ -63,9 +63,9 @@
         <form method="GET" style="margin-left: 38%;" action="{{route('orcamento_next')}}">
             <div>
                 <a class="rounded-pill btn btn-sm btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
-                <button class="rounded-pill btn btn-sm btn-cancelar mx-4" onClick="goBack()" type="reset">Voltar</button>
+                <button class="rounded-pill btn btn-sm btn-cancelar mx-4" style="width:70.89px" onClick="goBack()" type="reset">Voltar</button>
                 @if(count($orcamento['produtos'])>0)
-                <button class="rounded-pill btn btn-sm btn-success mx-4" type="submit">Seguir</button>
+                <button class="rounded-pill btn btn-sm btn-success mx-4" style="width:70.89px" type="submit">Seguir</button>
                 @endif
             </div>
         </form>

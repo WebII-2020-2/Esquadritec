@@ -42,6 +42,25 @@
         color: white;
     }
 
+    .card-orcamento-previo-principal{
+        width: 90%;
+        margin-left: 5%;
+        padding: 3%;
+        padding-bottom: 0.5%;
+        border-radius: 28px;
+        background: #c0e8fa;
+    }
+    .card-orcamento-previo{
+        padding: 20px;
+        padding-bottom: 0.5%;
+        background-color: #CCCCCC;
+        border-radius: 28px;
+    }
+
+    .card-orcamento-previo td{
+        background: #799091;
+    }
+
     .card-generico button{
         color: white;
     }
