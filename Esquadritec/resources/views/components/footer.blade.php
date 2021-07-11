@@ -64,6 +64,14 @@
         color: white;
     }
 
+    .card-orcamento-produto{
+        padding: 2%;
+        margin: 6%;
+        margin-bottom: 2%; 
+        border-radius: 25px;
+        background: #CCCCCC;
+    }
+
     .center {
         text-align: center;
     }

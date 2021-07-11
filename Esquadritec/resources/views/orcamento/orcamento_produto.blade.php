@@ -24,13 +24,14 @@
         @endif
 
         <h2 class="text-dark font-monospace py-4 center">Produtos</h2>
-        <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
-            <a type="button" class="btn btn-primary btn-sm" href="{{route('orcamento_p_add')}}">+ PRODUTO</a>
-        </div>
-        <div class="card-generico table">
-        <table class="table table-sm center">
+        <div class="card-generico" style="width:77%;margin-left: 12%;">
+            <div class="card-orcamento-produto">
+        <table class="table table-sm center card-orcamento-previo">
+            <div class="center" style="margin-bottom: 5px;">
+                <a type="button" class="btn btn-success btn-sm" href="{{route('orcamento_p_add')}}">+ PRODUTO</a>
+            </div>
             <thead>
-                <tr>
+                <tr class="bg-dark">
                     <th scope="col" class="table_first_row text-center">NOME</th>
                     <th scope="col" class="table_first_row text-center">LINHA</th>
                     <th scope="col" class="table_first_row text-center">MODELO</th>
@@ -46,9 +47,9 @@
                         <td>{{$produto['modelo']['modelo']}}</td>
                         <td>{{$produto['valor']}}</td>
 
-                        <td class="row">
+                        <td class="row" style="width: 112%;padding: 4%;">
                             <form method="GET" style="margin-left: 41%;" action="{{route('orcamento_p_rem',['id'=>$key])}}">
-                                <button class="btn" type="submit">
+                                <button class="btn" style="margin-top: -26%;" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
@@ -60,7 +61,8 @@
                     @endforeach
             </tbody>
         </table>
-        <form method="GET" style="margin-left: 38%;" action="{{route('orcamento_next')}}">
+        </div>
+        <form method="GET" class="center" style="margin-bottom: 4%;" action="{{route('orcamento_next')}}">
             <div>
                 <a class="rounded-pill btn btn-sm btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
                 <button class="rounded-pill btn btn-sm btn-cancelar mx-4" style="width:70.89px" onClick="goBack()" type="reset">Voltar</button>
