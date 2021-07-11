@@ -81,7 +81,7 @@
                         required autofocus>
                     <input type="password" name="password" class="input full-width form-control" placeholder="Senha"
                         style="width: 300px" required>
-                    <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="width: 50%;"
+                    <button class="center-div rounded-pill btn btn-sm btn-green mt-4" style="padding-bottom: 10%;"
                         type="submit">Entrar</button>
                 </form>
             </div>

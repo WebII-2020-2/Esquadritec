@@ -23,12 +23,12 @@
             </div>
         @endif
 
-        <h2 class="text-dark font-monospace py-4">Produtos</h2>
+        <h2 class="text-dark font-monospace py-4 center">Produtos</h2>
         <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
             <a type="button" class="btn btn-primary btn-sm" href="{{route('orcamento_p_add')}}">+ PRODUTO</a>
         </div>
         <div class="card-generico table">
-        <table class="table table-sm">
+        <table class="table table-sm center">
             <thead>
                 <tr>
                     <th scope="col" class="table_first_row text-center">NOME</th>
@@ -47,7 +47,7 @@
                         <td>{{$produto['valor']}}</td>
 
                         <td class="row">
-                            <form method="GET" action="{{route('orcamento_p_rem',['id'=>$key])}}">
+                            <form method="GET" style="margin-left: 41%;" action="{{route('orcamento_p_rem',['id'=>$key])}}">
                                 <button class="btn" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
@@ -60,17 +60,16 @@
                     @endforeach
             </tbody>
         </table>
-        <form method="GET" action="{{route('orcamento_next')}}">
-            <div class="pt-4">
-                <a class="rounded-pill btn btn-md btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
-                <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Voltar</button>
+        <form method="GET" style="margin-left: 38%;" action="{{route('orcamento_next')}}">
+            <div>
+                <a class="rounded-pill btn btn-sm btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
+                <button class="rounded-pill btn btn-sm btn-cancelar mx-4" onClick="goBack()" type="reset">Voltar</button>
                 @if(count($orcamento['produtos'])>0)
-                <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Seguir</button>
+                <button class="rounded-pill btn btn-sm btn-success mx-4" type="submit">Seguir</button>
                 @endif
             </div>
         </form>
     </div>
-
-        <x-footer/>
+    <x-footer/>
     </body>
 </html>

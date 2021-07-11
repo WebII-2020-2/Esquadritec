@@ -11,13 +11,12 @@
     </head>
 
     <body>
-    
         <x-layout/>
         <div class="py-4 center">
 
-            <h2 class="text-dark font-monospace py-4">Novo Orçamento</h2>
+            <h2 class="text-dark font-monospace py-4">Adicionar material</h2>
 
-            <div class="card-generico center-div text-white" style="min-width: 700px;height: 100%;">
+            <div class="card-generico center-div text-white pt-5" style="min-width: 700px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('orcamento_material_add')}}">
                     @csrf
                     <div class="full-width mb-2 center">
@@ -30,14 +29,14 @@
                         </select>
                     </div>
 
-                    <div class="row p-3 center-div pt-5" style="width: 300px;">
+                    <div class="row p-3 center-div" style="width: 456px;">
                         <label for="quantidade" class="pr-2 col-form-label" style="color: white">Quantidade:</label>
-                        <input id="quantidade" type="number" name="quantidade" class="form-control" placeholder="">
+                        <input id="quantidade" style="width: 21%;" type="number" name="quantidade" class="form-control" placeholder="">
                     </div>
 
                     <div class="pt-4">
-                        <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Cancelar</button>
-                        <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">ADICIONAR</button>
+                        <button class="rounded-pill btn btn-sm btn-cancelar mx-4" style="width: 76.64px;" onClick="goBack()" type="reset">Cancelar</button>
+                        <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Adicionar</button>
                     </div>
                 </form>
             </div>
