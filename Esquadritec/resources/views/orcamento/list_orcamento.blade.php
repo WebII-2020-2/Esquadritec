@@ -25,7 +25,6 @@
             <thead>
                 <tr>
                     <th scope="col" class="table_first_row">CLIENTE</th>
-                    <th scope="col" class="table_first_row">TELEFONE</th>
                     <th scope="col" class="table_first_row">EMAIL</th>
                     <th scope="col" class="table_first_row">DATA DE EMISSÃO</th>
                     <th scope="col" class="table_first_row">Q. PRODUTO</th>
@@ -40,14 +39,21 @@
                     @foreach($orcamentos as $orcamento)
                         <tr>
                             <td class="table_rows">{{$orcamento['cliente']->name}}</td>
-                            <td class="table_rows">{{$orcamento['cliente']->telefone}}</td>
                             <td class="table_rows">{{$orcamento['cliente']->email}}</td>
                             <td>{{$orcamento['created_at']->format('d/m/Y')}} as {{$orcamento['created_at']->format('H:i')}}</td>
                             <td class="table_rows">{{$orcamento['quantidade_produto']}}</td>
                             <td class="table_rows">R$ {{$orcamento['valor_t_b']}}</td>
                             <td class="table_rows">{{$orcamento['desconto']}}%</td>
                             <td class="table_rows">R${{$orcamento['valor_f']}}</td>
-                            <td class="table_rows">{{$orcamento['status']}}</td>
+                            @if($orcamento['status']=='APROVADO')
+                            <td class="table_rows" style="color: #32CD32;">{{$orcamento['status']}}</td>
+                            @endif
+                            @if($orcamento['status']=='PENDENTE')
+                            <td class="table_rows" style="color: yellow;">{{$orcamento['status']}}</td>
+                            @endif
+                            @if($orcamento['status']=='RECUSADO')
+                            <td class="table_rows" style="color: red;">{{$orcamento['status']}}</td>
+                            @endif
                             <td class="row">
                                 <form method="GET" action="{{route('show_orcamento', ['id'=>$orcamento->id])}}">
                                     <button class="btn" type="submit">
