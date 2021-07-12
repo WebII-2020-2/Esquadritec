@@ -57,9 +57,9 @@
                         <div class="col right text-white">Desconto(%):</div>
                         <div class="col text-left" style="margin-left: -2%;"><input type="text" style="width: 9%;" name="desconto" value="{{$orcamento['desconto']}}"></div>
                     </div>
-                    <div class="full-width mb-2 center text-white" style="margin:2% 0% 2% 0%;">
-                        <label>Status:</label>
-                        <input id="status" type="button" name="status" onClick="setStatus()" value="{{strtoupper($orcamento['status'])}}" class="btn btn-primary" />
+                    <div class="row" style="margin:1%;">
+                        <div class="col right">Status:</div>
+                        <div class="col text-left" style="margin-left: -2%;"><input id="status" type="button" name="status" onClick="setStatus()" value="{{strtoupper($orcamento['status'])}}" class="btn btn-primary" /></div>
                     </div>
                     <div class="row text-white">
                         <div class="col right">Valor Total:</div>
