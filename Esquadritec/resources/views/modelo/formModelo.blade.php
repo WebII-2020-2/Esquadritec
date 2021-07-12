@@ -12,72 +12,70 @@
     <title>Novo modelo</title>
 </head>
 <style>
-    .card {
+    .card_principal{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
         border-radius: 28px;
-        height: 255px;
+
     }
 
-    .center {
+     .formulario{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px
+    }
+
+    .sub_card{
+        width: 343px;
+        background-color: #295C8A;
+        border-radius: 8px;
+        height: 150px;     
+    }
+
+    .label_modelo{
+        margin-left: 100px;
+    }
+    .botao{
+        width: 300px;
+        margin-top: 25px;
+        display: flex;
+        flex-direction:row;
+        justify-content: space-around;
+
+
+    }
+    #modelo{
+        width: 150px;
+    }
+ 
+    h2{
+        text-transform: uppercase;
         text-align: center;
-    }
-
-    .center-div {
-        margin: auto;
-        width: 50%;
-        padding: 10px;
-    }
-
-    .form-control {
-        width: 65%;
-    }
-
-    .bottom-div {
-        position: absolute;
-        bottom: 20%;
-        left: 25%;
-    }
-
-    label {
-        color: white;
-    }
-
-    h2 {
-        font-size: 30px;
-        font-weight: 650;
-        line-height: 49px;
-
-    }
-
-    .navbar.custom {
-        width: 50%;
-    }
-
-    .right-addon input {
-        padding-right: 30px;
-    }
-
-    .inner-addon {
-        position: relative;
+        font-size: 22px;
     }
 </style>
     <body>
         <x-layout/>
-        <div class="py-4 center" style="min-height: 200px;">
-            <h2 class="text-black font-monospace ">Novo Modelo</h2>
+        <h2 class="font-monospace ">Novo Modelo</h2>
+        <div class="card_principal">
 
-            <div class="card-generico center-div bg-main" style="width: 500px;min-height: 100%;">
-                <form class="" style="height: 100%;" method="POST" action="{{ route('new_modelo_do') }}">
+            <div class="sub_card">
+                <form class="formulario" method="POST" action="{{ route('new_modelo_do') }}">
                     @csrf
-                    <div class="row p-3 center-div pt-5" style="width: 300px;">
-                        <label for="modelo" class="pr-2 col-form-label" style="color: white">Modelo:</label>
+                    <div class="row">
+                        <label id="label_modelo" for="modelo" class="pr-2 col-form-label" style="color: white">Modelo:</label>
                         <input id="modelo" type="text" name="modelo" class="form-control input-3" placeholder="">
                     </div>
-                    <div class="center-div bottom-div w-auto">
+                    <div class="botao">
                         <button class="rounded-pill btn btn-sm btn-danger ml-2" onClick="goBack()" type="reset">Cancelar</button>
                         <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Adicionar</button>
                     </div>
                 </form>
             </div>
+
         </div>
 
         <x-footer/>
