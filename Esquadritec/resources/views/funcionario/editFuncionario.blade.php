@@ -19,7 +19,7 @@
                     @csrf
                     <input type="hidden" value="{{$funcionario->id}}" name="id">
                     <div class="full-width mb-2 center">
-                        <div>
+                        <div style="margin-top: 3%; margin-bottom: 3%;">
                             <label for="user">Usuário:</label>
                             <input id="user" class="input-4" type="text" name="name" value="{{$funcionario->name}}" required>
                         </div>
@@ -29,7 +29,7 @@
                             <input id="email" class="input-3" type="text" name="email" value="{{$funcionario->email}}">
                         </div>
 
-                        <div class="mb-2" style="text-align: left;">
+                        <div class="mb-2" style="text-align: left;  margin-left: 16%;">
                             <label for="admin" style="margin-left: 55px;">Admin:</label>
                             @if ($funcionario->admin == 1)
                                 <input id="admin" type="checkbox" name="admin" value="1" checked>
