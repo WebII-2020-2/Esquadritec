@@ -74,6 +74,25 @@
         background: #CCCCCC;
     }
 
+    .editar-orcamento {
+        width: 72%;
+        margin-left: 15%;
+    }
+
+    .editar-orcamento-cliente {
+        padding: 20px;
+        padding-bottom: 2.5%;
+        margin: 2% 2% 4% 2%;
+        border-radius: 28px;
+    }
+
+    .editar-orcamento-orcamento {
+        padding: 20px;
+        padding-bottom: 2.5%;
+        margin: 2% 2% 4% 2%;
+        border-radius: 28px;
+    }
+
     .center {
         text-align: center;
     }
