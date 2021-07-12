@@ -22,7 +22,6 @@
             <thead>
                 <tr>
                 <th scope="col" class="table_first_row">NOME</th>
-                <th scope="col" class="table_first_row">TELEFONE</th>
                 <th scope="col" class="table_first_row">EMAIL</th>
                 <th scope="col" class="table_first_row">AÇÕES</th>
                 </tr>
@@ -31,7 +30,6 @@
                 @foreach($cliente as $cli)
                     <tr>
                         <td class="table_rows">{{$cli->name}}</td>
-                        <td class="table_rows">{{$cli->telefone}}</td>
                         <td class="table_rows">{{$cli->email}}</td>
 
                         <td class="row">
