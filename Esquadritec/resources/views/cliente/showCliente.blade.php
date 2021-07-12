@@ -9,20 +9,33 @@
         <link rel="stylesheet" href="">
     </head>
     <body>
-        <label for="nome" >NOME: </label>
-        <h4 id="nome">{{ $cliente->name }}</h4>
-        <label for="nome" >EMAIL: </label>
-        <h4 id="nome">{{ $cliente->email }}</h4>
-        @if ($cliente->cpf)
-            <label for="nome" >CPF: </label>
-            <h4 id="nome">{{ $cliente->cpf }}</h4>
-        @endif
-
-        @if ($cliente->cnpj)
-            <label for="nome" >CNPJ: </label>
-            <h4 id="nome">{{ $cliente->cnpj }}</h4>
-        @endif
-
+        <h1 class="text-black font-monospace py-4 center">{{ $cliente->name }}</h1>
+        <div class="card table card-generico">
+            <table class="table table-sm center" style="width:100%;">
+                <thead>
+                    <tr>
+                        @if ($cliente->cpf)
+                        <th scope="col" class="table_first_row">CPF</th>
+                        @endif
+                        @if ($cliente->cnpj)
+                        <th scope="col" class="table_first_row">CNPJ</th>
+                        @endif
+                        <th scope="col" class="table_first_row">EMAIL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        @if ($cliente->cpf)
+                        <td class="table_rows">{{$cliente->cpf}}</td>
+                        @endif
+                        @if ($cliente->cnpj)
+                        <td class="table_rows">{{$cliente->cnpj}}</td>
+                        @endif
+                        <td class="table_rows">{{$cliente->email}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
         @foreach($endereco as $key => $adress)
             <h1>{{$key+1}} - ENDEREÇO(S)</h1>
             
@@ -44,7 +57,6 @@
         @foreach($telefone as $key => $fone)
             <h4 id="nome">{{$key+1}} - {{ $fone->numero }}</h4>
         @endforeach
-
         <x-footer/>
     </body>
 </html>
