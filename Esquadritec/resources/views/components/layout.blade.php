@@ -172,6 +172,59 @@
         padding-left: 0px;
         margin-left: 15px;
     }
+
+    /* Menu bar - ajustado com flexBox */
+    .menu_bar{
+        width: 100%;
+    }
+    .navItens{
+        
+    }
+    .section1{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .sub_itens{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .pesquisar{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .form_pesquisar{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    .botao{
+        height: 100%;
+    }
+    .input_pesquisar{
+        height: 30px;
+    }
+    .user{
+        margin-right: 15px;
+    }
+
+    .btn{
+        padding: 0px 12px;
+    }
+    
+    
 </style>
 <script>
     function icons(id){
@@ -186,9 +239,9 @@
 
 <div class="menu_bar">
     <nav class="navItens bg-main">
-        <div class="container row" style="padding-right:0px; width:100%;text-align:center">
+        <div class="section1" style="">
             <!-- barra de menu slice -->
-            <div class="">
+            <div class="menu_lateral" style="margin-left: 15px">
                 <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
                         viewBox="0 0 16 16">
@@ -197,8 +250,7 @@
                     </svg>
                 </span>
             </div>
-
-            <div class="align-items-center col d-flex" style="text-align:center">
+            <div class="sub_itens" style="">
                 <div id="mySidenav" class="sidenav bg-main">
                     <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
                         onclick="closeNav()"><b>&times;</b></a>
@@ -266,13 +318,12 @@
 
                     <a href="{{route('logout')}}" class="content text-light">Sair</a>
                 </div>
-                <div class=""  style="left:0px;">
+                <div class="esquadritec"  style="">
                     <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
                 </div>
-                <!-- ------------------------------------------- -->
-                <div class="">
-                    <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                <div class="pesquisar">
+                    <form class="form_pesquisar">
+                        <input class="input_pesquisar form-control" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                         <button class="btn btn-outline-success" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-search" viewBox="0 0 16 16">
@@ -282,7 +333,7 @@
                         </button>
                     </form>
                 </div>
-                <div class="" style="right:0px;">
+                <div class="user" style="">
                     <form action="{{route('show_user', ['id'=>$user->id])}}">
                         <button type="submit" style="background-color:transparent; border:none;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
