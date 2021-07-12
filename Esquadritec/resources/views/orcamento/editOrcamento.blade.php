@@ -10,10 +10,17 @@
 
 
     <title>editar modelo {{$orcamento['cliente']['name']}}</title>
+    <style>
+        @media (max-width: 496px){
+            .titulo_form{
+                font-size: 25px;
+            }
+        }
+    </style>
 </head>
     <body>
         <x-layout/>
-        <h2 class="text-black font-monospace py-4 center">Editar Orçamento de {{strtoupper($orcamento['cliente']['name'])}}</h2>
+        <h2 class="text-black font-monospace py-4 center">Editar Orçamento de {{mb_strtoupper($orcamento['cliente']['name'])}}</h2>
         <div class="py-4 center card-generico editar-orcamento" style="min-height: 200px;">
             <div class="editar-orcamento-cliente bg-dark">
                 <h1 class="text-white center">CLIENTE</h1>
@@ -43,7 +50,7 @@
             <div class="editar-orcamento-orcamento" style="background: #799091;">
                 <form method="POST" action="{{route('edite_orcamento_do')}}">
                     @csrf
-                    <h1 class="text-white">ORÇAMENTO</h1>
+                    <h1 class="titulo_form text-white">ORÇAMENTO</h1>
                     <input type="hidden" name="id" value="{{$orcamento['id']}}">
                     <input type="hidden" name="valor_t" value="{{$orcamento['valor_t_b']}}">
                     <input id="statusHid" type="hidden" name="status" value="{{strtoupper($orcamento['status'])}}"/>
@@ -55,7 +62,7 @@
                     @endif
                     <div class="row">
                         <div class="col right text-white">Desconto(%):</div>
-                        <div class="col text-left" style="margin-left: -2%;"><input type="text" style="width: 9%;" name="desconto" value="{{$orcamento['desconto']}}"></div>
+                        <div class="col form-group text-left" style="margin-left: -2%;"><input type="text" style="width: 40px; border-radius: 4px; border:0px;" name="desconto" value="{{$orcamento['desconto']}}"></div>
                     </div>
                     <div class="row" style="margin:1%;">
                         <div class="col right">Status:</div>
