@@ -15,32 +15,35 @@
         <x-layout/>
         <div class="py-4 center">
 
-            <h2 class="text-dark font-monospace py-4">Novo Orçamento</h2>
+            <h2 class="text-dark font-monospace py-2" style="text-transform: uppercase;">Novo Orçamento</h2>
 
-            <div class="card-generico center-div text-white" style="min-width: 700px;height: 100%;">
+            <div class="card-generico center-div text-white" style="min-width: 500px; width: 500px; height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('orcamento_set')}}">
                     @csrf
-                    <div class="full-width mb-2 center pt-3">
-                        <label for="cliente">Cliente:</label>
+                    <div class="d-flex center-div justify-content-start flex-column px-0" style="width:312px;">
+                        <div class="d-flex align-items-center justify-content-start full-width mb-2 center-div p-0 pt-2" style="width: 463px;">
+                            <label class="m-1" for="cliente">Cliente:</label>
+    
+                            <select id="cliente" class="input-3" name="cliente" required>
+                                @foreach ($clientes as $cli)
+                                    <option value="{{$cli->id}}">{{$cli->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+    
+                        <div class="d-flex justify-content-start" style="width: 300px;">
+                            <label for="desconto" class="m-1 form-label" style="color: white">Desconto(%):</label>
+                            <input id="desconto" style="width: 15%;" type="number" name="desconto" class="form-control p-1" placeholder="">
+                        </div>
 
-                        <select id="cliente" class="input-3" name="cliente" required>
-                            @foreach ($clientes as $cli)
-                                <option value="{{$cli->id}}">{{$cli->name}}</option>
-                            @endforeach
-                        </select>
                     </div>
 
-                    <div class="row center-div" style="width: 463px;">
-                        <label for="desconto" class="pr-2 col-form-label" style="color: white">Desconto(%):</label>
-                        <input id="desconto" style="width: 15%;" type="number" name="desconto" class="form-control" placeholder="">
-                    </div>
-
-                    <div class="full-width mb-2 center">
+                    <div class="full-width d-flex justify-content-center mb-2 center">
                         <textarea id="observation" name="observacao" placeholder="Observações"
                             style="height: 100px; width: 65%; border-radius: 10px;"></textarea>
                     </div>
 
-                    <div class="pt-4">
+                    <div class="pt-3 pb-2">
                         <a class="rounded-pill btn btn-sm btn-cancelar mx-4" href="{{route('dashboard')}}" type="reset">Cancelar</a>
                         <button class="rounded-pill btn btn-sm btn-success ml-5" style="width:70.89px;" type="submit">Seguir</button>
                     </div>
