@@ -9,6 +9,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
 </head>
+<style>
+    tr{
+        color: white;
+    }
+    .table_rows{
+        color: black;
+        border: #295C8A solid 1px;
+
+    }
+    .card1{
+        border-radius: 5px; 
+    }
+    table{
+        border: #295C8A solid 1px;
+    }
+
+    .botao{
+        background: #295C8A;
+        border-radius: 3px;
+        color: white;
+        padding: 3px;
+    }
+    .div_botao{
+        padding: 0;
+    }
+</style>
 
 <body>
     <script>
@@ -24,15 +50,15 @@
     <x-layout/>
 
     <h2 class="text-black font-monospace py-4 text-center">Lista de Materiais</h2>
-    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
-        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_material')}}">ADICIONAR +</a>
+    <div class="div_botao col-lg-12" style="text-align: right; margin-bottom: 5px;">
+        <a type="button" class="botao" href="{{route('new_material')}}">ADICIONAR +</a>
     </div>
 
-    <div class="card-generico table" style="height: 100%;  padding-bottom: 0%;">
+    <div class="card1" style="height: 100%;  padding-bottom: 0%;">
         <table class="table table-sm center">
 
-            <thead>
-                <tr>
+            <thead class="cabecalho">
+                <tr style="background: #295C8A;">
                     <th scope="col" class="table_first_row">Nome</th>
                     <th scope="col" class="table_first_row">Unidade de Medida</th>
                     <th scope="col" class="table_first_row">Valor</th>
