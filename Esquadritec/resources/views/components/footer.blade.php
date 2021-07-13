@@ -1,4 +1,12 @@
 <script>
+
+    function PDF() {
+        var conteudo  = document.getElementById('conteudo');
+        var doc = new jsPDF('p', 'pt', 'letter');
+        doc.fromHTML(document.body)
+        doc.save("orcamento.pdf");
+    }
+
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
     }
@@ -275,3 +283,4 @@
 
 <script src="{{ asset('site/jquery.js') }}" async defer></script>
 <script src="{{ asset('site/bootstrap.js') }}" async defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.4.1/jspdf.debug.js" integrity="sha384-THVO/sM0mFD9h7dfSndI6TS0PgAGavwKvB5hAxRRvc0o9cPLohB0wb/PTA7LdUHs" crossorigin="anonymous"></script>

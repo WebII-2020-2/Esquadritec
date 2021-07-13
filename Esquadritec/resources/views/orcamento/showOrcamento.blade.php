@@ -12,8 +12,7 @@
     <title>Orçamento de {{$orcamento['cliente']['name']}}</title>
 </head>
     <body>
-        <x-layout/>
-            <div>
+            <div id="conteudo">
                 <h2 class="text-black font-monospace ">Orçamento de {{$orcamento['cliente']['name']}}</h2>
                 <div>
                         <h1>DADOS DO CLIENTE</h1>
@@ -120,10 +119,11 @@
                     @endforeach
                 </div>
             </div>
-
             <div class="">
                 <button class="rounded-pill btn btn-md btn-cancelar" onClick="goBack()" type="reset">Voltar</button>
             </div>
+
+            <button id="btnPDF" onClick="PDF()" class="rounded-pill" type="reset">PDF</button>
 
         <x-footer/>
     </body>
