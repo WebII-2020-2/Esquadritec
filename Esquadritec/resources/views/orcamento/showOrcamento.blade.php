@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <x-layout />
     <div>
         <h2 class="text-black font-monospace" style="text-align: center;">Orçamento de
             {{ $orcamento['cliente']['name'] }}</h2>
