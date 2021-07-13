@@ -251,7 +251,11 @@
                 </span>
             </div>
             <div class="sub_itens" style="">
+                
                 <div id="mySidenav" class="sidenav bg-main">
+                    <div id="menu_bar">
+                        <h3 style="color: white;">Esquadritec</h3>
+                    </div>
                     <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
                         onclick="closeNav()"><b>&times;</b></a>
 
@@ -323,7 +327,7 @@
                 </div>
                 <div class="pesquisar">
                     <form class="form_pesquisar">
-                        <input class="input_pesquisar form-control" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <input class="input_pesquisar form-control" style="" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
                         <button class="btn btn-outline-success" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-search" viewBox="0 0 16 16">
