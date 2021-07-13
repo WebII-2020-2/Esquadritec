@@ -11,6 +11,7 @@ use App\Http\Controllers\Linha\Linha;
 use App\Http\Controllers\Funcionario\Funcionario;
 use App\Http\Controllers\Orcamento\Orcamento;
 use App\Http\Controllers\produto\new_line;
+use App\Http\Controllers\Unidade\Unidade;
 
 
 Route::get('/', [Login::class, 'login'])->name('login');
@@ -56,6 +57,14 @@ Route::middleware(['Validate'])->group(function () {
     Route::post('/dashboard/linha/edit/do', [Linha::class, 'update'])->name('edite_linha_do');
     Route::get('/dashboard/linha/show/{id}', [Linha::class, 'show'])->name('show_linha');
     Route::get('/dashboard/linha/delete/{id}', [Linha::class, 'destroy'])->name('delete_linha');
+
+    Route::get('/dashboard/unidade', [Unidade::class, 'index'])->name('list_unidade');
+    Route::get('/dashboard/unidade/new', [Unidade::class, 'create'])->name('new_unidade');
+    Route::post('/dashboard/unidade/new/do', [Unidade::class, 'store'])->name('new_unidade_do');
+    Route::get('/dashboard/unidade/edit/{id}', [Unidade::class, 'edit'])->name('edite_unidade');
+    Route::post('/dashboard/unidade/edit/do', [Unidade::class, 'update'])->name('edite_unidade_do');
+    Route::get('/dashboard/unidade/show/{id}', [Unidade::class, 'show'])->name('show_unidade');
+    Route::get('/dashboard/unidade/delete/{id}', [Unidade::class, 'destroy'])->name('delete_unidade');
 
     Route::get('/dashboard/funcionario', [Funcionario::class, 'index'])->name('list_funcionario');
     Route::get('/dashboard/funcionario/new', [Funcionario::class, 'create'])->name('new_funcionario');

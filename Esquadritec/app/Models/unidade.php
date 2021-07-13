@@ -11,6 +11,6 @@ class Unidade extends Model
     protected $table = 'unidade_medida';
 
     protected $fillable = [
-        'nome'
+        'unidade'
     ];
 }
