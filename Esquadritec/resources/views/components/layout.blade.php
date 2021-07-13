@@ -320,6 +320,16 @@
                         </li>
                     </ul>
 
+                    <a href="#" onclick="icons('content_7')" class="content text-light">Unidade medida</a>
+                    <ul id="content_7" class="content_menu">
+                        <li>
+                            <a href="{{route('list_unidade')}}" class="content text-light">Listar Unidades</a>
+                        </li>
+                        <li>
+                            <a href="{{route('new_unidade')}}" class="content text-light">Novo Unidade</a>
+                        </li>
+                    </ul>
+
                     <a href="{{route('logout')}}" class="content text-light">Sair</a>
                 </div>
                 <div class="esquadritec"  style="">

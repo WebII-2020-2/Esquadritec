@@ -59,7 +59,7 @@
                 </tr>
 
             </thead>
-            <tbody>                
+            <tbody>
                 <tr>
                     @if ($orcamento['observacao'])
                         <td>{{ $orcamento['observacao'] }}</td>
@@ -70,8 +70,8 @@
                     <td>{{ $orcamento['valor_f'] }}</td>
                 </tr>
             </tbody>
-        </table>      
-    </div>    
+        </table>
+    </div>
 
     <div class="card-body">
 
@@ -123,6 +123,7 @@
                         @endforeach
                     </tbody>
                 </table>
+
             </div>
         @endforeach
     </div>
@@ -133,6 +134,11 @@
     </div>
 
     <x-footer />
+</body>
+
+<button id="btnPDF" onClick="PDF()" class="rounded-pill" type="reset">PDF</button>
+
+<x-footer />
 </body>
 
 </html>
