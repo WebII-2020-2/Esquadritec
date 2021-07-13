@@ -20,7 +20,7 @@ class Login extends Controller
         if(Auth::attempt($credentials)){
             return redirect()->route('dashboard')->with('succes','Login Realizado!');
         }
-        return redirect()->route('login')->with('errors','Credenciais inválidas!');
+        return redirect()->route('login')->with('error','Credenciais inválidas!');
     }
 
     public function logout(){

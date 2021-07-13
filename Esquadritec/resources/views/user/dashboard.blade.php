@@ -155,6 +155,8 @@
             </div>
         </div>
 
+        <x-footer/>
+
         <!-- grafico -->
         <div class="coar_graphic">
             <h2 style="width:330px; margin-top: -35px; margin-left: 15px; background-color: white; text-align:center;">
@@ -162,8 +164,6 @@
             </h2>
             <div id="chartContainer" style="height: 370px; width: 100%;"></div>
         </div>
-
-        <x-footer/>
 
         <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
         <script src="{{ asset('site/jquery.js') }}" async defer></script>

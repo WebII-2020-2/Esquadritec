@@ -29,11 +29,14 @@
             <tbody>
                 <tr>
                     <td>{{$unidade->unidade}}</td>
-                    @if($unidade->created_at && $unidade->updated_at)
+                    @if($unidade->created_at)
                         <td>{{$unidade->created_at->format('d/m/Y')}} as {{$unidade->created_at->format('H:i')}}</td>
-                        <td>{{$unidade->updated_at->format('d/m/Y')}} as {{$unidade->updated_at->format('H:i')}}</td>
                     @else
                         <td>--------</td>
+                    @endif
+                    @if($unidade->updated_at)
+                        <td>{{$unidade->updated_at->format('d/m/Y')}} as {{$unidade->updated_at->format('H:i')}}</td>
+                    @else
                         <td>--------</td>
                     @endif
                 </tr>

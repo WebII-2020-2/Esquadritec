@@ -264,11 +264,11 @@
 </style>
 
 @if(session()->has('error'))
-    <div class="absolute-center" style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
+    <div class="absolute-center" style="position:absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
         <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('error')}}</p>
     </div>
 @elseif(session()->has('succes'))
-    <div style="text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
+    <div class="absolute-center" style="position:absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
         <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
     </div>
 @endif
