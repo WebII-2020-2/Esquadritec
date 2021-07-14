@@ -49,6 +49,7 @@ class Material extends Controller
     public function store(Request $request)
     {
         try {
+            dd($request);
             $new_material = new Materiais($request->except(['_token']));
             $new_material->save();
             return redirect()->route('list_material')->with('succes', 'cadastrado');
@@ -88,8 +89,12 @@ class Material extends Controller
 
         try {
             $material = Materiais::where('id', $id)->first();
+            $unidades = Unidade::all();
             $material->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
-            return view('materiais/editMaterial', ['material' => $material], ['material' => $material]);
+            return view('materiais/editMaterial', [
+                'material' => $material,
+                'unidades' => $unidades
+            ]);
         } catch (Exception $e) {
             return redirect()->route('showMaterial')->with('error', 'Falha de rede!');
         }
@@ -105,7 +110,9 @@ class Material extends Controller
     public function update(Request $request)
     {
         try {
-            $material = Materiais::where('id', $request->id)->update(['materiais' => $request->modelo]);
+            // dd($request);
+            $material = Materiais::where('id', $request->id)->update($request->except(['_token', 'id']));
+            return redirect()->route('list_material')->with('succes', 'Atualizado!');
         } catch (Exception $e) {
             return redirect()->route('list_material')->with('error', 'Falha de rede!');
         }
