@@ -47,6 +47,50 @@
         text-align: center;
 
     }
+    .card-generico form{
+        height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .campo{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        
+        padding: 10px;
+    }
+    .btns{
+        width: 323px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        margin-top: 23px;
+    }
+    .input1{
+        width: 210px;
+    }
+    .input2{
+        width: 210px;
+    }
+    .input3{
+        width: 210px;
+    }
+    .input4{
+        width: 210px;
+    }
+    
+    form input{
+        border-radius: 5px;
+        border: 0;
+        padding: 8px;
+    }
+    form select{
+        border-radius: 5px;
+        border: 0;
+        padding: 8px;
+    }
 </style>
 
 <body>
@@ -57,25 +101,25 @@
     <div class="py-4 center" style="min-height: 200px;">
         <h2 class="text-main font-monospace ">EDITAR MATERIAL {{strtoupper($material->nome)}}</h2>
 
-        <div class="card-generico center-div bg-main" style="width: 500px;min-height: 100%;">
+        <div class="card-generico center-div bg-main" style="width: 500px; height: 330px;">
             <form class="" style="height: 100%;" method="POST" action="{{ route('edite_material_do') }}">
                 @csrf
                 <input type="hidden" name="id" value="{{$material->id}}">
-                <div class="row p-3 center-div pt-5" style="width: 300px;">
+                <div class="campo" style="width: 300px;">
                     <label for="nome" class="pr-2 col-form-label" style="color: white">Material:</label>
-                    <input id="nome" type="text" name="nome" class="form-control" value="{{$material->nome}}">
+                    <input id="nome" class="input1" type="text" name="nome" class="form-control" value="{{$material->nome}}">
                 </div>
-                <div class="row p-3 center-div pt-5" style="width: 300px;">
+                <div class="campo" style="width: 300px;">
                     <label for="codigo" class="pr-2 col-form-label" style="color: white">Código:</label>
-                    <input id="codigo" type="text" name="codigo" class="form-control" value="{{$material->codigo}}">
+                    <input id="codigo" class="input2" type="text" name="codigo" class="form-control" value="{{$material->codigo}}">
                 </div>
-                <div class="row p-3 center-div pt-5" style="width: 300px;">
+                <div class="campo" style="width: 300px;">
                     <label for="valor" class="pr-2 col-form-label" style="color: white">Valor:</label>
-                    <input id="valor" type="number" name="valor" class="form-control" value="{{$material->valor}}">
+                    <input id="valor" class="input2" type="number" name="valor" class="form-control" value="{{$material->valor}}">
                 </div>
-                <div class="row p-3 center-div pt-5">
-                    <label for="inputInudadeMedida">Unidade de Medida:</label>
-                    <select id="inputUnidadeMedida" name="unidade_medida" class="form-select form-control" style="width: 80px;">
+                <div class="campo" style="width: 300px;">
+                    <label for="inputInudadeMedida" class="pr-2 col-form-label">Unidade de Medida:</label>
+                    <select id="inputUnidadeMedida"  class="select" name="unidade_medida" class="form-select form-control" style="width: 80px;">
                         @foreach ($unidades as $unidade)
                             @if($unidade->id == $material->unidade_medida->id)
                                 <option value="{{ $unidade->id }}" selected>{{ $unidade->unidade }}</option>
@@ -85,8 +129,8 @@
                         @endforeach
                     </select>
                 </div>
-                <div class="center-div bottom-div w-auto">
-                    <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()"
+                <div class="btns">
+                    <button class="rounded-pill btn btn-md btn-cancelar" onClick="goBack()"
                         type="reset">Cancelar</button>
                     <button class="rounded-pill btn btn-md btn-green" type="submit">Atualizar</button>
                 </div>
