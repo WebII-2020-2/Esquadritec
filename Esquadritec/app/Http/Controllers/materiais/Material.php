@@ -49,7 +49,7 @@ class Material extends Controller
     public function store(Request $request)
     {
         try {
-            dd($request);
+            // dd($request);
             $new_material = new Materiais($request->except(['_token']));
             $new_material->save();
             return redirect()->route('list_material')->with('succes', 'cadastrado');

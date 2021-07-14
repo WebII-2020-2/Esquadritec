@@ -82,12 +82,12 @@
     }
     
     form input{
-        border-radius: 5px;
+        border-radius: 10px;
         border: 0;
         padding: 8px;
     }
     form select{
-        border-radius: 5px;
+        border-radius: 10px;
         border: 0;
         padding: 8px;
     }

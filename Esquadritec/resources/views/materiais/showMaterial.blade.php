@@ -24,6 +24,7 @@
     }
     th {
         color: white;
+
     }
     .table_rows {
         color: black;

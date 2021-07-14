@@ -23,7 +23,9 @@
     .card1 {}
 
     .tabela {
-        border: rgba(204, 204, 204, 0.952) solid 1px;
+        border-left: rgba(204, 204, 204, 0.952) solid 1px;
+        border-bottom: rgba(204, 204, 204, 0.952) solid 1px;
+        border-top: rgba(204, 204, 204, 0.952) solid 1px;
         width: 100%;
         text-align: center;
     }
@@ -52,15 +54,25 @@
     }
 
     .row_options {
+        margin: 0;
+        padding: 0; 
         width: 136px;
         display: flex;
         flex-direction: row;
         justify-content: center;
 
     }
+    .row_options form{
+        border-right: rgba(204, 204, 204, 0.952) solid 1px;
+        border-top: rgba(204, 204, 204, 0.952) solid 1px;
+        width: 100%;
+    }
 
     .cabecalho th {
-        border: rgba(204, 204, 204, 0.952) solid 1px;
+        border-left: rgba(204, 204, 204, 0.952) solid 1px;
+        border-right: rgba(204, 204, 204, 0.952) solid 1px;
+        border-top: rgba(204, 204, 204, 0.952) solid 1px;
+        border-bottom: rgba(204, 204, 204, 0.952) solid 2px;
     }
 
     /* .svg_show:hover {
