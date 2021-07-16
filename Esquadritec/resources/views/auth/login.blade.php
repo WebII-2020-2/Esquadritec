@@ -7,51 +7,15 @@
     <title>LOGIN</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('site/style.css')}}">
+    <x-content/>
 </head>
 <style>
-    @keyframes menssagem {
-        from {
-            opacity: 60%;
-        }
-
-        to {
-            opacity: 0%;
-        }
-    }
-
     .center {
         top: 100px;
-        text-align: center;
     }
-
-    .full-width {
-        width: 100%;
-        height: 100%;
-    }
-
-    .input {
-        position: relative;
-        padding-top: 10px;
-        margin-top: 10px;
-    }
-
-    .card {
-        padding: 20px;
-        width: 320px;
-        border-radius: 28px;
-    }
-
-    .center-div {
-        margin: auto;
-        width: 50%;
-        padding: 10px;
-    }
-
     body {
         background-color: rgba(0, 97, 116, 0);
     }
-
     html {
         height: 100%;
         margin: 0%;
@@ -61,7 +25,6 @@
         background-repeat: no-repeat;
     }
 </style>
-
 <body>
     <x-AuthLayout/>
     <div class="container card center bg-white-opacity" style="width: 400px; height:350px;">

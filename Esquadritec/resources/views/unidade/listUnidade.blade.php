@@ -7,7 +7,7 @@
     <title>Lista de Linhas</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('site/style.css')}}">
+    <x-content/>
     <script>
     // corrigir essa funçaõ para passar valor pela url
     </script>

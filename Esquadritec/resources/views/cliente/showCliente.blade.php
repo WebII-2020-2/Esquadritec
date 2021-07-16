@@ -6,7 +6,7 @@
         <title>USUÁRIOS CADASTRADOS</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <x-content/>
     </head>
     <body>
         <h1 class="text-black font-monospace py-4 center">{{ $cliente->name }}</h1>

@@ -6,7 +6,7 @@
         <title>Novo Orçamento</title>
         <meta name="description" content="Tela de novo usuário">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('site/style.css')}}">
+        <x-content/>
     </head>
 
     <body>

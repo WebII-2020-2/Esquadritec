@@ -7,63 +7,8 @@
         <title>Novo Produto</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('site/style.css')}}">
+        <x-content/>
     </head>
-    <style>
-    body {
-        color: white;
-    }
-    .background_card {
-        background-color: #318A90;
-        border-radius: 28px;
-        height: 455px;
-    }
-
-    .table {
-        background-color: #CCCCCC;
-        border-radius: 20px;
-        margin-top: 10px;
-        color: white;
-    }
-
-    .table_first_row {
-        background-color: #000000c0;
-        border-radius: 20px;
-    }
-
-    .table_rows {
-        background-color: #799091;
-        border-radius: 20px;
-    }
-
-    .center {
-        text-align: center;
-    }
-
-    .center-div {
-        margin: auto;
-        width: 50%;
-        padding: 10px;
-    }
-
-    .form-control {
-        width: 65%;
-    }
-
-    .bottom-div {
-        position: absolute;
-        bottom: 20%;
-        left: 25%;
-    }
-
-    h2 {
-        font-size: 30px;
-        font-weight: 650;
-        line-height: 49px;
-        text-align: center;
-
-    }
-</style>
 
     <body>
         <div class="container" style="width: 100%">

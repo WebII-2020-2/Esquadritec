@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tela nova linha">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('site/style.css')}}">
-
+    <x-content/>
 
     <title>Nova Unidade</title>
 </head>

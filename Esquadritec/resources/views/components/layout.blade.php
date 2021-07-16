@@ -227,6 +227,13 @@
     
 </style>
 <script>
+    document.addEventListener('click', function(event) {
+        var ignoreClickOnMeElement = document.getElementById('menu_barr');
+        var isClickInsideElement = ignoreClickOnMeElement.contains(event.target);
+        if (!isClickInsideElement) {
+            closeNav()
+        }
+    });
     function icons(id){
         var doc = document.getElementById(id);
         if (doc.style.display != "block"){
@@ -237,7 +244,7 @@
     }
 </script>
 
-<div class="menu_bar">
+<div id="menu_barr" class="menu_bar">
     <nav class="navItens bg-main">
         <div class="section1" style="">
             <!-- barra de menu slice -->

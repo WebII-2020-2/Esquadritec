@@ -7,10 +7,7 @@
     <title>{{$funcionario->name}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="{{asset('site/style.css')}}">
-    <script>
-    // corrigir essa funçaõ para passar valor pela url
-    </script>
+    <x-content/>
 </head>
 
 <body>
