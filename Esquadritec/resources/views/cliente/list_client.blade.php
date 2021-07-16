@@ -10,20 +10,140 @@
     <link rel="stylesheet" href="{{asset('site/style.css')}}">
 </head>
 
+<style>
+    tr {
+        color: white;
+    }
+
+    .table_rows {
+        color: black;
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+
+    }
+
+    .tabela {
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .botao {
+        font-size: 15px;
+        background: #295C8A;
+        border-radius: 3px;
+        color: white;
+        padding: 5px;
+
+    }
+
+    .botao:hover {
+        color: white;
+        background: #28A745;
+        background: bottom, #295d8ac5, #295C8A;
+        transition: 0.5;
+        background-image: linear-gradient(#295d8ae3, #28a746bd);
+
+        text-decoration: none;
+    }
+
+    .div_botao {
+        padding: 0;
+        text-align: right;
+        margin-bottom: 5px;
+
+    }
+
+    @media (max-width: 854px){
+        .div_botao{
+            text-align: start;
+        }
+    }
+
+    .row_options {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+
+    }
+
+    .row_options form {
+        border-top: rgba(204, 204, 204, 0.952) solid 1px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .cabecalho th {
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+
+    }
+
+    .row_options input {
+        border: none;
+    }
+
+    .botao_options1 {
+        color: rgba(0, 0, 255, 0.685);
+
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options2 {
+        color: rgba(20, 160, 1, 0.938);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options3 {
+        color: rgba(160, 14, 1, 0.801);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options1:hover {
+        color: rgb(0, 0, 255);
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .botao_options2:hover {
+        color: rgb(9, 255, 0);
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .botao_options3:hover {
+        color: red;
+
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+</style>
+
 <body>
     <x-layout/>
     <h2 class="text-black font-monospace py-4 text-center">Lista de Clientes</h2> 
-    <div class="col-lg-12" style="text-align: right; margin-bottom: 5px;">
-        <a type="button" class="btn btn-primary btn-sm" href="{{route('new_cliente')}}">ADICIONAR +</a>
+    <div class="div_botao col-lg-12">
+        <a type="button" class="botao" href="{{route('new_cliente')}}">ADICIONAR +</a>
     </div>
-
-    <div class="card-generico table">
-        <table class="table table-sm center">
-            <thead>
-                <tr>
+    <div class="card1" style="height: 100%;  padding-bottom: 0%;">
+        <table class="tabela">
+            <thead class="cabecalho">
+                <tr style="background: #295C8A;">
                 <th scope="col" class="table_first_row">NOME</th>
                 <th scope="col" class="table_first_row">EMAIL</th>
-                <th scope="col" class="table_first_row">AÇÕES</th>
+                <th scope="col" class="" style="width: 135px;">AÇÕES</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,9 +152,9 @@
                         <td class="table_rows">{{$cli->name}}</td>
                         <td class="table_rows">{{$cli->email}}</td>
 
-                        <td class="row">
-                            <form method="GET" style="margin-left: 30%;" action="{{route('show_cliente', ['id'=>$cli->id])}}">
-                                <button class="btn" type="submit">
+                        <td class="row_options">
+                            <form method="GET" action="{{route('show_cliente', ['id'=>$cli->id])}}">
+                                <button class="botao_options1" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-list" viewBox="0 0 16 16">
                                         <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
                                         <path d="M5 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 5 8zm0-2.5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 5a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-1-5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zM4 8a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm0 2.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/>
@@ -43,7 +163,7 @@
                             </form>
 
                             <form method="GET" action="{{route('edite_cliente', ['id'=>$cli->id])}}">
-                                <button class="btn" type="submit">
+                                <button class="botao_options2" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -52,7 +172,7 @@
                             </form>
 
                             <form method="GET" action="{{route('delete_cliente', ['id'=>$cli->id])}}">
-                                <button class="btn" type="submit">
+                                <button class="botao_options3" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                                         <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>

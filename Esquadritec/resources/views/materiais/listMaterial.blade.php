@@ -20,12 +20,8 @@
 
     }
 
-    .card1 {}
-
     .tabela {
-        border-left: rgba(204, 204, 204, 0.952) solid 1px;
-        border-bottom: rgba(204, 204, 204, 0.952) solid 1px;
-        border-top: rgba(204, 204, 204, 0.952) solid 1px;
+        border: rgba(204, 204, 204, 0.952) solid 1px;
         width: 100%;
         text-align: center;
     }
@@ -51,34 +47,91 @@
 
     .div_botao {
         padding: 0;
+        text-align: right;
+        margin-bottom: 5px;
+
+    }
+
+    @media (max-width: 854px){
+        .div_botao{
+            text-align: start;
+        }
     }
 
     .row_options {
         margin: 0;
-        padding: 0; 
-        width: 136px;
+        padding: 0;
+        width: 100%;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        align-items: center;
+
 
     }
-    .row_options form{
-        border-right: rgba(204, 204, 204, 0.952) solid 1px;
+
+    .row_options form {
         border-top: rgba(204, 204, 204, 0.952) solid 1px;
         width: 100%;
+        height: 100%;
     }
 
     .cabecalho th {
-        border-left: rgba(204, 204, 204, 0.952) solid 1px;
-        border-right: rgba(204, 204, 204, 0.952) solid 1px;
-        border-top: rgba(204, 204, 204, 0.952) solid 1px;
-        border-bottom: rgba(204, 204, 204, 0.952) solid 2px;
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+
+    }
+
+    .row_options input {
+        border: none;
+    }
+
+    .botao_options1 {
+        color: rgba(0, 0, 255, 0.685);
+
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options2 {
+        color: rgba(20, 160, 1, 0.938);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options3 {
+        color: rgba(160, 14, 1, 0.801);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options1:hover {
+        color: rgb(0, 0, 255);
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .botao_options2:hover {
+        color: rgb(9, 255, 0);
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .botao_options3:hover {
+        color: red;
+
+        transform: translate(1px, 2%);
+        transition: 0.5s;
     }
 
     /* .svg_show:hover {
         background: white;
     } */
-
 
 </style>
 
@@ -96,7 +149,7 @@
     <x-layout />
 
     <h2 class="text-black font-monospace py-4 text-center">Lista de Materiais</h2>
-    <div class="div_botao col-lg-12" style="text-align: right; margin-bottom: 5px;">
+    <div class="div_botao col-lg-12">
         <a type="button" class="botao" href="{{ route('new_material') }}">ADICIONAR +</a>
     </div>
 
@@ -123,7 +176,7 @@
 
                         <td class="row_options">
                             <form method="GET" action="{{ route('show_material', ['id' => $material->id]) }}">
-                                <button class="btn" type="submit">
+                                <button class="botao_options1" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="" viewBox="0 0 16 16">
                                         <path
@@ -135,7 +188,7 @@
                             </form>
 
                             <form method="GET" action="{{ route('edite_material', ['id' => $material->id]) }}">
-                                <button class="btn" type="submit">
+                                <button class="botao_options2" type="submit">
                                     <svg class="svg_show" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="" viewBox="0 0 16 16">
                                         <path
@@ -147,7 +200,7 @@
                             </form>
 
                             <form method="GET" action="{{ route('delete_material', ['id' => $material->id]) }}">
-                                <button class="btn" type="submit">
+                                <button class="botao_options3" type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi" viewBox="0 0 16 16">
                                         <path
