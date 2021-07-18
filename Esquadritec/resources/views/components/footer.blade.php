@@ -268,6 +268,121 @@
         border-radius: 28px;
         height: 455px;
     }
+    /*A partir daqui é o novo css das tabelas lista*/
+    .div_botao {
+        padding: 0;
+        text-align: right;
+        margin-bottom: 5px;
+    }
+
+    @media (max-width: 854px){
+        .div_botao{
+            text-align: start;
+        }
+    }
+
+    .botao {
+        font-size: 15px;
+        background: #295C8A;
+        border-radius: 3px;
+        color: white;
+        padding: 5px;
+
+    }
+
+    .card1 {
+        width: 100%;
+    }
+
+    .botao:hover {
+        color: white;
+        background: #28A745;
+        background: bottom, #295d8ac5, #295C8A;
+        transition: 0.5;
+        background-image: linear-gradient(#295d8ae3, #28a746bd);
+
+        text-decoration: none;
+    }
+
+    /*Css da nova tabela está a partir daqui*/
+    .card1 {
+        width: 100%;
+    }
+    
+    .tabela_lista {
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+        
+        width: 100%;
+        text-align: center;
+
+        color: black;
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+    }
+    .tabela_lista thead {
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+    }
+
+    .table_rows {
+        color: black;
+        border: rgba(204, 204, 204, 0.952) solid 1px;
+
+    } 
+    .botao_options1 {
+        color: rgba(0, 0, 255, 0.685);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options2 {
+        color: rgba(20, 160, 1, 0.938);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options3 {
+        color: rgba(160, 14, 1, 0.801);
+        border: none;
+        background: none;
+        height: 100%;
+        margin: 2px;
+    }
+
+    .botao_options1:hover {
+        color: rgb(0, 0, 255);
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .botao_options2:hover {
+        color: rgb(9, 255, 0);
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .botao_options3:hover {
+        color: red;
+
+        transform: translate(1px, 2%);
+        transition: 0.5s;
+    }
+
+    .row_options {
+        margin: 0;
+        padding: 0; 
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .row_options form{
+        width: 100%;
+        border-top: rgba(204, 204, 204, 0.952) solid 1px;
+    }
 
 </style>
 

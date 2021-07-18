@@ -18,7 +18,7 @@
     </div>
     <div class="card1" style="height: 100%;  padding-bottom: 0%;">
         <table class="tabela">
-            <thead class="cabecalho">
+            <thead>
                 <tr style="background: #295C8A;">
                 <th scope="col" class="table_first_row">NOME</th>
                 <th scope="col" class="table_first_row">EMAIL</th>

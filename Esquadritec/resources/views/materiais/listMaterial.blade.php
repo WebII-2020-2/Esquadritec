@@ -9,131 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ asset('site/style.css') }}">
 </head>
-<style>
-    tr {
-        color: white;
-    }
 
-    .table_rows {
-        color: black;
-        border: rgba(204, 204, 204, 0.952) solid 1px;
-
-    }
-
-    .tabela {
-        border: rgba(204, 204, 204, 0.952) solid 1px;
-        width: 100%;
-        text-align: center;
-    }
-
-    .botao {
-        font-size: 15px;
-        background: #295C8A;
-        border-radius: 3px;
-        color: white;
-        padding: 5px;
-
-    }
-
-    .botao:hover {
-        color: white;
-        background: #28A745;
-        background: bottom, #295d8ac5, #295C8A;
-        transition: 0.5;
-        background-image: linear-gradient(#295d8ae3, #28a746bd);
-
-        text-decoration: none;
-    }
-
-    .div_botao {
-        padding: 0;
-        text-align: right;
-        margin-bottom: 5px;
-
-    }
-
-    @media (max-width: 854px){
-        .div_botao{
-            text-align: start;
-        }
-    }
-
-    .row_options {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-
-
-    }
-
-    .row_options form {
-        border-top: rgba(204, 204, 204, 0.952) solid 1px;
-        width: 100%;
-        height: 100%;
-    }
-
-    .cabecalho th {
-        border: rgba(204, 204, 204, 0.952) solid 1px;
-
-    }
-
-    .row_options input {
-        border: none;
-    }
-
-    .botao_options1 {
-        color: rgba(0, 0, 255, 0.685);
-
-        border: none;
-        background: none;
-        height: 100%;
-        margin: 2px;
-    }
-
-    .botao_options2 {
-        color: rgba(20, 160, 1, 0.938);
-        border: none;
-        background: none;
-        height: 100%;
-        margin: 2px;
-    }
-
-    .botao_options3 {
-        color: rgba(160, 14, 1, 0.801);
-        border: none;
-        background: none;
-        height: 100%;
-        margin: 2px;
-    }
-
-    .botao_options1:hover {
-        color: rgb(0, 0, 255);
-        transform: translate(1px, 2%);
-        transition: 0.5s;
-    }
-
-    .botao_options2:hover {
-        color: rgb(9, 255, 0);
-        transform: translate(1px, 2%);
-        transition: 0.5s;
-    }
-
-    .botao_options3:hover {
-        color: red;
-
-        transform: translate(1px, 2%);
-        transition: 0.5s;
-    }
-
-    /* .svg_show:hover {
-        background: white;
-    } */
-
-</style>
 
 <body>
     <script>
@@ -154,10 +30,10 @@
     </div>
 
     <div class="card1" style="height: 100%;  padding-bottom: 0%;">
-        <table class="tabela">
+        <table class="tabela tabela_lista">
 
             <thead class="cabecalho">
-                <tr style="background: #295C8A;">
+                <tr style="background: #295C8A; color: white;">
                     <th scope="col" class="table_first_row">Nome</th>
                     <th scope="col" class="" style="width: 200px;">Unidade de Medida</th>
                     <th scope="col" class="table_first_row">Valor</th>
