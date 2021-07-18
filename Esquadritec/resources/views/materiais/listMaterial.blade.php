@@ -32,7 +32,7 @@
     <div class="card1" style="height: 100%;  padding-bottom: 0%;">
         <table class="tabela tabela_lista">
 
-            <thead class="cabecalho">
+            <thead>
                 <tr style="background: #295C8A; color: white;">
                     <th scope="col" class="table_first_row">Nome</th>
                     <th scope="col" class="" style="width: 200px;">Unidade de Medida</th>

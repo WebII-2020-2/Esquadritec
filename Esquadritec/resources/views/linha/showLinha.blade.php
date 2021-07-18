@@ -14,9 +14,9 @@
     <x-layout/>
     <h2 class="text-black font-monospace py-4">{{$linha->linha}}</h2>
 
-    <div class="card-generico table">
-        <table class="table table-sm center">
-            <thead>
+    <div class="card1" style="height: 100%; padding-bottom: 0;">
+        <table class="tabela_lista">
+            <thead style="background-color: #295C8A; color: white;">
                 <tr>
                     <th class="table_first_row">NOME</th>
                     <th class="table_first_row">CRIADO</th>
@@ -25,9 +25,9 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$linha->linha}}</td>
-                    <td>{{$linha->created_at->format('d/m/Y')}} as {{$linha->created_at->format('H:i')}}</td>
-                    <td>{{$linha->updated_at->format('d/m/Y')}} as {{$linha->updated_at->format('H:i')}}</td>
+                    <td class="table_rows">{{$linha->linha}}</td>
+                    <td class="table_rows">{{$linha->created_at->format('d/m/Y')}} as {{$linha->created_at->format('H:i')}}</td>
+                    <td class="table_rows">{{$linha->updated_at->format('d/m/Y')}} as {{$linha->updated_at->format('H:i')}}</td>
                 </tr>
             </tbody>
         </table>

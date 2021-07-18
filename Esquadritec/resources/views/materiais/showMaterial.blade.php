@@ -12,37 +12,15 @@
         // corrigir essa funçaõ para passar valor pela url
     </script>
 </head>
-<style>
-    .tabela {
-        border: rgba(204, 204, 204, 0.952) solid 1px;
-        width: 100%;
-
-        text-align: center;
-    }
-    .cabecalho th {
-        border: rgba(204, 204, 204, 0.952) solid 1px;
-    }
-    th {
-        color: white;
-
-    }
-    .table_rows {
-        color: black;
-        border: rgba(204, 204, 204, 0.952) solid 1px;
-
-    }
-
-
-</style>
 
 <body>
     <x-layout />
-    <h2 class="text-black font-monospace" style="font-size: 25px;">{{ $material->nome }}</h2>
+    <h2 class="text-black font-monospace py-4">{{ $material->nome }}</h2>
 
     <div class="card1" style="height: 100%;  padding-bottom: 0%;">
-        <table class="tabela">
+        <table class="tabela_lista">
             <thead class="cabecalho">
-                <tr  style="background: #295C8A;">
+                <tr  style="background: #295C8A; color: white;">
                     <th class="table_first_row">NOME</th>
                     <th class="table_first_row">UNIDADE DE MEDIDA</th>
                     <th class="table_first_row">VALOR</th>

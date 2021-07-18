@@ -69,11 +69,11 @@
                     </div>
                     <div class="row text-white">
                         <div class="col right">Valor Total:</div>
-                        <div class="col text-left" style="margin-left: -2%;">{{$orcamento['valor_t_b']}}</div>
+                        <div class="col text-left" style="margin-left: -2%;">R$ {{$orcamento['valor_t_b']}}</div>
                     </div>
                     <div class="row text-white">
                         <div class="col right">Valor Final:</div>
-                        <div class="col text-left" style="margin-left: -2%;">{{$orcamento['valor_f']}}</div>
+                        <div class="col text-left" style="margin-left: -2%;">R$ {{$orcamento['valor_f']}}</div>
                     </div>
                     <div class="center" style="margin-top:2%;">
                         <button class="rounded-pill btn btn-sm btn-cancelar mx-4" onClick="goBack()" type="reset">Cancelar</button>

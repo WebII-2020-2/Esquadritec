@@ -61,8 +61,8 @@
 </style>
     <body>
         <x-layout/>
-        <div class="py-4 center" style="min-height: 200px;">
-            <h2 class="text-black font-monospace ">Editar Modelo {{strtoupper($modelo->modelo)}}</h2>
+        <div class="py-4 center" style="min-height: 200px; margin-top:10%;">
+            <h2 class="text-black font-monospace" style="margin-bottom:2%;">Editar Modelo {{strtoupper($modelo->modelo)}}</h2>
 
             <div class="card-generico center-div bg-main" style="width: 500px;min-height: 100%;">
                 <form class="" style="height: 100%;" method="POST" action="{{ route('edite_modelo_do') }}">
@@ -72,9 +72,9 @@
                         <input type="hidden" name="id" value="{{$modelo->id}}">
                         <input type="text" name="modelo" class="form-control" value="{{$modelo->modelo}}">
                     </div>
-                    <div class="center-div bottom-div w-auto">
-                        <button class="rounded-pill btn btn-md btn-cancelar mx-4" onClick="goBack()" type="reset">Cancelar</button>
-                        <button class="rounded-pill btn btn-md btn-green" type="submit">Atualizar</button>
+                    <div>
+                        <button class="rounded-pill btn btn-md btn-cancelar mx-4 m-2" onClick="goBack()" type="reset">Cancelar</button>
+                        <button class="rounded-pill btn btn-md btn-green m-2" type="submit">Atualizar</button>
                     </div>
                 </form>
             </div>
