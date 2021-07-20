@@ -61,7 +61,7 @@
 </style>
     <body>
         <x-layout/>
-        <div class="py-4 center" style="min-height: 200px; margin-top:10%;">
+        <div class="py-4 center" style="min-height: 200px; margin-top:2%;">
             <h2 class="text-black font-monospace" style="margin-bottom:2%;">Editar Modelo {{strtoupper($modelo->modelo)}}</h2>
 
             <div class="card-generico center-div bg-main" style="width: 500px;min-height: 100%;">

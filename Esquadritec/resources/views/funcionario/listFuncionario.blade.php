@@ -23,7 +23,7 @@
                 <tr style="background: #295C8A; color: white;">
                 <th scope="col" class="table_first_row">NOME</th>
                 <th scope="col" class="table_first_row">EMAIL</th>
-                <th scope="col" class="table_first_row">AÇÕES</th>
+                <th scope="col" class="table_first_row" style="width: 160px;">AÇÕES</th>
                 </tr>
             </thead>
             <tbody>

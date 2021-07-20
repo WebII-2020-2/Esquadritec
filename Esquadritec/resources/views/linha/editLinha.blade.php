@@ -14,8 +14,8 @@
 
 <body>
     <x-layout/>
-    <div class="py-4 center" style="min-height: 200px; margin-top:10%;">
-        <h2 class="text-main font-monospace" style="margin-bottom:2%;">NOVA LINHA</h2>
+    <div class="py-4 center" style="min-height: 200px; margin-top:2%;">
+        <h2 class="text-main font-monospace" style="margin-bottom:2%;">IDITAR LINHA</h2>
 
         <div class="card-generico center-div" style="width: 500px;min-height: 100%;">
             <form class="" style="height: 100%;" action="{{route('edite_linha_do')}}" method="POST">
@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <button class="rounded-pill btn btn-md btn-cancelar mx-4 m-2" onClick="goBack()" type="reset">Cancelar</button>
-                    <button class="rounded-pill btn btn-md btn-green m-2" type="submit">Adicionar</button>
+                    <button class="rounded-pill btn btn-md btn-green m-2" type="submit">Atualizar</button>
                 </div>
             </form>
         </div>

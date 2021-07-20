@@ -38,7 +38,7 @@
                     <th scope="col" class="" style="width: 200px;">Unidade de Medida</th>
                     <th scope="col" class="table_first_row">Valor</th>
                     <th scope="col" class="table_first_row">Código</th>
-                    <th scope="col" class="" style="width: 135px;">Ações</th>
+                    <th scope="col" class="table_first_row" style="width: 135px;">Ações</th>
                 </tr>
             </thead>
             <tbody>

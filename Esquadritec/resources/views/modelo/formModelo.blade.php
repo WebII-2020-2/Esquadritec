@@ -37,7 +37,7 @@
     .label_modelo{
         margin-left: 100px;
     }
-    .botao{
+    .botoes{
         width: 300px;
         margin-top: 25px;
         display: flex;
@@ -68,7 +68,7 @@
                         <label id="label_modelo" for="modelo" class="pr-2 col-form-label" style="color: white">Modelo:</label>
                         <input id="modelo" type="text" name="modelo" class="form-control input-3" placeholder="">
                     </div>
-                    <div class="botao">
+                    <div class="botoes">
                         <button class="rounded-pill btn btn-sm btn-danger ml-2" onClick="goBack()" type="reset">Cancelar</button>
                         <button class="rounded-pill btn btn-sm btn-success ml-5" type="submit">Adicionar</button>
                     </div>

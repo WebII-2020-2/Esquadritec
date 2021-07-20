@@ -22,7 +22,7 @@
             <thead>
                 <tr style="background-color: #295C8A; color: white;">
                     <th scope="col" class="table_first_row">NOME</th>
-                    <th scope="col" class="table_first_row">AÇÕES</th>
+                    <th scope="col" class="" style="width: 160px;">AÇÕES</th>
                 </tr>
             </thead>
             <tbody>

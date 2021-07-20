@@ -15,29 +15,29 @@
 
 <body>
     <x-layout/>
-    <h2 class="text-black font-monospace py-4">{{$unidade->unidade}}</h2>
+    <h2 class="text-black font-monospace py-4" style="margin:0px;">{{$unidade->unidade}}</h2>
 
-    <div class="card-generico table">
-        <table class="table table-sm center">
+    <div class="card1">
+        <table class="tabela_lista">
             <thead>
-                <tr>
-                    <th class="table_first_row">NOME</th>
-                    <th class="table_first_row">CRIADO</th>
-                    <th class="table_first_row">ATUALIZADO</th>
+                <tr style="background: #295C8A; color: white;">
+                    <th scope="col" class="table_first_row">NOME</th>
+                    <th scope="col" class="table_first_row">CRIADO</th>
+                    <th scope="col" class="table_first_row">ATUALIZADO</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$unidade->unidade}}</td>
+                    <td class="table_rows">{{$unidade->unidade}}</td>
                     @if($unidade->created_at)
-                        <td>{{$unidade->created_at->format('d/m/Y')}} as {{$unidade->created_at->format('H:i')}}</td>
+                        <td class="table_rows">{{$unidade->created_at->format('d/m/Y')}} as {{$unidade->created_at->format('H:i')}}</td>
                     @else
-                        <td>--------</td>
+                        <td class="table_rows">--------</td>
                     @endif
                     @if($unidade->updated_at)
-                        <td>{{$unidade->updated_at->format('d/m/Y')}} as {{$unidade->updated_at->format('H:i')}}</td>
+                        <td class="table_rows">{{$unidade->updated_at->format('d/m/Y')}} as {{$unidade->updated_at->format('H:i')}}</td>
                     @else
-                        <td>--------</td>
+                        <td class="table_rows">--------</td>
                     @endif
                 </tr>
             </tbody>
