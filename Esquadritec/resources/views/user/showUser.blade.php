@@ -15,26 +15,26 @@
 
 <body>
     <x-layout/>
-    <h2>{{$user->name}}</h2>
+    <h2 style="margin-left: 5px;">{{ucfirst($user->name)}}</h2>
 
-    <div class="card-generico table">
-        <table class="table table-sm center">
+    <div class="card1">
+        <table class="tabela tabela_lista">
             <thead>
-                <tr>
-                    <th class="table_first_row">NOME</th>
-                    <th class="table_first_row">EMAIL</th>
-                    <th class="table_first_row">ADMIN</th>
-                    <th class="table_first_row">CRIADO</th>
-                    <th class="table_first_row">ATUALIZADO</th>
+                <tr style="background-color: #295C8A; color: white;">
+                    <th scope="col" class="table_first_row">NOME</th>
+                    <th scope="col" class="table_first_row">EMAIL</th>
+                    <th scope="col" class="table_first_row">ADMIN</th>
+                    <th scope="col" class="table_first_row">CRIADO</th>
+                    <th scope="col" class="table_first_row">ATUALIZADO</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{$user->admin==1?'SIM':'NÃO'}}</td>
-                    <td>{{$user->created_at->format('d/m/Y')}} as {{$user->created_at->format('H:i')}}</td>
-                    <td>{{$user->updated_at->format('d/m/Y')}} as {{$user->updated_at->format('H:i')}}</td>
+                    <td class="table_rows">{{$user->name}}</td>
+                    <td class="table_rows">{{$user->email}}</td>
+                    <td class="table_rows">{{$user->admin==1?'SIM':'NÃO'}}</td>
+                    <td class="table_rows">{{$user->created_at->format('d/m/Y')}} as {{$user->created_at->format('H:i')}}</td>
+                    <td class="table_rows">{{$user->updated_at->format('d/m/Y')}} as {{$user->updated_at->format('H:i')}}</td>
                 </tr>
             </tbody>
         </table>

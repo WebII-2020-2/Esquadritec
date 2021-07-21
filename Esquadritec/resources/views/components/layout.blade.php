@@ -78,8 +78,9 @@
         animation: opacity 5s;
         /* IE 10+, Fx 29+ */
     }
-    .space{
-        margin-bottom:50px;
+
+    .space {
+        margin-bottom: 50px;
     }
 
     .toHome {
@@ -96,7 +97,7 @@
     }
 
     #menu_bar {
-        background-image: url("{{asset('img/logo.png')}}");
+        background-image: url("{{ asset('img/logo.png') }}");
         position: absolute;
         width: 100%;
         height: 120px;
@@ -160,10 +161,11 @@
         display: none;
         font-size: 20px;
     }
-    .navItens{
+
+    .navItens {
         padding: 0px;
-        margin:0px;
-        width:100%;
+        margin: 0px;
+        width: 100%;
         height: 50px;
     }
 
@@ -174,13 +176,13 @@
     }
 
     /* Menu bar - ajustado com flexBox */
-    .menu_bar{
+    .menu_bar {
         width: 100%;
     }
-    .navItens{
-        
-    }
-    .section1{
+
+    .navItens {}
+
+    .section1 {
         width: 100%;
         height: 100%;
         position: relative;
@@ -189,7 +191,8 @@
         justify-content: space-around;
         align-items: center;
     }
-    .sub_itens{
+
+    .sub_itens {
         width: 100%;
         height: 100%;
         display: flex;
@@ -198,33 +201,35 @@
         align-items: center;
     }
 
-    .pesquisar{
+    .pesquisar {
         position: relative;
         display: flex;
         flex-direction: row;
     }
 
-    .form_pesquisar{
+    .form_pesquisar {
         position: relative;
         display: flex;
         flex-direction: row;
         align-items: center;
     }
-    .botao{
+
+    .botao {
         height: 100%;
     }
-    .input_pesquisar{
+
+    .input_pesquisar {
         height: 30px;
     }
-    .user{
+
+    .user {
         margin-right: 15px;
     }
 
-    .btn{
+    .btn {
         padding: 0px 12px;
     }
-    
-    
+
 </style>
 <script>
     document.addEventListener('click', function(event) {
@@ -234,15 +239,23 @@
             closeNav()
         }
     });
-    function icons(id){
+
+    function icons(id) {
         var doc = document.getElementById(id);
-        if (doc.style.display != "block"){
+        if (doc.style.display != "block") {
             doc.style.display = "block"
-        }else{
+        } else {
             doc.style.display = "none"
         }
     }
 </script>
+<header>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+    <link href="{{ asset('site/narvbar/css/styles.css') }}" rel="stylesheet" />
+    
+</header>
+
 
 <div id="menu_barr" class="menu_bar">
     <nav class="navItens bg-main">
@@ -250,29 +263,30 @@
             <!-- barra de menu slice -->
             <div class="menu_lateral" style="margin-left: 15px">
                 <span style="cursor: pointer;" class="navbar-brand text-light" onclick="openNav()">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list"
-                        viewBox="0 0 16 16">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        class="bi bi-list" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                     </svg>
                 </span>
             </div>
             <div class="sub_itens" style="">
-                
+
                 <div id="mySidenav" class="sidenav bg-main">
                     <div id="menu_bar">
-                        <h3 style="color: white;">Esquadritec</h3>
+                        <h3 style="color:white;">Esquadritec</h3>
                     </div>
                     <a href="javascript:void(0)" class="closebtn text-light text-decoration-none"
                         onclick="closeNav()"><b>&times;</b></a>
 
-                    <a href="#" onclick="icons('content_4')" class="content text-light" style="margin-top:60px">Orçamento</a>
+                    <a href="#" onclick="icons('content_4')" class="content text-light"
+                        style="margin-top:60px">Orçamento</a>
                     <ul id="content_4" class="content_menu">
                         <li>
-                            <a href="{{route('list_orcamento')}}" class="content text-light">Listar Orçamento</a>
+                            <a href="{{ route('list_orcamento') }}" class="content text-light">Listar Orçamento</a>
                         </li>
                         <li>
-                            <a href="{{route('new_orcamento')}}" class="content text-light">Novo Orçamento</a>
+                            <a href="{{ route('new_orcamento') }}" class="content text-light">Novo Orçamento</a>
                         </li>
                     </ul>
 
@@ -280,10 +294,10 @@
                     <ul id="content_1" class="content_menu">
                         <li>
                             <!--Mudei a rota aqui pq a rota lista cliente tá com problema-->
-                            <a href="{{route('list_cliente')}}" class="content text-light">Listar Clientes</a>
+                            <a href="{{ route('list_cliente') }}" class="content text-light">Listar Clientes</a>
                         </li>
                         <li>
-                            <a href="{{route('new_cliente')}}" class="content text-light">Novo Cliente</a>
+                            <a href="{{ route('new_cliente') }}" class="content text-light">Novo Cliente</a>
                         </li>
                     </ul>
 
@@ -293,58 +307,61 @@
                             <a href="{{ route('list_material') }}" class="content text-light">Listar Materiais</a>
                         </li>
                         <li>
-                            <a href="{{route('new_material')}}" class="content text-light">Novo Material</a>
+                            <a href="{{ route('new_material') }}" class="content text-light">Novo Material</a>
                         </li>
                     </ul>
 
                     <a href="#" onclick="icons('content_5')" class="content text-light">Modelo</a>
                     <ul id="content_5" class="content_menu">
                         <li>
-                            <a href="{{route('list_modelo')}}" class="content text-light">Listar Modelos</a>
+                            <a href="{{ route('list_modelo') }}" class="content text-light">Listar Modelos</a>
                         </li>
                         <li>
-                            <a href="{{route('new_modelo')}}" class="content text-light">Novo Modelo</a>
+                            <a href="{{ route('new_modelo') }}" class="content text-light">Novo Modelo</a>
                         </li>
                     </ul>
 
                     <a href="#" onclick="icons('content_6')" class="content text-light">Linha</a>
                     <ul id="content_6" class="content_menu">
                         <li>
-                            <a href="{{route('list_linha')}}" class="content text-light">Listar Linhas</a>
+                            <a href="{{ route('list_linha') }}" class="content text-light">Listar Linhas</a>
                         </li>
                         <li>
-                            <a href="{{route('new_linha')}}" class="content text-light">Nova Linha</a>
+                            <a href="{{ route('new_linha') }}" class="content text-light">Nova Linha</a>
                         </li>
                     </ul>
 
                     <a href="#" onclick="icons('content_2')" class="content text-light">Funcionário</a>
                     <ul id="content_2" class="content_menu">
                         <li>
-                            <a href="{{route('list_funcionario')}}" class="content text-light">Listar Funcionários</a>
+                            <a href="{{ route('list_funcionario') }}" class="content text-light">Listar
+                                Funcionários</a>
                         </li>
                         <li>
-                            <a href="{{route('new_funcionario')}}" class="content text-light">Novo Funcionário</a>
+                            <a href="{{ route('new_funcionario') }}" class="content text-light">Novo Funcionário</a>
                         </li>
                     </ul>
 
                     <a href="#" onclick="icons('content_7')" class="content text-light">Unidade medida</a>
                     <ul id="content_7" class="content_menu">
                         <li>
-                            <a href="{{route('list_unidade')}}" class="content text-light">Listar Unidades</a>
+                            <a href="{{ route('list_unidade') }}" class="content text-light">Listar Unidades</a>
                         </li>
                         <li>
-                            <a href="{{route('new_unidade')}}" class="content text-light">Novo Unidade</a>
+                            <a href="{{ route('new_unidade') }}" class="content text-light">Novo Unidade</a>
                         </li>
                     </ul>
 
-                    <a href="{{route('logout')}}" class="content text-light">Sair</a>
+                    <a href="{{ route('logout') }}" class="content text-light">Sair</a>
+
                 </div>
-                <div class="esquadritec"  style="">
-                    <a class="toHome" href="{{route('dashboard')}}">ESQUADRITEC</a>
+                <div class="esquadritec" style="">
+                    <a class="toHome" href="{{ route('dashboard') }}">ESQUADRITEC</a>
                 </div>
                 <div class="pesquisar">
                     <form class="form_pesquisar">
-                        <input class="input_pesquisar form-control" style="" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+                        <input class="input_pesquisar form-control" style="" type="search" placeholder="Pesquisar"
+                            aria-label="Pesquisar">
                         <button class="btn btn-outline-success" type="submit">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-search" viewBox="0 0 16 16">
@@ -355,7 +372,33 @@
                     </form>
                 </div>
                 <div class="user" style="">
-                    <form action="{{route('show_user', ['id'=>$user->id])}}">
+                    <!-- Navbar-->
+                    <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                        <li class="nav-item dropdown">
+                            <a class=" nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-fw"></i>
+                                <button class="user_1" style="background: none; border:none; padding: 0;">
+                                    <svg class="user_1" xmlns="http://www.w3.org/2000/svg" width="25" height="25"
+                                        fill="white" class="icone_user bi bi-person-circle" viewBox="0 0 16 16">
+                                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
+                                        <path fill-rule="evenodd"
+                                            d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                                    </svg>
+
+                                </button>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item"
+                                        href="{{ route('show_user', ['id' => $user->id]) }}">Show user</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="{{ route('logout') }}">Sair</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                    {{-- <form action="{{ route('show_user', ['id' => $user->id]) }}">
                         <button type="submit" style="background-color:transparent; border:none;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="white"
                                 class="bi bi-person-circle" viewBox="0 0 16 16">
@@ -364,7 +407,7 @@
                                     d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                             </svg>
                         </button>
-                    </form>
+                    </form> --}}
                 </div>
             </div>
         </div>
@@ -380,7 +423,16 @@
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+
     function goBack() {
         window.history.back();
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+{{-- <script src="assets/demo/chart-area-demo.js"></script>
+<script src="assets/demo/chart-bar-demo.js"></script>
+<script src="js/datatables-simple-demo.js"></script>
+<script src="js/scripts.js"></script> --}}
