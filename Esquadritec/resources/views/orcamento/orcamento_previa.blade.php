@@ -73,28 +73,32 @@
                     </tbody>
                 </table>
             </div>
-            <div class="row right" style="margin-bottom: 2%; margin-top: 2%;">
-                <div class="col">
-                    <label>Mão de obra: </label>
-                </div>
-                <div class="col" style="margin-left: -1%;">
-                    <div class="card text-left" style="padding-left:2%;">V. n definido</div>
-                </div>
-                <div class="col">
-                    <label>Desconto:</label>
-                </div>
-                <div class="col" style="margin-left: -1%;">
-                    <div class="card text-left" style="padding-left:3%; width: 33%;">{{$orcamento['desconto']}} %</div>
-                </div>
-                <div class="col">
-                    <label>Valor final:</label>
-                </div>
-                <div class="col" style="margin-left: -1%;">
-                    <div class="card text-left" style="padding-left:4%; width: 77%;">R$ {{$orcamento['valor_final']}}</div>
-                </div>
-            </div>
             <form method="POST" action="{{route('new_orcamento_do')}}">
                 @csrf
+                <div class="row right" style="margin-bottom: 2%; margin-top: 2%;">
+                    <div class="col">
+                        <label>Mão de obra: </label>
+                    </div>
+                    <div class="col" style="margin-left: -1%;">
+                        <input class="card text-left" id="maoObra" name="maoObra" type="number" class="form-control p-1" value="">
+                    </div>
+                    <div class="d-flex justify-content-start" style="width: 300px;">
+                        <label for="desconto" class="m-1 form-label" style="color: white">Desconto(%):</label>
+                        <input id="desconto" style="width: 50px;" type="number" name="desconto" class="form-control p-1" placeholder="">
+                    </div>
+                    <div class="col">
+                        <label>Valor(R$):</label>
+                    </div>
+                    <div class="col" style="margin-left: -1%;">
+                        <input class="card text-left" id="valorTotal" type="number" class="form-control p-1" readonly value="{{$orcamento['valor_final']}}">
+                    </div>
+                    <div class="col">
+                        <label>Valor final(R$):</label>
+                    </div>
+                    <div class="col" style="margin-left: -1%;">
+                        <input class="card text-left" id="valorFinal" type="number" class="form-control p-1" readonly value="{{$orcamento['valor_final']}}">
+                    </div>
+                </div>
                 <div class="center" style="margin-bottom: 2%;">
                     <a class="rounded-pill btn btn-sm btn-cancelar mx-4" style="width: 72.88px;" href="{{route('dashboard')}}">Cancelar</a>
                     <button class="rounded-pill btn btn-sm btn-cancelar mx-4" style="width: 72.88px;" onClick="goBack()" type="reset">Voltar</button>

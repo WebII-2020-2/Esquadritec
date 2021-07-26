@@ -1,5 +1,23 @@
 <script>
+    $('#desconto').keyup( function () {
+        var valor = parseInt($('#valorTotal').val())
+        var maoObra = parseInt($('#maoObra').val())
+        var desconto = parseInt($('#desconto').val())
 
+        var valorF = maoObra>0?(valor+maoObra):valor
+        var valorF = (desconto > 0)?(valorF-(valorF*(desconto/100))):valorF
+
+        $('#valorFinal').val(valorF)
+    })
+    $('#maoObra').keyup( function () {
+        var valor = parseInt($('#valorTotal').val())
+        var maoObra = parseInt($('#maoObra').val())
+        var desconto = parseInt($('#desconto').val())
+
+        var valorF = maoObra>0?(valor+maoObra):valor
+        valorF = (desconto > 0)?(valorF-(valorF*(desconto/100))):valorF
+        $('#valorFinal').val(valorF)
+    })
     function PDF() {
         var conteudo  = document.getElementById('conteudo');
         var doc = new jsPDF('p', 'pt', 'letter');

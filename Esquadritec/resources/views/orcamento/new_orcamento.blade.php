@@ -29,11 +29,6 @@
                                 @endforeach
                             </select>
                         </div>
-    
-                        <div class="d-flex justify-content-start" style="width: 300px;">
-                            <label for="desconto" class="m-1 form-label" style="color: white">Desconto(%):</label>
-                            <input id="desconto" style="width: 15%;" type="number" name="desconto" class="form-control p-1" placeholder="">
-                        </div>
 
                     </div>
 

@@ -211,14 +211,17 @@ class Orcamento extends Controller
     {
         try{
             $orcamento = session()->get('newOrcamento');
+            $desconto = $request['desconto'];
+            $valor_t_b = $orcamento['valor_total']+$request['maoObra'];
+            $valorFinal = ($valor_t_b - ($valor_t_b * ($desconto/100)));
 
             $orcamento_set = [
                 'cliente' => $orcamento['cliente']->id,
                 'observacao' => $orcamento['observacao'],
-                'desconto' => $orcamento['desconto'],
+                'desconto' => $desconto,
                 'status' => 'PENDENTE',
-                'valor_t_b' => $orcamento['valor_total'],
-                'valor_f' => $orcamento['valor_final']
+                'valor_t_b' => $valor_t_b,
+                'valor_f' => $valorFinal
             ];
             $orcamento_set = new Orcament($orcamento_set);
             $orcamento_set->save();

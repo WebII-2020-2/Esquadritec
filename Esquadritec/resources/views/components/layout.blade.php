@@ -352,8 +352,6 @@
                         </li>
                     </ul>
 
-                    <a href="{{ route('logout') }}" class="content text-light">Sair</a>
-
                 </div>
                 <div class="esquadritec" style="">
                     <a class="toHome" href="{{ route('dashboard') }}">ESQUADRITEC</a>

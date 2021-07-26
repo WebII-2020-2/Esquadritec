@@ -24,13 +24,13 @@
                         </div>
                         <div class="col">
                             <label for="value" class="">Valor:</label>
-                            <input id="value" class="input-3" style="width: 35%;" type="number" name="valor">
+                            <input id="value" class="input-3" style="width: 35%;" type="number" name="valor" required>
                         </div>
                     </div>
                     <div class="row" style="margin-bottom: 2%;">
                         <div class="col-6" style="margin-left: 1%;">
                         <label for="codigo">Código:</label>
-                        <input id="codigo"class="input-3" type="text" name="codigo">
+                        <input id="codigo"class="input-3" type="text" name="codigo" required>
                         </div>
                     </div>
 
