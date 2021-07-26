@@ -36,6 +36,7 @@
                 <tr style="background: #295C8A; color: white;">
                     <th scope="col" class="table_first_row">Nome</th>
                     <th scope="col" class="" style="width: 200px;">Unidade de Medida</th>
+                    <th scope="col" class="" style="width: 200px;">Linha</th>
                     <th scope="col" class="table_first_row">Valor</th>
                     <th scope="col" class="table_first_row">Código</th>
                     <th scope="col" class="table_first_row" style="width: 135px;">Ações</th>
@@ -47,6 +48,7 @@
                     <tr class="">
                         <td class="table_rows">{{ $material->nome }}</td>
                         <td class="table_rows">{{ $material->unidade_medida->unidade }}</td>
+                        <td class="table_rows">{{ $material->linha->linha }}</td>
                         <td class="table_rows">{{ $material->valor }}</td>
                         <td class="table_rows">{{ $material->codigo }}</td>
 

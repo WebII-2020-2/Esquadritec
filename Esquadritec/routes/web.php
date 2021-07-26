@@ -18,11 +18,20 @@ Route::get('/', [Login::class, 'login'])->name('login');
 Route::get('/logout', [Login::class, 'logout'])->name('logout');
 Route::post('/login/do', [Login::class, 'loginDo'])->name('loginDo');
 
+// Route::get('/dashboard/funcionario/new', [Funcionario::class, 'create'])->name('new_funcionario');
+// Route::post('/dashboard/funcionario/new/do', [Funcionario::class, 'store'])->name('new_funcionario_do');
+
 Route::middleware(['Validate'])->group(function () {
     Route::get('/dashboard', [User::class, 'index'])->name('dashboard');
 
-    Route::get('/dashboard/new', [User::class, 'create'])->name('user_create');
-    Route::post('/dashboard/new/do', [User::class, 'store'])->name('user_create_do');
+    Route::get('/dashboard/funcionario', [Funcionario::class, 'index'])->name('list_funcionario');
+    Route::get('/dashboard/funcionario/new', [Funcionario::class, 'create'])->name('new_funcionario');
+    Route::post('/dashboard/funcionario/new/do', [Funcionario::class, 'store'])->name('new_funcionario_do');
+    Route::get('/dashboard/funcionario/edit/{id}', [Funcionario::class, 'edit'])->name('edite_funcionario');
+    Route::post('/dashboard/funcionario/edit/do', [Funcionario::class, 'update'])->name('edite_funcionario_do');
+    Route::get('/dashboard/funcionario/show/{id}', [Funcionario::class, 'show'])->name('show_funcionario');
+    Route::get('/dashboard/funcionario/delete/{id}', [Funcionario::class, 'destroy'])->name('delete_funcionario');
+
     Route::get('/dashboard/user/{id}', [User::class, 'show'])->name('show_user');
 
     //Material
@@ -65,14 +74,6 @@ Route::middleware(['Validate'])->group(function () {
     Route::post('/dashboard/unidade/edit/do', [Unidade::class, 'update'])->name('edite_unidade_do');
     Route::get('/dashboard/unidade/show/{id}', [Unidade::class, 'show'])->name('show_unidade');
     Route::get('/dashboard/unidade/delete/{id}', [Unidade::class, 'destroy'])->name('delete_unidade');
-
-    Route::get('/dashboard/funcionario', [Funcionario::class, 'index'])->name('list_funcionario');
-    Route::get('/dashboard/funcionario/new', [Funcionario::class, 'create'])->name('new_funcionario');
-    Route::post('/dashboard/funcionario/new/do', [Funcionario::class, 'store'])->name('new_funcionario_do');
-    Route::get('/dashboard/funcionario/edit/{id}', [Funcionario::class, 'edit'])->name('edite_funcionario');
-    Route::post('/dashboard/funcionario/edit/do', [Funcionario::class, 'update'])->name('edite_funcionario_do');
-    Route::get('/dashboard/funcionario/show/{id}', [Funcionario::class, 'show'])->name('show_funcionario');
-    Route::get('/dashboard/funcionario/delete/{id}', [Funcionario::class, 'destroy'])->name('delete_funcionario');
 
     Route::get('/dashboard/orcamento', [Orcamento::class, 'index'])->name('list_orcamento');
     Route::get('/dashboard/orcamento/new', [Orcamento::class, 'create'])->name('new_orcamento');

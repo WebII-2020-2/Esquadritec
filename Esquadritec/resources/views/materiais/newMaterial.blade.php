@@ -17,34 +17,51 @@
             <div class="card-generico center-div text-white" style="width: 500px;height: 100%;">
                 <form class="" style="height: 100%; width: 100%;" method="POST" action="{{route('new_material_do')}}">
                     @csrf
-                    <div class="row" style="margin-bottom: 2%; margin-top:4%;">
-                        <div class="col">
-                            <label for="material">Material:</label>
-                            <input id="material" class="input-3" type="text" name="nome" required>
+                    <div class="full-width" style="height:100px;">
+                        <div class="title full-width row col-12">
+                            <div class="col-6 full-width">Material</div>
+                            <div class="col-6 full-width">Código</div>
                         </div>
-                        <div class="col">
-                            <label for="value" class="">Valor:</label>
-                            <input id="value" class="input-3" style="width: 35%;" type="number" name="valor" required>
-                        </div>
-                    </div>
-                    <div class="row" style="margin-bottom: 2%;">
-                        <div class="col-6" style="margin-left: 1%;">
-                        <label for="codigo">Código:</label>
-                        <input id="codigo"class="input-3" type="text" name="codigo" required>
+                        <div class="full-width row col-12">
+                            <div class="col-6">
+                                <input id="material" class="input-5" type="text" name="nome" required>
+                            </div>
+                            <div class="col-6">
+                                <input id="codigo"class="input-5" type="text" name="codigo" required>
+                            </div>
                         </div>
                     </div>
-
-                    <div class="row" style="margin-left: 6%;">
-                        <label for="inputInudadeMedida">Unidade de Medida:</label>
-                            <select id="inputUnidadeMedida" name="unidade_medida" class="form-select form-control space" style="margin-left: 1%; width: 15%; font-size:11px;">
-
-                                @foreach ($unidades as $unidade)
-
-                                <option value="{{ $unidade->id }}">{{ $unidade->unidade }}</option>
-
-                                @endforeach
-
-                            </select>
+                    <div class="full-width" style="height:100px;">
+                        <div class="title full-width row col-12">
+                            <div class="col-3 full-width">Medida</div>
+                            <div class="col-3 full-width">Peso/UN</div>
+                            <div class="col-4 full-width">Linha</div>
+                            <div class="col-2 full-width">Valor</div>
+                        </div>
+                        <div class="full-width row col-12">
+                            <div class="col-3 full-width">
+                                <select id="inputUnidadeMedida"  name="unidade_medida" class="input-5">
+                                    @foreach ($unidades as $unidade)
+                                        <option value="{{ $unidade->id }}">{{ $unidade->unidade }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-3 full-width">
+                                <div class="full-width">
+                                    <input id="peso" class="full-width input-5" type="text" name="peso" required>
+                                </div>
+                            </div>
+                            <div class="col-4 full-width">
+                                <select id="linha" class="input-5" name="linha" required>
+                                    @foreach ($linhas as $lin)
+                                        <option value="{{$lin->id}}">{{$lin->linha}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <input id="value" class="input-5" type="number" name="valor" required>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="pt-4" style="margin-bottom:4%;">

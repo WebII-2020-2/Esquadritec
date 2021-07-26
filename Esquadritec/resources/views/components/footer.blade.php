@@ -147,6 +147,10 @@
         width: 100%;
     }
 
+    .title{
+        color: white;
+    }
+
     .input {
         position: relative;
         padding-top: 10px;
@@ -170,6 +174,12 @@
 
     .input-4 {
         width: 40%;
+        border-radius: 10px;
+        border: solid 1px white;
+    }
+
+    .input-5 {
+        width: 100%;
         border-radius: 10px;
         border: solid 1px white;
     }

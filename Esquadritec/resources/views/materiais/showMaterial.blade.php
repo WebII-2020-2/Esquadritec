@@ -23,6 +23,7 @@
                 <tr  style="background: #295C8A; color: white;">
                     <th class="table_first_row">NOME</th>
                     <th class="table_first_row">UNIDADE DE MEDIDA</th>
+                    <th class="table_first_row">LINHA</th>
                     <th class="table_first_row">VALOR</th>
                     <th class="table_first_row">CODIGO</th>
                     <th class="table_first_row">CRIADO</th>
@@ -33,6 +34,7 @@
                 <tr>
                     <td class="table_rows">{{ $material->nome }}</td>
                     <td class="table_rows">{{ $material->unidade_medida->unidade }}</td>
+                    <td class="table_rows">{{ $material->linha->linha }}</td>
                     <td class="table_rows">{{ $material->valor }}</td>
                     <td class="table_rows">{{ $material->codigo }}</td>
                     <td>{{ $material->created_at->format('d/m/Y') }} as {{ $material->created_at->format('H:i') }}</td>

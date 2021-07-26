@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models;
 use App\Models\Material as Materiais;
 use App\Models\unidade;
+use App\Models\Linha;
 use Illuminate\Http\Request;
 
 class Material extends Controller
@@ -20,7 +21,9 @@ class Material extends Controller
         $materiais = Materiais::all();
         foreach ($materiais as $key => $material) {
             $materiais[$key]->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
+            $materiais[$key]->linha = Linha::where('id', $material->linha)->first();
         }
+        // dd($materiais);
         return view('materiais/listMaterial', [
             'materiais' => $materiais,
         ]);
@@ -37,7 +40,8 @@ class Material extends Controller
     public function create()
     {
         $unidades = unidade::all();
-        return view('materiais/newMaterial', ['unidades' => $unidades]);
+        $linhas = Linha::all();
+        return view('materiais/newMaterial', ['unidades' => $unidades, 'linhas'=>$linhas]);
     }
 
     /**
@@ -54,7 +58,7 @@ class Material extends Controller
             $new_material->save();
             return redirect()->route('list_material')->with('succes', 'cadastrado');
         } catch (Expection $e) {
-            return redirect()->route('listMaterial')->with('error', 'Falha de rede!');
+            return redirect()->route('list_material')->with('error', 'Falha de rede!');
         }
     }
 
@@ -71,6 +75,7 @@ class Material extends Controller
 
             $material = Materiais::where('id', $id)->first();
             $material->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
+            $material->linha = Linha::where('id', $material->linha)->first();
 
             return view('materiais/showMaterial', ['material' => $material]);
         } catch (Exception $e) {
@@ -90,13 +95,15 @@ class Material extends Controller
         try {
             $material = Materiais::where('id', $id)->first();
             $unidades = Unidade::all();
-            $material->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
+            $linhas = Linha::all();
+            // dd($material);
             return view('materiais/editMaterial', [
                 'material' => $material,
-                'unidades' => $unidades
+                'unidades' => $unidades,
+                'linhas' => $linhas
             ]);
         } catch (Exception $e) {
-            return redirect()->route('showMaterial')->with('error', 'Falha de rede!');
+            return redirect()->route('show_material')->with('error', 'Falha de rede!');
         }
     }
 

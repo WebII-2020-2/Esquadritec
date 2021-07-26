@@ -17,12 +17,10 @@ class Produto extends Migration
             $table->bigIncrements('id', true);
             $table->foreignId('orcamento');
             $table->foreignId('modelo');
-            $table->foreignId('linha');
             $table->string('nome',50);
             $table->decimal('valor', 8, 2);
             $table->foreign('orcamento')->references('id')->on('orcamento')->onDelete('CASCADE');
             $table->foreign('modelo')->references('id')->on('modelo')->onDelete('CASCADE');
-            $table->foreign('linha')->references('id')->on('linha')->onDelete('CASCADE');
             $table->timestamps();
         });
     }

@@ -100,7 +100,7 @@
     <div class="py-4 center" style="min-height: 200px;">
         <h2 class="text-main font-monospace ">EDITAR MATERIAL {{strtoupper($material->nome)}}</h2>
 
-        <div class="card-generico center-div bg-main" style="width: 500px; height: 330px;">
+        <div class="card-generico center-div bg-main" style="width: 500px; height: 350px;">
             <form class="" style="height: 100%;" method="POST" action="{{ route('edite_material_do') }}">
                 @csrf
                 <input type="hidden" name="id" value="{{$material->id}}">
@@ -116,18 +116,43 @@
                     <label for="valor" class="pr-2 col-form-label" style="color: white">Valor:</label>
                     <input id="valor" class="input2" type="number" name="valor" class="form-control" value="{{$material->valor}}">
                 </div>
-                <div class="campo" style="width: 300px;">
-                    <label for="inputInudadeMedida" class="pr-2 col-form-label">Unidade de Medida:</label>
-                    <select id="inputUnidadeMedida"  class="select" name="unidade_medida" class="form-select form-control" style="width: 80px;">
-                        @foreach ($unidades as $unidade)
-                            @if($unidade->id == $material->unidade_medida->id)
-                                <option value="{{ $unidade->id }}" selected>{{ $unidade->unidade }}</option>
-                            @else
-                                <option value="{{ $unidade->id }}">{{ $unidade->unidade }}</option>
-                            @endif
-                        @endforeach
-                    </select>
+                <div class="full-width" style="height:100px;">
+                    <div class="title full-width row col-12">
+                        <div class="col-4 full-width">Unidade Medida</div>
+                        <div class="col-4 full-width">Peso/UN</div>
+                        <div class="col-4 full-width">Linha</div>
+                    </div>
+                    <div class="full-width row col-12">
+                        <div class="col-4 full-width">
+                            <select id="inputUnidadeMedida"  name="unidade_medida" class="select form-select form-control">
+                                @foreach ($unidades as $unidade)
+                                    @if($unidade->id == $material->unidade_medida)
+                                        <option value="{{ $unidade->id }}" selected>{{ $unidade->unidade }}</option>
+                                    @else
+                                        <option value="{{ $unidade->id }}">{{ $unidade->unidade }}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-4 full-width">
+                            <div class="full-width">
+                                <input id="peso" class="full-width" type="text" name="peso" value="{{$material->peso}}" required>
+                            </div>
+                        </div>
+                        <div class="col-4 full-width">
+                            <select id="linha" class="input-5 full-width" name="linha" required>
+                                @foreach ($linhas as $lin)
+                                    @if($lin->id == $material->linha)
+                                        <option value="{{$lin->id}}" selected>{{$lin->linha}}</option>
+                                    @else
+                                        <option value="{{$lin->id}}">{{$lin->linha}}</option>
+                                    @endif
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="btns">
                     <button class="rounded-pill btn btn-md btn-cancelar" onClick="goBack()"
                         type="reset">Cancelar</button>

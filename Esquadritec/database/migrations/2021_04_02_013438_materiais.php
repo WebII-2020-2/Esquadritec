@@ -16,10 +16,13 @@ class Materiais extends Migration
         Schema::create('materiais', function (Blueprint $table) {
             $table->bigIncrements('id', true);
             $table->foreignId('unidade_medida');
+            $table->foreignId('linha');
             $table->string('nome',50);
             $table->string('codigo',50);
-            $table->decimal('valor', 8, 2);
+            $table->string('peso',50)->nullable();
+            $table->decimal('valor', 8, 2)->nullable();
             $table->foreign('unidade_medida')->references('id')->on('unidade_medida')->onDelete('CASCADE');
+            $table->foreign('linha')->references('id')->on('linha')->onDelete('CASCADE');
             $table->timestamps();
         });
     }
