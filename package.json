@@ -1,13 +1,14 @@
 {
     "private": true,
     "scripts": {
-        "dev": "react-scripts start",
-        "start": "serve -s build",
-        "build": "react-scripts build",
-        "test": "react-scripts test --env = jsdom ",
-        " eject ":
-        " react- scripts eject ", " heroku-postbuild ":" npm run build "
-        },
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
     "devDependencies": {
         "axios": "^0.21",
         "laravel-mix": "^6.0.6",
