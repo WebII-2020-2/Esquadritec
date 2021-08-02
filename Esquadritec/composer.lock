@@ -196,24 +196,28 @@
             ],
             "authors": [
                 {
-                    "name": "Guilherme Blanco",
-                    "email": "guilhermeblanco@gmail.com"
+                    "name": "Djalma Santana Malta Neto",
+                    "email": "djalma7743@gmail.com"
                 },
                 {
-                    "name": "Roman Borschel",
-                    "email": "roman@code-factory.org"
+                    "name": "Sâmela Camelo Brito",
+                    "email": "samelabrito08@gmail.com"
                 },
                 {
-                    "name": "Benjamin Eberlei",
-                    "email": "kontakt@beberlei.de"
+                    "name": "Eliveltom Xavier",
+                    "email": ""
                 },
                 {
-                    "name": "Jonathan Wage",
-                    "email": "jonwage@gmail.com"
+                    "name": "Joedson",
+                    "email": ""
                 },
                 {
-                    "name": "Johannes Schmitt",
-                    "email": "schmittjoh@gmail.com"
+                    "name": "Guilherme",
+                    "email": ""
+                },
+                {
+                    "name": "Ismael Amorin Luduvico",
+                    "email": ""
                 }
             ],
             "description": "PHP Doctrine Inflector is a small library that can perform string manipulations with regard to upper/lowercase and singular/plural forms of words.",

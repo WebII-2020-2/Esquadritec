@@ -18,6 +18,9 @@ Route::get('/', [Login::class, 'login'])->name('login');
 Route::get('/logout', [Login::class, 'logout'])->name('logout');
 Route::post('/login/do', [Login::class, 'loginDo'])->name('loginDo');
 
+// para adicionar um usuario sem estar logado use as rotas abaixo e retire o atributo:
+// "<li><a class="dropdown-item" href="{{ route('show_user', ['id' => $user->id]) }}">Show user</a></li>" do layout
+
 // Route::get('/dashboard/funcionario/new', [Funcionario::class, 'create'])->name('new_funcionario');
 // Route::post('/dashboard/funcionario/new/do', [Funcionario::class, 'store'])->name('new_funcionario_do');
 

@@ -386,8 +386,7 @@
                                 </button>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item"
-                                        href="{{ route('show_user', ['id' => $user->id]) }}">Show user</a></li>
+                                <li><a class="dropdown-item" href="{{ route('show_user', ['id' => $user->id]) }}">Show user</a></li>
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
