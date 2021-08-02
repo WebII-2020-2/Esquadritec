@@ -14,7 +14,10 @@ use App\Http\Controllers\produto\new_line;
 use App\Http\Controllers\Unidade\Unidade;
 
 
-Route::get('/', [Login::class, 'login'])->name('login');
+// Route::get('/', [Login::class, 'login'])->name('login');
+Route::get('/', function(){
+    return view('Auth/Login');
+})->name('login');
 Route::get('/logout', [Login::class, 'logout'])->name('logout');
 Route::post('/login/do', [Login::class, 'loginDo'])->name('loginDo');
 
