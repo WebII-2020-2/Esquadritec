@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Orcamento;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\Cliente;
+use App\Models\cliente;
 use App\Models\Linha;
 use App\Models\Modelo;
 use App\Models\Material;
