@@ -14,7 +14,7 @@
 > -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png" width="4.5%"/> Mysql Workbench 
 > -  - <img src="https://img.icons8.com/fluent/48/000000/figma.png" width="3.3%"/> Figma
 > - **Banco de Dados**
-> - - <img src="https://img.icons8.com/color/20/000000/postgreesql.png"/> PostgreSQL
+> - - <img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/> MySQL
 > - **Ferramentas para codificar**
 > - -  <img src="https://img.icons8.com/fluent/20/000000/sublime-text.png"/>  Sublime Text
 > - - <img src="https://img.icons8.com/fluent/20/000000/visual-studio-code-2019.png"/> Visual Studio Code
