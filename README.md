@@ -11,7 +11,7 @@
 
  ### O sistema foi projetado e desenvolvido com o auxílio das seguintes ferramentas:
 >  - **Modelagem**
-> -  - <img src="https://img.icons8.com/color/20/4a90e2/mysql-logo.png" width="4.5%"/> Mysql Workbench 
+> -  - <img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/> Mysql Workbench 
 > -  - <img src="https://img.icons8.com/fluent/48/000000/figma.png" width="3.3%"/> Figma
 > - **Banco de Dados**
 > - - <img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/> MySQL
