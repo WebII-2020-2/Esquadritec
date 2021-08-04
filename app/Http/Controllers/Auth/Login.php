@@ -18,7 +18,9 @@ class Login extends Controller
             'password' => $request->password,
         ];
         if(Auth::attempt($credentials)){
-            return redirect()->route('dashboard')->with('succes','Login Realizado!');
+            // return redirect()->route('dashboard')->with('succes','Login Realizado!');
+            $user = Auth::user();
+            return redirect()->view('user/dashboard', compact('user'))->with('succes','Login Realizado!');
         }
         return redirect()->route('login')->with('error','Credenciais inválidas!');
     }
