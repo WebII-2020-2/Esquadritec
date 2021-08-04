@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Cliente;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\cliente as Clientes;
+use App\Models\Cliente as Clientes;
 use App\Models\endereco as Endereco;
 use App\Models\Telefone as Telefone;
 

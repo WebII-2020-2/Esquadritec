@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Auth;
 
 use App\Models\User as Users;
 
-use App\Models\cliente as Clientes;
+use App\Models\Cliente as Clientes;
 use App\Models\Funcionario as Funcionarios;
 use App\Models\unidade as Unidades;
 use App\Models\Modelo as Model;
