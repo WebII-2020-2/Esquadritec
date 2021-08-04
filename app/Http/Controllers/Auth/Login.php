@@ -74,6 +74,7 @@ class Login extends Controller
         // }
         // return redirect()->route('login')->with('error','Credenciais inválidas!');
             $user = Auth::user();
+            dd($user);
             return view('user/dashboard', compact('user', 'dataPoints'))->with('succes','Login Realizado!');
         }
         return redirect()->route('login')->with('error','Credenciais inválidas!');
