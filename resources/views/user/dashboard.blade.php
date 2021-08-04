@@ -41,7 +41,7 @@
     </head>
     <body>
         <h1>{{$user->name}}</h1>
-        <x-layout/>
+        <!-- <x-layout/> -->
         <!--
         <label for="email" >EMAIL: </label>
         <h4 id="email">{{ $user->email }}</h4>-->
