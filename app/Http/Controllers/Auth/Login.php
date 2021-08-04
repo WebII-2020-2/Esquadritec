@@ -60,24 +60,25 @@ class Login extends Controller
                 array("x"=> 56, "y"=> 450),
                 array("x"=> 57, "y"=> 35),
             );
-            $clientes = Clientes::all();
-            $funcionarios = Funcionarios::all();
-            $unidades = Unidades::all();
-            $modelos = Model::all();
-            $linhas = Linha::all();
-            $orcamentos = Orcamento::all();
-            $materiais = Material::all();
-            return view('user/dashboard', [
-                'user' => Auth::user(),
-                'clientes' => count($clientes),
-                'funcionarios' => count($funcionarios),
-                'unidades' => count($unidades),
-                'modelos' => count($modelos),
-                'linhas' => count($linhas),
-                'materiais' => count($materiais),
-                'orcamentos' => count($orcamentos),
-                'dataPoints' => $dataPoints,
-            ])->with('succes','Login Realizado!');
+            $clientes = count(Clientes::all());
+            $funcionarios = count(Funcionarios::all());
+            $unidades = count(Unidades::all());
+            $modelos = count(Model::all());
+            $linhas = count(Linha::all());
+            $orcamentos = count(Orcamento::all());
+            $materiais = count(Material::all());
+            $user =  Auth::user();
+            return view('user/dashboard', compact(
+                'user',
+                'clientes',
+                'funcionarios',
+                'unidades',
+                'modelos',
+                'linhas',
+                'materiais',
+                'orcamentos',
+                'dataPoints'
+            ))->with('succes','Login Realizado!');
         }
         return redirect()->route('login')->with('error','Credenciais inválidas!');
     }
