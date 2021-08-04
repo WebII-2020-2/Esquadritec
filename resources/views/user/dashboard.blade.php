@@ -40,6 +40,7 @@
         </script>
     </head>
     <body>
+        <h1>{{$user->name}}</h1>
         <x-layout/>
         <!--
         <label for="email" >EMAIL: </label>
