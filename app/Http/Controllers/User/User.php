@@ -65,6 +65,7 @@ class User extends Controller
         $linhas = Linha::all();
         $orcamentos = Orcamento::all();
         $materiais = Material::all();
+        dd('axo');
         return view('user/dashboard', [
             'user' => Auth::user(),
             'clientes' => count($clientes),
