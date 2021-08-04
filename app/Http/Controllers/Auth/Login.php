@@ -6,14 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-use App\Models\Cliente as Clientes;
-use App\Models\Funcionario as Funcionarios;
-use App\Models\unidade as Unidades;
-use App\Models\Modelo as Model;
-use App\Models\Linha as Linha;
-use App\Models\Material as Material;
-use App\Models\Orcamento as Orcamento;
-
 class Login extends Controller
 {
     public function login(){
@@ -60,25 +52,29 @@ class Login extends Controller
                 array("x"=> 56, "y"=> 450),
                 array("x"=> 57, "y"=> 35),
             );
-            $clientes = count(Clientes::all());
-            $funcionarios = count(Funcionarios::all());
-            $unidades = count(Unidades::all());
-            $modelos = count(Model::all());
-            $linhas = count(Linha::all());
-            $orcamentos = count(Orcamento::all());
-            $materiais = count(Material::all());
-            $user =  Auth::user();
-            return view('user/dashboard', compact(
-                'user',
-                'clientes',
-                'funcionarios',
-                'unidades',
-                'modelos',
-                'linhas',
-                'materiais',
-                'orcamentos',
-                'dataPoints'
-            ))->with('succes','Login Realizado!');
+        //     $clientes = count(Clientes::all());
+        //     $funcionarios = count(Funcionarios::all());
+        //     $unidades = count(Unidades::all());
+        //     $modelos = count(Model::all());
+        //     $linhas = count(Linha::all());
+        //     $orcamentos = count(Orcamento::all());
+        //     $materiais = count(Material::all());
+        //     $user =  Auth::user();
+        //     return view('user/dashboard', compact(
+        //         'user',
+        //         'clientes',
+        //         'funcionarios',
+        //         'unidades',
+        //         'modelos',
+        //         'linhas',
+        //         'materiais',
+        //         'orcamentos',
+        //         'dataPoints'
+        //     ))->with('succes','Login Realizado!');
+        // }
+        // return redirect()->route('login')->with('error','Credenciais inválidas!');
+            $user = Auth::user();
+            return view('user/dashboard', compact('user', 'dataPoints'))->with('succes','Login Realizado!');
         }
         return redirect()->route('login')->with('error','Credenciais inválidas!');
     }
