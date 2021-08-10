@@ -25,6 +25,7 @@
                     <th class="table_first_row">UNIDADE DE MEDIDA</th>
                     <th class="table_first_row">LINHA</th>
                     <th class="table_first_row">VALOR</th>
+                    <th class="table_first_row">PESO</th>
                     <th class="table_first_row">CODIGO</th>
                     <th class="table_first_row">CRIADO</th>
                     <th class="table_first_row">ATUALIZADO</th>
@@ -36,6 +37,7 @@
                     <td class="table_rows">{{ $material->unidade_medida->unidade }}</td>
                     <td class="table_rows">{{ $material->linha->linha }}</td>
                     <td class="table_rows">{{ $material->valor }}</td>
+                    <td class="table_rows">{{ $material->peso }}</td>
                     <td class="table_rows">{{ $material->codigo }}</td>
                     <td>{{ $material->created_at->format('d/m/Y') }} as {{ $material->created_at->format('H:i') }}</td>
                     <td>{{ $material->updated_at->format('d/m/Y') }} as {{ $material->updated_at->format('H:i') }}</td>

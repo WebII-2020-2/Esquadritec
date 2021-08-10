@@ -114,7 +114,8 @@
                 </div>
                 <div class="campo" style="width: 300px;">
                     <label for="valor" class="pr-2 col-form-label" style="color: white">Valor:</label>
-                    <input id="valor" class="input2" type="number" name="valor" class="form-control" value="{{$material->valor}}">
+                    <input type="number" class="input2" placeholder="0.00" required name="valor" min="0" value="{{$material->valor}}" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" onblur="
+this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'">
                 </div>
                 <div class="full-width" style="height:100px;">
                     <div class="title full-width row col-12">

@@ -19,6 +19,7 @@ class Material extends Controller
     public function index()
     {
         $materiais = Materiais::all();
+        // dd($materiais);
         foreach ($materiais as $key => $material) {
             $materiais[$key]->unidade_medida = unidade::where('id', $material->unidade_medida)->first();
             $materiais[$key]->linha = Linha::where('id', $material->linha)->first();
@@ -55,6 +56,7 @@ class Material extends Controller
         try {
             // dd($request);
             $new_material = new Materiais($request->except(['_token']));
+            // dd($new_material);
             $new_material->save();
             return redirect()->route('list_material')->with('succes', 'cadastrado');
         } catch (Expection $e) {

@@ -59,7 +59,8 @@
                                 </select>
                             </div>
                             <div class="col-2">
-                                <input id="value" class="input-5" type="number" name="valor" required>
+                            <input type="number" class="input-5" placeholder="0.00" required name="valor" min="0" value="0" step="0.01" title="Currency" pattern="^\d+(?:\.\d{1,2})?$" onblur="
+this.parentNode.parentNode.style.backgroundColor=/^\d+(?:\.\d{1,2})?$/.test(this.value)?'inherit':'red'">
                             </div>
                         </div>
                     </div>
