@@ -230,7 +230,6 @@ class Orcamento extends Controller
                 $produto = [
                     'orcamento'=> $orcamento_set->id,
                     'modelo'=> $pdt['modelo']['id'],
-                    'linha'=> $pdt['linha']['id'],
                     'nome'=> $pdt['nome'],
                     'valor'=> $pdt['valor']
                 ];
@@ -272,7 +271,7 @@ class Orcamento extends Controller
             foreach($produtos as $key=>$value){
                 $materiais = [];
                 $produtos[$key]['modelo'] = (Modelo::where('id', $value['modelo'])->first())->toArray();
-                $produtos[$key]['linha'] = (Linha::where('id', $value['linha'])->first())->toArray();
+                // $produtos[$key]['linha'] = (Linha::where('id', $value['linha'])->first())->toArray();
                 $material = materialProduto::where('produto', $value['id'])->get();
 
                 foreach($material as $mat){
@@ -310,7 +309,7 @@ class Orcamento extends Controller
             foreach($produtos as $key=>$value){
                 $materiais = [];
                 $produtos[$key]['modelo'] = (Modelo::where('id', $value['modelo'])->first())->toArray();
-                $produtos[$key]['linha'] = (Linha::where('id', $value['linha'])->first())->toArray();
+                // $produtos[$key]['linha'] = (Linha::where('id', $value['linha'])->first())->toArray();
                 $material = materialProduto::where('produto', $value['id'])->get();
 
                 foreach($material as $mat){

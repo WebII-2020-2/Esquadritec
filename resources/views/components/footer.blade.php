@@ -57,7 +57,84 @@
 </script>
 
 <style>
-     .card-generico {
+    @-webkit-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    @-moz-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    @-o-keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    @keyframes opacity {
+        0% {
+            opacity: 0;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            display: none;
+        }
+    }
+    #alert {
+        display: none;
+        opacity: 0;
+        position:absolute;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        width:100%;
+        z-index:9999;
+        -webkit-animation: opacity 5s;
+        /* Safari 4+ */
+        -moz-animation: opacity 5s;
+        /* Fx 5+ */
+        -o-animation: opacity 5s;
+        /* Opera 12+ */
+        animation: opacity 5s;
+        /* IE 10+, Fx 29+ */
+    }
+    .card-generico {
         padding: 20px;
         padding-bottom: 0.5%;
         background-color: #295C8A;
@@ -194,18 +271,6 @@
         margin-right: -10px;
         margin-top: -10px;
         margin-bottom: 20px;
-    }
-
-    #alert {
-        opacity: 0;
-        -webkit-animation: opacity 5s;
-        /* Safari 4+ */
-        -moz-animation: opacity 5s;
-        /* Fx 5+ */
-        -o-animation: opacity 5s;
-        /* Opera 12+ */
-        animation: opacity 5s;
-        /* IE 10+, Fx 29+ */
     }
 
     .toHome {
@@ -415,12 +480,12 @@
 </style>
 
 @if(session()->has('error'))
-    <div class="absolute-center" style="position:absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
-        <p id="alert" class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('error')}}</p>
+    <div id="alert" class="absolute-center">
+        <p class="alert alert-warning" role="alert" style="width:200px;">{{session()->get('error')}}</p>
     </div>
 @elseif(session()->has('succes'))
-    <div class="absolute-center" style="position:absolute; text-align: center; display: flex;justify-content: center; width:100%; z-index:9999;">
-        <p id="alert" class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
+    <div id="alert" class="absolute-center">
+        <p class="alert alert-success" role="alert" style="width:200px;">{{session()->get('succes')}}</p>
     </div>
 @endif
 

@@ -84,7 +84,6 @@
                             <th scope="col" class="table_first_row">NOME</th>
                             <th scope="col" class="table_first_row">VALOR</th>
                             <th scope="col" class="table_first_row">MODELO</th>
-                            <th scope="col" class="table_first_row">LINHA</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -92,7 +91,6 @@
                             <td>{{ $produto['nome'] }}</td>
                             <td>{{ $produto['valor'] }}</td>
                             <td>{{ $produto['modelo']['modelo'] }}</td>
-                            <td>{{ $produto['linha']['linha'] }}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -130,12 +128,11 @@
 
     <div class="">
         <button class="rounded-pill btn btn-md btn-cancelar" onClick="goBack()" type="reset">Voltar</button>
+        <button id="btnPDF" onClick="PDF()" class="rounded-pill" type="reset">PDF</button>
     </div>
 
     <x-footer />
 </body>
-
-<button id="btnPDF" onClick="PDF()" class="rounded-pill" type="reset">PDF</button>
 
 <x-footer />
 </body>
